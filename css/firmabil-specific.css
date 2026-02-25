@@ -1,0 +1,433 @@
+/* firmabil-specific.css - Firmabil kalkulator styling */
+
+/* Info tooltip styling */
+.info-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: help;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.info-tooltip:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
+}
+
+.info-tooltip::before {
+    content: "i";
+}
+
+.info-tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: #1f2937;
+    color: #f3f4f6;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.info-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #1f2937 transparent transparent transparent;
+}
+
+.info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip positioning adjustments for mobile */
+@media (max-width: 768px) {
+    .info-tooltip .tooltip-text {
+        width: 220px;
+        left: auto;
+        right: -10px;
+        transform: none;
+    }
+    
+    .info-tooltip .tooltip-text::after {
+        left: auto;
+        right: 15px;
+        transform: none;
+    }
+}
+
+/* Tooltip with link styling */
+.tooltip-text a {
+    color: #6ee7b7;
+    text-decoration: underline;
+}
+
+.tooltip-text a:hover {
+    color: #a7f3d0;
+}
+
+/* Tooltip highlight text */
+.tooltip-text strong {
+    color: #6ee7b7;
+}
+
+/* Label with tooltip container */
+.label-with-tooltip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label-with-tooltip label {
+    margin-bottom: 0;
+}
+
+/* Firmabil-specifik gradient (grønn for økonomi/finans-tema) */
+body {
+    background: linear-gradient(135deg, #059669 0%, #047857 25%, #10b981 75%, #34d399 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(5, 150, 105, 0.3);
+}
+
+/* Firmabil-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-left: 5px solid #059669;
+}
+
+.breakdown {
+    background: rgba(5, 150, 105, 0.05);
+    border: 1px solid rgba(5, 150, 105, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.breakdown h3 {
+    color: #047857;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 2px solid rgba(5, 150, 105, 0.2);
+    padding-bottom: 10px;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(5, 150, 105, 0.08);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-label {
+    color: #374151;
+    font-weight: 500;
+}
+
+.breakdown-value {
+    color: #047857;
+    font-weight: 600;
+}
+
+.section-header {
+    background: rgba(5, 150, 105, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #047857;
+    border-left: 4px solid #059669;
+}
+
+/* Firmabil-spesifikke knapper */
+.calculate-btn {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(5, 150, 105, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #059669;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.info-note {
+    background: rgba(5, 150, 105, 0.1);
+    border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(5, 150, 105, 0.05);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group:hover {
+    background: rgba(5, 150, 105, 0.1);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #059669;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-description {
+    font-size: 13px;
+    color: #6b7280;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+/* Tax display cards */
+.tax-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.tax-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid #059669;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tax-card.highlight {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: white;
+    border-left: none;
+}
+
+.tax-card.highlight .tax-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tax-card.highlight .tax-value {
+    color: white;
+}
+
+.tax-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.tax-value {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #047857;
+}
+
+.tax-sub {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 5px;
+}
+
+/* Firmabil icon styling */
+.firmabil-icon {
+    font-size: 2.5em;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Summary box */
+.summary-box {
+    background: linear-gradient(135deg, #047857 0%, #059669 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.summary-box h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.summary-box .big-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.summary-box .per-month {
+    opacity: 0.8;
+    font-size: 0.95em;
+}
+
+/* Reduction badges */
+.reduction-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.reduction-badge.active {
+    background: rgba(5, 150, 105, 0.2);
+    color: #047857;
+}
+
+.reduction-badge.inactive {
+    background: rgba(156, 163, 175, 0.2);
+    color: #6b7280;
+}
+
+/* Slider for tax rate */
+.slider-container {
+    margin-top: 10px;
+}
+
+.slider-container input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e5e7eb;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #059669;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-value {
+    display: inline-block;
+    background: #059669;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tax-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .tax-card {
+        padding: 15px;
+    }
+    
+    .tax-value {
+        font-size: 1.5em;
+    }
+    
+    .summary-box .big-number {
+        font-size: 2em;
+    }
+}
+
+/* Warning/info boxes */
+.warning-box {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #92400e;
+    font-size: 14px;
+}
+
+.tip-box {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #1e40af;
+    font-size: 14px;
+}
+
+/* Year selection styling */
+.year-info {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 5px;
+}
+
+.car-age-indicator {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.car-age-indicator.old {
+    background: rgba(5, 150, 105, 0.15);
+    color: #047857;
+}
+
+.car-age-indicator.new {
+    background: rgba(156, 163, 175, 0.15);
+    color: #4b5563;
+}

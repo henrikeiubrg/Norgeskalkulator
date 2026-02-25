@@ -1,0 +1,164 @@
+/* barnetrygd-specific.css - Barnetrygd-spesifikk styling */
+
+/* Barnetrygd-specifik gradient (rosa/blå for familie/barn-tema) */
+body {
+    background: linear-gradient(135deg, #f97316 0%, #ec4899 25%, #8b5cf6 50%, #3b82f6 75%, #10b981 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(249, 115, 22, 0.3);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Barnetrygd-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fef7f0 0%, #fff1f2 100%);
+    border-left: 5px solid #f97316;
+}
+
+.breakdown {
+    background: rgba(249, 115, 22, 0.05);
+    border: 1px solid rgba(249, 115, 22, 0.1);
+}
+
+.breakdown h3 {
+    color: #ea580c;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.child-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.05);
+}
+
+.child-card:last-child {
+    border-bottom: none;
+}
+
+.family-warning {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #7c3aed;
+}
+
+/* Barnetrygd-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.info-note {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+/* Spesielle barnetrygd-elementer */
+.family-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.family-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #f97316;
+    text-align: center;
+}
+
+.family-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Family-specific styling */
+.single-parent {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+    color: white;
+}
+
+.extended-benefit {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+}
+
+.regular-benefit {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+/* Child age indicator styling */
+.age-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.age-0-3 {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.age-4-17 {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Add children button */
+.add-child-btn {
+    background: rgba(249, 115, 22, 0.1);
+    border: 2px dashed #f97316;
+    color: #ea580c;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.add-child-btn:hover {
+    background: rgba(249, 115, 22, 0.2);
+    border-color: #ea580c;
+}
+
+.remove-child-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.remove-child-btn:hover {
+    background: #dc2626;
+}

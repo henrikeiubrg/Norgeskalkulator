@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Matpriser Norge 2026 – Sammenlign Priser på Mat i Norske Butikker | Norgeskalkulator</title>
+    <link rel="canonical" href="https://norgeskalkulator.no/matpriser/">
+    <meta name="description"
+        content="Sammenlign matpriser i sanntid fra Rema 1000, Kiwi, Coop, Meny og andre norske butikker. Se prishistorikk, finn billigste butikk og spar penger på dagligvarer. Oppdatert daglig med over 50.000 produkter.">
+    <meta name="keywords"
+        content="matpriser norge, dagligvarepriser, sammenlign matpriser, billigste matvarer, rema 1000 priser, kiwi priser, coop priser, meny priser, prisutvikling mat, matvarekalkulator, dagligvarer norge, handlekurv sammenligning, matinflasjon norge">
+    <link rel="icon" type="image/png" href="https://norgeskalkulator.no/images/n-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://norgeskalkulator.no/images/n-icon.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://norgeskalkulator.no/matpris-oversikt/" />
+    <meta property="og:title" content="Matpriser Norge – Sammenlign Priser på Mat og Dagligvarer" />
+    <meta property="og:description"
+        content="Finn billigste priser på mat i Norge. Sammenlign priser fra alle store dagligvarekjeder og se prisutvikling over tid." />
+    <meta property="og:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="Norgeskalkulator" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Matpriser Norge – Prissammenligning Dagligvarer" />
+    <meta name="twitter:description" content="Spar penger på mat! Sammenlign priser fra norske butikker i sanntid." />
+    <meta name="twitter:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#1e90ff">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Norgeskalkulator">
+    <meta name="language" content="Norwegian">
+    <meta name="revisit-after" content="1 days">
+    <meta http-equiv="content-language" content="no">
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Matpriser Norge",
+      "description": "Sammenlign matpriser fra norske dagligvarebutikker. Se prishistorikk, finn billigste butikk og spar penger på dagligvarer.",
+      "url": "https://norgeskalkulator.no/matpris-oversikt/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "inLanguage": "nb-NO",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "NOK"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Norgeskalkulator.no",
+        "url": "https://norgeskalkulator.no",
+        "logo": "https://norgeskalkulator.no/images/n-icon.png"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvilke butikker kan jeg sammenligne matpriser fra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du kan sammenligne priser fra Rema 1000, Kiwi, Coop Extra, Coop Prix, Coop Mega, Coop Obs, Meny, Spar, Joker og Bunnpris."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvor ofte oppdateres matprisene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prisene oppdateres daglig via Kassalapp API med over 50 000 produkter fra norske dagligvarebutikker."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan jeg bygge en handlekurv og sammenligne totalpriser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, du kan legge produkter i en handlekurv og sammenligne totalpriser mellom butikker for å finne hvor du får billigst totalt."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../css/calculator-base.css">
+    <link rel="stylesheet" href="../css/matpriser-specific.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <h1 style="font-size: 1.5em; text-align: center;">
+                <a href="/"
+                    style="text-decoration: none; color: inherit; display: inline-block; max-width: 100%; word-wrap: break-word;">
+                    <span class="flag">🇳🇴</span> Norgeskalkulator.no
+                </a>
+            </h1>
+            <h2>🛒 Matpriser Norge - Prissammenligning</h2>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <h3>🔍 Søk etter produkt</h3>
+                <div class="search-controls">
+                    <input type="text" id="productSearch" placeholder="50 000+ produkter!" />
+                    <button id="searchBtn" class="search-btn" onclick="searchProducts()">Søk</button>
+                </div>
+                <div id="searchLoader" class="search-loader" hidden>
+                    <div class="spinner" aria-hidden="true"></div>
+                    <span>Søker…</span>
+                </div>
+
+                <div class="filter-row">
+                    <select id="storeFilter">
+                        <option value="">Alle butikker</option>
+                        <option value="REMA_1000">Rema 1000</option>
+                        <option value="KIWI">Kiwi</option>
+                        <option value="COOP_EXTRA">Coop Extra</option>
+                        <option value="COOP_PRIX">Coop Prix</option>
+                        <option value="COOP_MEGA">Coop Mega</option>
+                        <option value="COOP_OBS">Coop Obs</option>
+                        <option value="MENY_NO">Meny</option>
+                        <option value="SPAR_NO">Spar</option>
+                        <option value="JOKER_NO">Joker</option>
+                        <option value="BUNNPRIS">Bunnpris</option>
+                    </select>
+
+                    <select id="categoryFilter">
+                        <option value="">Alle kategorier</option>
+                        <option value="bakeri">Bakeri</option>
+                        <option value="drikke">Drikke</option>
+                        <option value="frukt-grønt">Frukt & Grønt</option>
+                        <option value="kjøtt">Kjøtt</option>
+                        <option value="meieri">Meieri</option>
+                        <option value="fisk">Fisk</option>
+                        <option value="frysevarer">Frysevarer</option>
+                    </select>
+
+                    <select id="sortBy">
+                        <option value="coverage_desc" selected>Dekning: flest butikker</option>
+                        <option value="price_asc">Pris: Lav til høy</option>
+                        <option value="price_desc">Pris: Høy til lav</option>
+                        <option value="name_asc">Navn: A-Å</option>
+                        <option value="name_desc">Navn: Å-A</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="searchResults" class="search-results" style="display: none;">
+                <h3 id="resultsHeader">Søkeresultater</h3>
+                <div id="resultsList" class="results-grid"></div>
+                <div id="loadMoreContainer" class="load-more-container" style="display:none;">
+                    <button id="loadMoreBtn" class="load-more-btn" onclick="loadMoreResults()">Se mer</button>
+                </div>
+            </div>
+
+            <!-- Basket / Comparison -->
+            <div class="comparison-section" id="basketSection">
+                <h3>📊 Sammenlign handlekurv</h3>
+                <div class="basket-builder">
+                    <div id="basketItems" class="basket-items">
+                        <p class="info-text">Søk etter produkter ovenfor og legg dem til i handlekurven for å
+                            sammenligne totalpriser mellom butikker.</p>
+                    </div>
+                </div>
+
+                <div id="comparisonResults" class="comparison-results" style="display: none;">
+                    <h4>Handlekurv totalpris per butikk:</h4>
+                    <canvas id="basketChart"></canvas>
+                    <div id="storeTotals" class="store-totals"></div>
+                </div>
+            </div>
+
+            <!-- Price History Chart -->
+            <div id="priceHistorySection" class="price-history-section" style="display: none;">
+                <h3>📈 Prishistorikk</h3>
+                <canvas id="priceChart"></canvas>
+            </div>
+
+            <!-- Store Finder -->
+            <div class="store-finder-section">
+                <h3>📍 Finn butikker nær deg</h3>
+                <div class="location-controls">
+                    <input type="text" id="locationSearch" placeholder="Søk etter sted eller adresse..." />
+                    <button class="search-btn" onclick="findStores()">Finn butikker</button>
+                    <button class="location-btn" onclick="useMyLocation()">📍 Bruk min posisjon</button>
+                </div>
+                <div id="storeResults" class="store-results"></div>
+            </div>
+
+            <div class="info-note">
+                <strong>ℹ️ Om Matpriser Norge:</strong> Sammenlign priser på over 50.000 produkter fra norske
+                dagligvarebutikker. Data oppdateres daglig via Kassalapp API. Se prishistorikk, finn billigste butikk
+                og bygg handlekurver for å sammenligne totalpriser.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // -------------------- Utilities & API --------------------
+        const API_BASE = '/.netlify/functions/kassalapp';
+        const hasPrice = p => typeof p.current_price === 'number' && !Number.isNaN(p.current_price);
+        const hasImage = p => !!p.image && p.image.trim() !== '';
+        const cap = (n, max = 100) => Math.min(Number(n || 0), max) || max;
+
+        function apiCall(endpoint, params = {}) {
+            const qs = new URLSearchParams(
+                Object.entries(params).filter(([_, v]) => v !== undefined && v !== null && v !== '')
+            ).toString();
+            return fetch(`${API_BASE}?endpoint=${encodeURIComponent(endpoint)}${qs ? `&${qs}` : ''}`);
+        }
+
+        function preloadImage(url, timeoutMs = 8000) {
+            return new Promise((resolve) => {
+                if (!url) return resolve(false);
+                const img = new Image();
+                let settled = false;
+                const done = ok => { if (!settled) { settled = true; resolve(ok); } };
+                const timer = setTimeout(() => done(false), timeoutMs);
+                img.onload = () => { clearTimeout(timer); done(true); };
+                img.onerror = () => { clearTimeout(timer); done(false); };
+                img.src = url;
+            });
+        }
+
+        async function validateImagesForProducts(items, concurrency = 8) {
+            const out = [];
+            let i = 0;
+            async function worker() {
+                while (i < items.length) {
+                    const idx = i++;
+                    const p = items[idx];
+                    const ok = await preloadImage(p.image);
+                    if (ok) out.push(p);
+                }
+            }
+            const workers = Array.from({ length: Math.max(1, concurrency) }, worker);
+            await Promise.all(workers);
+            const set = new Set(out);
+            return items.filter(p => set.has(p)); // preserve order
+        }
+
+        // Normalize /products/ean/{ean} variations
+        function normalizeEANProducts(resp) {
+            const payload = resp?.data ?? resp;
+            if (Array.isArray(payload?.products)) return payload.products;
+            if (Array.isArray(payload)) return payload;
+            if (payload?.product) return [payload.product];
+            return [];
+        }
+        const getStoreName = (item) =>
+            item?.store?.name || item?.store?.[0]?.name || item?.store_name || item?.storeName || 'Ukjent butikk';
+
+        function lastPriceFromHistory(item) {
+            const ph = item?.price_history || item?.priceHistory || [];
+            if (!Array.isArray(ph) || ph.length === 0) return null;
+            const last = ph[ph.length - 1];
+            return typeof last?.price === 'number' ? last.price : null;
+        }
+
+        function normalizeName(name) {
+            return (name || '').toLowerCase().replace(/\s+/g, ' ').trim();
+        }
+        function unitLabelFor(p) {
+            const u = (p?.weight_unit || p?.unit || '').toLowerCase();
+            if (!u) return 'stk';
+            if (u === 'g') return 'kg';
+            if (u === 'ml') return 'l';
+            return u;
+        }
+
+        // --- latest price helpers (date-aware) ---
+        // Picks the newest (by date) price from a single product row.
+        // Falls back to current_price + last_updated if history is missing.
+        function latestPriceEntry(item) {
+            const ph = Array.isArray(item?.price_history) ? item.price_history : [];
+            let best = null; // { price, date }
+
+            for (const e of ph) {
+                if (!e || typeof e.price !== 'number' || !e.date) continue;
+                const t = Date.parse(e.date);
+                if (Number.isNaN(t)) continue;
+                const cand = { price: e.price, date: new Date(t).toISOString() };
+                if (!best || Date.parse(best.date) < t) best = cand;
+            }
+
+            if (!best && typeof item?.current_price === 'number') {
+                const d = item?.last_updated || item?.updated_at || item?.updatedAt || null;
+                best = { price: item.current_price, date: d ? new Date(d).toISOString() : null };
+            }
+
+            return best || { price: null, date: null };
+        }
+        // Cache of EAN -> { [storeName]: { price, date } } (new cache version to bust old data)
+        const __CACHE_VER = 'v2';
+
+        // Helper: pick entry with newest date
+        function pickMostRecent(a, b) {
+            if (!a || !a.date) return b;
+            if (!b || !b.date) return a;
+            return Date.parse(b.date) > Date.parse(a.date) ? b : a;
+        }
+        function formatDateNB(iso) {
+            if (!iso) return '';
+            try { return new Date(iso).toLocaleDateString('nb-NO', { year: 'numeric', month: '2-digit', day: '2-digit' }); }
+            catch { return iso; }
+        }
+        function mergeMostRecentStoreMapsObj(base = {}, add = {}) {
+            for (const [store, entry] of Object.entries(add || {})) {
+                if (!entry || typeof entry.price !== 'number') continue;
+                base[store] = pickMostRecent(base[store], entry);
+            }
+            return base;
+        }
+
+        // Blocklist — never show these stores anywhere
+        function isBlockedStoreName(name) {
+            return /engrosnett/i.test(String(name || ''));
+        }
+        function isBlockedStoreFromItem(item) {
+            const name = getStoreName(item);
+            const code = (item?.store?.code || item?.store_code || '').toString();
+            return isBlockedStoreName(name) || /engrosnett/i.test(code);
+        }
+        function median(arr) {
+            const a = arr.filter(n => Number.isFinite(n)).sort((x, y) => x - y);
+            if (!a.length) return null;
+            const mid = Math.floor(a.length / 2);
+            return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
+        }
+        function isBlockedStoreName(name) { return /engrosnett/i.test(String(name || '')); } // (duplicate here if not added above)
+
+        // --- EAN -> latest price per store (with candidates for logging) ---
+        const storePriceCache = new Map();          // ean -> {store:{price,date}}
+        const storeCandidatesCache = new Map();     // ean -> {store:[{price,date,ean}]}
+
+        async function getStorePriceMapByEAN(ean) {
+            if (!ean) return {};
+            const cacheKey = `${ean}::${__CACHE_VER}`;
+            if (storePriceCache.has(cacheKey)) return storePriceCache.get(cacheKey);
+
+            try {
+                const res = await apiCall(`products/ean/${ean}`);
+                if (!res.ok) { storePriceCache.set(cacheKey, {}); storeCandidatesCache.set(cacheKey, {}); return {}; }
+
+                const items = normalizeEANProducts(await res.json());
+
+                const candidates = {}; // store -> [{price,date,ean}]
+                for (const it of items) {
+                    if (isBlockedStoreFromItem(it)) continue;             // 👈 skip Engrosnett
+                    const store = getStoreName(it);
+                    if (!store) continue;
+
+                    const ph = Array.isArray(it?.price_history) ? it.price_history : [];
+                    for (const e of ph) {
+                        const t = e && e.date ? Date.parse(e.date) : NaN;
+                        if (Number.isNaN(t) || typeof e.price !== 'number') continue;
+                        (candidates[store] ||= []).push({ price: e.price, date: new Date(t).toISOString(), ean });
+                    }
+                    if (typeof it?.current_price === 'number') {
+                        const d = it?.last_updated || it?.updated_at || it?.updatedAt || null;
+                        (candidates[store] ||= []).push({ price: it.current_price, date: d ? new Date(d).toISOString() : null, ean });
+                    }
+                }
+
+                const finalMap = {};
+                for (const [store, list] of Object.entries(candidates)) {
+                    let best = null;
+                    for (const cand of list) {
+                        if (!cand || typeof cand.price !== 'number' || !cand.date) continue;
+                        best = pickMostRecent(best, cand);
+                    }
+                    if (best) finalMap[store] = { price: best.price, date: best.date };
+                }
+
+                storeCandidatesCache.set(cacheKey, candidates);
+                storePriceCache.set(cacheKey, finalMap);
+                return finalMap;
+            } catch (err) {
+                console.error('getStorePriceMapByEAN failed', err);
+                storePriceCache.set(cacheKey, {});
+                storeCandidatesCache.set(cacheKey, {});
+                return {};
+            }
+        }
+
+        // -------------------- Search UI state --------------------
+        let __searchTimer = null;
+        function restoreSearchUI() {
+            const searchBtn = document.getElementById('searchBtn');
+            const loader = document.getElementById('searchLoader');
+            if (searchBtn) {
+                searchBtn.disabled = false;
+                searchBtn.textContent = searchBtn.dataset._label || 'Søk';
+            }
+            if (loader) { loader.classList.remove('show'); loader.hidden = true; }
+            __searchTimer = null;
+        }
+        function showSearching(maxMs = 5000) {
+            const searchBtn = document.getElementById('searchBtn');
+            const loader = document.getElementById('searchLoader');
+            if (searchBtn) { searchBtn.disabled = true; searchBtn.dataset._label = searchBtn.textContent; searchBtn.textContent = 'Søker…'; }
+            if (loader) { loader.hidden = false; loader.classList.add('show'); }
+            if (__searchTimer) clearTimeout(__searchTimer);
+            __searchTimer = setTimeout(restoreSearchUI, Math.max(0, maxMs || 0));
+        }
+
+        // -------------------- Basket --------------------
+        let basket = [];
+        function getBasketEntry(id) { return basket.find(it => String(it.id) === String(id)); }
+        function getQty(id) { const e = getBasketEntry(id); return e ? e.qty : 0; }
+        function updateCartCounter() {
+            const total = basket.reduce((acc, it) => acc + (parseInt(it.qty) || 0), 0);
+            const badge = document.getElementById('cartCountBadge');
+            if (badge) { badge.textContent = String(total); badge.classList.toggle('has-items', total > 0); }
+        }
+
+        function setQty(id, name, price, eansCsv, qty) {
+            qty = Math.max(0, Math.floor(qty || 0));
+            const eans = typeof eansCsv === 'string' && eansCsv ? eansCsv.split(',').filter(Boolean) : [];
+            const e = getBasketEntry(id);
+            if (qty === 0) {
+                if (e) basket = basket.filter(x => String(x.id) !== String(id));
+            } else {
+                if (e) {
+                    e.qty = qty;
+                    if (name) e.name = name;
+                    if (typeof price === 'number' && price > 0) e.price = price;
+                    if (eans.length) e.eans = eans, e.ean = eans[0];
+                } else {
+                    basket.push({ id, name, price, eans, ean: eans[0] || null, qty });
+                }
+            }
+            updateBasketDisplay();
+            updateQuantityBadges();
+            updateCartCounter();
+        }
+        function incQty(id, name, price, eansCsv, delta = 1) { setQty(id, name, price, eansCsv, getQty(id) + (delta || 1)); }
+        function decQty(id, delta = 1) { setQty(id, null, undefined, undefined, getQty(id) - (delta || 1)); }
+
+        function updateQuantityBadges() {
+            document.querySelectorAll('.qty-badge').forEach(el => {
+                const pid = el.getAttribute('data-product-id');
+                const q = getQty(pid);
+                el.textContent = q > 0 ? `I kurv: ${q}` : 'I kurv: 0';
+                el.classList.toggle('has-items', q > 0);
+            });
+            document.querySelectorAll('.qty-count').forEach(el => {
+                const pid = el.getAttribute('data-product-id');
+                el.textContent = getQty(pid);
+            });
+        }
+        function onProductImageError(imgEl) { const card = imgEl.closest('.product-card'); if (card) card.remove(); }
+        function removeFromBasket(index) { basket.splice(index, 1); updateBasketDisplay(); updateQuantityBadges(); }
+
+        // -------------------- Listing / Aggregation --------------------
+        let currentProducts = [];
+        let displayLimit = 20;
+        let lastRenderedProducts = [];
+        let preloadReady = false;
+
+        // Aggregate by NAME, union EANs, pick most recent per store across everything
+        async function aggregateProductsByEANAndName(items) {
+            const byName = new Map();
+            for (const p of (items || [])) {
+                if (!hasImage(p) && !p?.image) continue;
+                const anyPrice = hasPrice(p) || lastPriceFromHistory(p) !== null;
+                if (!anyPrice) continue;
+                const key = normalizeName(p.name);
+                if (!byName.has(key)) byName.set(key, []);
+                byName.get(key).push(p);
+            }
+
+            const result = [];
+            for (const [nameKey, group] of byName) {
+                const rep = group.find(x => !!x.image) || group[0];
+                const eans = [...new Set(group.map(x => x.ean).filter(Boolean))];
+
+                // merge store maps from all EANs (newest wins)
+                let unionMap = {};
+                if (eans.length) {
+                    const maps = await Promise.all(eans.map(getStorePriceMapByEAN));
+                    for (const m of maps) mergeMostRecentStoreMapsObj(unionMap, m);
+                }
+                // also merge any direct row price (covers rows w/out EAN)
+                for (const row of group) {
+                    if (isBlockedStoreFromItem(row)) continue; // 👈 skip Engrosnett
+                    const store = getStoreName(row);
+                    const entry = latestPriceEntry(row);
+                    if (store && typeof entry.price === 'number') {
+                        unionMap[store] = pickMostRecent(unionMap[store], entry);
+                    }
+                }
+
+                const stores = Object.keys(unionMap);
+                const min = Math.min(...stores.map(s => unionMap[s].price).filter(v => isFinite(v)));
+
+                result.push({
+                    id: `AGG:${nameKey}`,
+                    eans,
+                    ean: eans[0] || null,
+                    name: rep?.name || 'Uten navn',
+                    brand: rep?.brand || '',
+                    image: rep?.image || '',
+                    minPrice: Number.isFinite(min) ? min : null,
+                    storeCount: stores.length,
+                    unitPrice: typeof rep?.current_unit_price === 'number' ? rep.current_unit_price : null,
+                    unitLabel: unitLabelFor(rep)
+                });
+            }
+            return result;
+        }
+
+        function loadMoreResults() {
+            if (!preloadReady) return;
+            displayLimit += 20;
+            displayProducts(lastRenderedProducts);
+        }
+
+        async function applyUIFilters() {
+            try {
+                const storeVal = (document.getElementById('storeFilter')?.value || '').toUpperCase();
+                const categoryVal = (document.getElementById('categoryFilter')?.value || '').toUpperCase();
+                const sortVal = (document.getElementById('sortBy')?.value || 'price_asc');
+
+                const getCategory = (p) => (p?.category?.name || p?.category_name || p?.categoryName || p?.main_category || '').toUpperCase();
+                const getStoreCode = (p) => (p?.store?.code || p?.store_code || p?.storeCode || '').toUpperCase();
+                const getStoreNorm = (p) => (getStoreName(p) || '').toUpperCase().replace(/\s+/g, '_');
+
+                let arr = Array.isArray(currentProducts) ? [...currentProducts] : [];
+                displayLimit = 20;
+
+                if (storeVal) {
+                    arr = arr.filter(p => {
+                        const code = getStoreCode(p);
+                        if (code) return code === storeVal;
+                        const norm = getStoreNorm(p);
+                        const v = storeVal.replace('COOP_', '');
+                        return norm.includes(v);
+                    });
+                }
+
+                if (categoryVal) {
+                    arr = arr.filter(p => {
+                        const cat = getCategory(p);
+                        if (cat) return cat.includes(categoryVal);
+                        return (p?.name || '').toUpperCase().includes(categoryVal);
+                    });
+                }
+
+                let agg = await aggregateProductsByEANAndName(arr);
+                // Sort aggregated cards
+                if (sortVal === 'coverage_desc' || !sortVal) {
+                    // Most stores first; tie-break by cheaper min price, then name
+                    agg.sort((a, b) =>
+                        (b.storeCount || 0) - (a.storeCount || 0) ||
+                        (a.minPrice ?? Infinity) - (b.minPrice ?? Infinity) ||
+                        (a.name || '').localeCompare(b.name || '', 'no')
+                    );
+                } else if (sortVal === 'price_asc') {
+                    agg.sort((a, b) => (a.minPrice ?? Infinity) - (b.minPrice ?? Infinity));
+                } else if (sortVal === 'price_desc') {
+                    agg.sort((a, b) => (b.minPrice ?? -Infinity) - (a.minPrice ?? -Infinity));
+                } else if (sortVal === 'name_asc') {
+                    agg.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'no'));
+                } else if (sortVal === 'name_desc') {
+                    agg.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'no'));
+                }
+
+                displayProducts(agg);
+            } catch (e) {
+                console.warn('applyUIFilters failed', e);
+                displayProducts([]);
+            }
+        }
+
+        function displayProducts(aggregated, headerText = null) {
+            const resultsDiv = document.getElementById('searchResults');
+            const resultsList = document.getElementById('resultsList');
+            const resultsHeader = document.getElementById('resultsHeader');
+
+            const visible = Array.isArray(aggregated) ? aggregated : [];
+            lastRenderedProducts = visible;
+            const toShow = visible.slice(0, displayLimit);
+
+            resultsHeader.textContent = headerText || `Fant ${visible.length} produkter`;
+            resultsDiv.style.display = 'block';
+
+            if (visible.length === 0) {
+                resultsList.innerHTML = '<p class="no-results">Ingen produkter med bilde og pris</p>';
+                document.getElementById('loadMoreContainer').style.display = 'none';
+                return;
+            }
+
+            resultsList.innerHTML = toShow.map(p => {
+                const min = (typeof p.minPrice === 'number') ? p.minPrice.toFixed(2) : '—';
+                const unit = (typeof p.unitPrice === 'number') ? `${p.unitPrice.toFixed(2)} kr/${p.unitLabel}` : '—';
+                const sc = p.storeCount || 0;
+                const scText = sc > 0 ? `I ${sc} butikk${sc === 1 ? '' : 'er'}` : '—';
+                const eansCsv = (p.eans && p.eans.length) ? p.eans.join(',') : (p.ean || '');
+
+                return `
+          <div class="product-card">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="onProductImageError(this, '${p.id}')" />
+            <h4>${p.name}</h4>
+            <p class="brand">${p.brand || ''}</p>
+            <p class="price">Fra ${min} kr</p>
+            <p class="unit-price">${unit}</p>
+            <p class="store-count">${scText}</p>
+
+            <div class="product-actions product-actions-secondary">
+              <button ${eansCsv ? '' : 'disabled'} onclick="showStorePrices('${eansCsv}', '${p.name.replace(/\'/g, "\\'")}')">Butikkpriser</button>
+              <button ${eansCsv ? '' : 'disabled'} onclick="showPriceHistory('${eansCsv}', '${p.name.replace(/\'/g, "\\'")}')">Se prishistorikk</button>
+            </div>
+
+            <div class="qty-controls">
+              <button class="qty-btn minus" aria-label="Fjern én"
+                onclick="decQty('${p.id}', '${p.name.replace(/\'/g, "\\'")}', ${p.minPrice ?? 0}, '${eansCsv}')">-</button>
+              <span class="qty-count" data-product-id="${p.id}">0</span>
+              <button class="qty-btn plus" aria-label="Legg til én"
+                onclick="incQty('${p.id}', '${p.name.replace(/\'/g, "\\'")}', ${p.minPrice ?? 0}, '${eansCsv}')">+</button>
+            </div>
+            <div class="qty-badge" data-product-id="${p.id}">I kurv: 0</div>
+          </div>
+        `;
+            }).join('');
+
+            updateQuantityBadges();
+
+            const lmc = document.getElementById('loadMoreContainer');
+            if (lmc) {
+                if (visible.length > displayLimit) {
+                    lmc.style.display = 'block';
+                    const btn = document.getElementById('loadMoreBtn');
+                    if (btn) { btn.disabled = !preloadReady; btn.textContent = preloadReady ? 'Se mer' : 'Laster …'; }
+                } else {
+                    lmc.style.display = 'none';
+                }
+            }
+        }
+
+        // -------------------- Init / Search --------------------
+        document.addEventListener('DOMContentLoaded', function () {
+            setupEventListeners();
+            loadInitialData(); updateCartCounter();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('productSearch').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') searchProducts();
+            });
+            document.getElementById('storeFilter').addEventListener('change', applyUIFilters);
+            document.getElementById('categoryFilter').addEventListener('change', applyUIFilters);
+            document.getElementById('sortBy').addEventListener('change', applyUIFilters);
+        }
+
+        async function loadInitialData() {
+            try {
+                const res = await apiCall('products', { size: 50, sort: 'price_asc' });
+                if (!res.ok) return;
+                const data = await res.json();
+                const raw = data.data || [];
+                currentProducts = raw.filter(p => hasImage(p) && (hasPrice(p) || lastPriceFromHistory(p) !== null));
+                await applyUIFilters();
+            } catch (e) { console.error('init error', e); }
+        }
+
+        async function searchProducts() {
+            const searchTerm = document.getElementById('productSearch').value.trim();
+            const store = document.getElementById('storeFilter').value;
+            const category = document.getElementById('categoryFilter').value;
+
+            if (searchTerm.length < 3 && !store && !category) {
+                alert('Vennligst skriv minst 3 tegn for å søke');
+                return;
+            }
+            const params = { size: 100, search: searchTerm || undefined };
+            try {
+                showSearching(5000);
+                const res = await apiCall('products', params);
+                if (!res.ok) {
+                    console.error('Products error', res.status, await res.text());
+                    alert(`Kunne ikke hente produkter (feil ${res.status}).`);
+                    return;
+                }
+                const data = await res.json();
+                const raw = data.data || [];
+                const initialPool = raw.filter(p => hasImage(p) && (hasPrice(p) || lastPriceFromHistory(p) !== null));
+
+                const first = initialPool.slice(0, 20);
+                const rest = initialPool.slice(20);
+                const validFirst = await validateImagesForProducts(first, 8);
+                currentProducts = validFirst;
+                preloadReady = false;
+                await applyUIFilters();
+
+                validateImagesForProducts(rest, 8).then(async validRest => {
+                    currentProducts = validFirst.concat(validRest);
+                    preloadReady = true;
+                    await applyUIFilters();
+                    const btn = document.getElementById('loadMoreBtn');
+                    if (btn) { btn.disabled = false; btn.textContent = 'Se mer'; }
+                });
+            } catch (e) {
+                console.error('Search error', e);
+                alert('Uventet feil under søk.');
+            }
+        }
+
+        // -------------------- Butikkpriser (with debug log) --------------------
+        async function showStorePrices(eanOrCsv, productName) {
+            const eans = String(eanOrCsv || '').split(',').map(s => s.trim()).filter(Boolean);
+            if (eans.length === 0) return;
+
+            // ensure caches are populated and collect candidate lists for logging
+            let merged = {};
+            const logCandidates = {}; // store -> [{price,date,ean}]
+            for (const ean of eans) {
+                const m = await getStorePriceMapByEAN(ean);
+                // merge newest per store
+                merged = mergeMostRecentStoreMapsObj(merged, m);
+                // collect candidates for console
+                const cand = storeCandidatesCache.get(`${ean}::${__CACHE_VER}`) || {};
+                for (const [store, list] of Object.entries(cand)) {
+                    if (!logCandidates[store]) logCandidates[store] = [];
+                    // clone for safety and tag ean
+                    for (const entry of list) {
+                        logCandidates[store].push({ price: entry.price, date: entry.date, ean });
+                    }
+                }
+            }
+
+            // Debug log: show all candidate price/date per store
+            try {
+                console.groupCollapsed(`[Butikkpriser] Kandidater for "${productName}"`);
+                Object.keys(logCandidates).sort().forEach(store => {
+                    const arr = logCandidates[store].slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+                    console.log(store, arr);
+                });
+                console.groupEnd();
+            } catch { }
+
+            const rows = Object.entries(merged)
+                .map(([store, { price, date }]) => ({ store, price, date }))
+                .sort((a, b) => a.price - b.price);
+
+            const title = document.getElementById('storePricesTitle');
+            const body = document.getElementById('storePricesBody');
+            title.textContent = `Butikkpriser – ${productName}`;
+            body.innerHTML = rows.length ? `
+        <table style="width:100%; border-collapse:collapse;">
+          <thead><tr>
+            <th style="text-align:left; padding:8px; border-bottom:1px solid #eee;">Butikk</th>
+            <th style="text-align:right; padding:8px; border-bottom:1px solid #eee;">Pris</th>
+          </tr></thead>
+          <tbody>
+            ${rows.map(r => `
+              <tr>
+                <td style="padding:8px; border-bottom:1px solid #f2f2f2;">
+                  ${r.store}
+                  ${r.date ? `<span title="Sist oppdatert: ${formatDateNB(r.date)}" style="margin-left:6px; font-size:12px; cursor:help; color:#666;">ⓘ</span>` : ''}
+                </td>
+                <td style="padding:8px; border-bottom:1px solid #f2f2f2; text-align:right;">${r.price.toFixed(2)} kr</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>` : '<p>Ingen priser funnet for dette produktet.</p>';
+
+            document.getElementById('storePricesModal').style.display = 'flex';
+        }
+
+        // -------------------- Basket UI + Comparison --------------------
+        function updateBasketDisplay() {
+            const basketDiv = document.getElementById('basketItems');
+            const resultsDiv = document.getElementById('comparisonResults');
+
+            if (basket.length === 0) {
+                basketDiv.innerHTML = '<p class="info-text">Søk etter produkter ovenfor og legg dem til i handlekurven.</p>';
+                resultsDiv.style.display = 'none';
+                if (basketChartInstance) { basketChartInstance.destroy(); basketChartInstance = null; }
+                document.getElementById('storeTotals').innerHTML = '';
+                return;
+            }
+
+            basketDiv.innerHTML = basket.map((item, index) => `
+        <div class="basket-item">
+          <div class="basket-line">
+            <span class="basket-name">${item.name}</span>
+            <div class="basket-qty-controls">
+              <button class="qty-btn minus" aria-label="Fjern én"
+                onclick="decQty('${item.id}', '${item.name.replace(/'/g, "&#39;")}', ${item.price}, '${(item.eans || []).join(',')}')">-</button>
+              <span class="qty-count" data-product-id="${item.id}">${item.qty}</span>
+              <button class="qty-btn plus" aria-label="Legg til én"
+                onclick="incQty('${item.id}', '${item.name.replace(/'/g, "&#39;")}', ${item.price}, '${(item.eans || []).join(',')}')">+</button>
+            </div>
+            <span class="basket-price">${(item.price * item.qty).toFixed(2)} kr (x${item.qty})</span>
+            <button class="remove-line" onclick="removeFromBasket(${index})">Fjern</button>
+          </div>
+        </div>
+      `).join('');
+
+            if (basket.length > 0) { compareBasket(); }
+        }
+
+        let basketChartInstance = null;
+
+        async function compareBasket() {
+            if (basket.length === 0) return;
+
+            // 1) Build merged latest-price map per basket line using *all* EANs
+            const mergedMaps = await Promise.all(basket.map(async item => {
+                const eans = (item.eans && item.eans.length) ? item.eans : (item.ean ? [item.ean] : []);
+                let map = {};
+                for (const ean of eans) {
+                    const m = await getStorePriceMapByEAN(ean);
+                    map = mergeMostRecentStoreMapsObj(map, m);
+                }
+                // Debug log: show all candidates per store from all EANs
+                try {
+                    const candidateLog = {};
+                    for (const ean of eans) {
+                        const cand = storeCandidatesCache.get(`${ean}::${__CACHE_VER}`) || {};
+                        for (const [store, list] of Object.entries(cand)) {
+                            if (isBlockedStoreName(store)) continue; // 👈 skip Engrosnett
+                            (candidateLog[store] ||= []).push(...list.map(x => ({ price: x.price, date: x.date, ean })));
+                        }
+                    }
+                    console.groupCollapsed(`[Compare] Kandidater for "${item.name}"`);
+                    Object.keys(candidateLog).sort().forEach(store => {
+                        const arr = candidateLog[store].slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+                        console.log(store, arr);
+                    });
+                    console.groupEnd();
+                } catch { }
+                return map;
+            }));
+
+            // 2) Universe of stores (excluding Engrosnett)
+            const stores = Array.from(new Set(
+                mergedMaps.flatMap(m => Object.keys(m))
+            )).filter(s => !isBlockedStoreName(s));
+
+            // 3) Per-item market medians m_p (across available stores, excluding Engrosnett)
+            const itemMedians = mergedMaps.map(m => {
+                const prices = Object.entries(m)
+                    .filter(([s]) => !isBlockedStoreName(s))
+                    .map(([, e]) => e?.price)
+                    .filter(v => typeof v === 'number');
+                return median(prices);
+            });
+
+            // 4) Store indices I_s = median( price_{s,p} / m_p ) over overlap items
+            const ratiosByStore = {}; // store -> [ratios]
+            stores.forEach(s => ratiosByStore[s] = []);
+            mergedMaps.forEach((m, idx) => {
+                const mp = itemMedians[idx];
+                if (!Number.isFinite(mp) || mp <= 0) return;
+                for (const [s, e] of Object.entries(m)) {
+                    if (isBlockedStoreName(s)) continue;
+                    if (e && typeof e.price === 'number') ratiosByStore[s].push(e.price / mp);
+                }
+            });
+            const storeIndex = {}; // store -> {index, n}
+            for (const s of stores) {
+                const arr = ratiosByStore[s].filter(x => Number.isFinite(x) && x > 0);
+                storeIndex[s] = { index: median(arr), n: arr.length };
+            }
+
+            const IMPUTE_MIN_OVERLAPS = 3;
+
+            // 5) Sum totals with imputation for missing prices
+            const totals = stores.map(store => {
+                let total = 0;
+                basket.forEach((item, idx) => {
+                    const entry = mergedMaps[idx][store];
+                    let unit;
+                    if (entry && typeof entry.price === 'number') {
+                        unit = entry.price;
+                    } else {
+                        const mp = itemMedians[idx];
+                        if (Number.isFinite(mp) && mp > 0) {
+                            const si = storeIndex[store];
+                            unit = (si && si.n >= IMPUTE_MIN_OVERLAPS && Number.isFinite(si.index)) ? (si.index * mp) : mp;
+                        } else {
+                            unit = 0; // no basis to impute
+                        }
+                    }
+                    total += unit * (item.qty || 0);
+                });
+                return { store, total };
+            }).sort((a, b) => a.total - b.total);
+
+            displayComparisonResults(totals);
+        }
+
+
+        function displayComparisonResults(totals) {
+            const resultsDiv = document.getElementById('comparisonResults');
+            const ctx = document.getElementById('basketChart').getContext('2d');
+            resultsDiv.style.display = 'block';
+
+            if (basketChartInstance) { basketChartInstance.destroy(); basketChartInstance = null; }
+
+            basketChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: totals.map(t => t.store),
+                    datasets: [{ label: 'Total pris', data: totals.map(t => t.total), borderWidth: 1 }]
+                },
+                options: {
+                    responsive: true,
+                    scales: { y: { beginAtZero: true, ticks: { callback: v => `${v} kr` } } }
+                }
+            });
+
+            document.getElementById('storeTotals').innerHTML = totals.map((t, i) => `
+        <div class="store-total ${i === 0 ? 'cheapest' : ''}">
+          <span class="store-name">${t.store}</span>
+          <span class="store-price">${t.total.toFixed(2)} kr</span>
+          ${i === 0 ? '<span class="badge">Billigst!</span>' : ''}
+        </div>
+      `).join('');
+        }
+
+        // -------------------- Prishistorikk (multi-EAN) --------------------
+        let priceChartInstance = null;
+
+        async function showPriceHistory(eanOrCsv, productName) {
+            const eans = String(eanOrCsv || '').split(',').map(s => s.trim()).filter(Boolean);
+            if (!eans.length) { alert('Prishistorikk ikke tilgjengelig for dette produktet'); return; }
+            try {
+                const responses = await Promise.all(eans.map(async ean => {
+                    const res = await apiCall(`products/ean/${ean}`);
+                    return res.ok ? res.json() : null;
+                }));
+                const products = responses.flatMap(r => r ? normalizeEANProducts(r) : []);
+                displayPriceHistoryMerged(products, productName);
+            } catch (err) { console.error('Price history error:', err); }
+        }
+
+        function displayPriceHistoryMerged(products, productName) {
+            const section = document.getElementById('priceHistorySection');
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth' });
+            const ctx = document.getElementById('priceChart').getContext('2d');
+
+            const byStore = new Map();
+            for (const p of products) {
+                if (isBlockedStoreFromItem(p)) continue; // 👈 skip Engrosnett
+                const store = getStoreName(p);
+                const ph = Array.isArray(p?.price_history) ? p.price_history : [];
+                if (!byStore.has(store)) byStore.set(store, []);
+                for (const e of ph) {
+                    if (e?.date && typeof e?.price === 'number') {
+                        byStore.get(store).push({ x: new Date(e.date), y: e.price });
+                    }
+                }
+            }
+
+            const datasets = Array.from(byStore.entries()).map(([store, points]) => {
+                const m = new Map();
+                for (const pt of points) m.set(pt.x.getTime(), pt);
+                const sorted = Array.from(m.values()).sort((a, b) => a.x - b.x);
+                return { label: store, data: sorted, borderWidth: 2, fill: false };
+            }).filter(ds => ds.data.length > 0);
+
+            if (priceChartInstance) { priceChartInstance.destroy(); priceChartInstance = null; }
+            if (datasets.length === 0) {
+                const g = document.getElementById('priceChart').getContext('2d');
+                g.clearRect(0, 0, g.canvas.width, g.canvas.height);
+                return;
+            }
+
+            priceChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: { datasets },
+                options: {
+                    responsive: true,
+                    plugins: { title: { display: true, text: `Prishistorikk: ${productName}` }, legend: { position: 'bottom' } },
+                    scales: {
+                        x: { type: 'time', time: { unit: 'day' } },
+                        y: { beginAtZero: false, ticks: { callback: v => `${v} kr` } }
+                    }
+                }
+            });
+        }
+
+        // -------------------- Stores Near Me --------------------
+        async function findStores() {
+            const location = document.getElementById('locationSearch').value;
+            if (!location) { alert('Vennligst skriv inn et sted'); return; }
+            try {
+                const response = await apiCall('physical-stores', { search: location, size: 10 });
+                if (response.ok) displayStores((await response.json()).data || []);
+                else alert('Kunne ikke finne butikker');
+            } catch (error) {
+                console.error('Store search error:', error);
+                alert('En feil oppstod ved søk etter butikker');
+            }
+        }
+        async function useMyLocation() {
+            if (!navigator.geolocation) { alert('Geolokasjon støttes ikke av din nettleser'); return; }
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                try {
+                    const response = await apiCall('physical-stores', {
+                        lat: position.coords.latitude, lng: position.coords.longitude, km: 10, size: 10
+                    });
+                    if (response.ok) displayStores((await response.json()).data || []);
+                    else alert('Kunne ikke finne butikker nær deg');
+                } catch (error) {
+                    console.error('Location search error:', error);
+                    alert('En feil oppstod ved søk basert på posisjon');
+                }
+            }, () => { alert('Kunne ikke hente din posisjon'); });
+        }
+        function displayStores(stores) {
+            const resultsDiv = document.getElementById('storeResults');
+            if (stores.length === 0) { resultsDiv.innerHTML = '<p>Ingen butikker funnet</p>'; return; }
+            resultsDiv.innerHTML = stores.map(store => `
+        <div class="store-card">
+          <h4>${store.name}</h4>
+          <p>${store.address}</p>
+          ${store.phone ? `<p>📞 ${store.phone}</p>` : ''}
+          <div class="opening-hours">
+            <strong>Åpningstider:</strong>
+            <p>Man-Fre: ${store.openingHours.monday || 'Stengt'}</p>
+            <p>Lørdag: ${store.openingHours.saturday || 'Stengt'}</p>
+            <p>Søndag: ${store.openingHours.sunday || 'Stengt'}</p>
+          </div>
+        </div>
+      `).join('');
+        }
+    </script>
+
+    <!-- Store Prices Modal -->
+    <div id="storePricesModal"
+        style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1000; align-items:center; justify-content:center;">
+        <div
+            style="background:#fff; width:min(720px,95vw); max-height:85vh; overflow:auto; border-radius:12px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.2);">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px;">
+                <h3 id="storePricesTitle" style="margin:0;">Butikkpriser</h3>
+                <button onclick="closeStorePrices()"
+                    style="border:none; background:#eee; padding:6px 10px; border-radius:8px; cursor:pointer;">Lukk</button>
+            </div>
+            <div id="storePricesBody"></div>
+        </div>
+    </div>
+    <script> function closeStorePrices() { document.getElementById('storePricesModal').style.display = 'none'; } </script>
+
+    <!-- Bottom floating cart -->
+    <button id="floatingCartBtn" class="floating-cart-btn"
+        onclick="document.getElementById('basketSection').scrollIntoView({behavior:'smooth'});">
+        <span class="cart-label">Se kurv</span><span id="cartCountBadge" class="cart-count-badge">0</span>
+    </button>
+
+    <!-- SEO content (unchanged) -->
+    <section id="seo-article"
+        style="max-width: 800px; margin: 40px auto; padding: 20px; background: #ffffff; border-radius: 10px; font-family: 'Segoe UI', sans-serif;">
+        <!-- … keep your SEO article blocks here … -->
+    </section>
+</body>
+
+</html>

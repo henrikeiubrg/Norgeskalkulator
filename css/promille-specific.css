@@ -1,0 +1,491 @@
+/* alcohol-specific.css - Promille-kalkulator spesifikk styling */
+
+/* Alkohol-tema gradient (rød/oransje varseltema) */
+body {
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 25%, #f59e0b 75%, #fbbf24 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Promille-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left: 5px solid #dc2626;
+}
+
+/* Result items - smaller, more compact text */
+.result-item {
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+.result-label {
+    font-size: 13px;
+    line-height: 1.4;
+    flex: 1;
+    padding-right: 10px;
+}
+
+.result-value {
+    font-size: 14px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.result-item:last-child {
+    font-size: 1em;
+}
+
+/* Promille-spesifikke knapper */
+.calculate-btn {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.4);
+}
+
+.add-drink-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.add-drink-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.info-note {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* Drinks section */
+.drinks-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border: 2px dashed rgba(220, 38, 38, 0.2);
+}
+
+.drinks-section h3 {
+    margin-bottom: 20px;
+    color: #b91c1c;
+    font-size: 1.3em;
+}
+
+#drinksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.drink-entry {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.drink-entry:hover {
+    border-color: #dc2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+}
+
+.drink-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1.1em;
+}
+
+.remove-drink-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-drink-btn:hover {
+    background: #dc2626;
+    transform: rotate(90deg);
+}
+
+.custom-fields {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed #e5e7eb;
+}
+
+/* BAC Display - Stort promilletall */
+.bac-display {
+    text-align: center;
+    margin: 20px 0 30px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+    border-radius: 20px;
+    border: 3px solid #dc2626;
+}
+
+.bac-number {
+    font-size: 4em;
+    font-weight: 800;
+    color: #dc2626;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.bac-label {
+    font-size: 1.2em;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Status Indicator */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.status-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+}
+
+.status-text {
+    flex: 1;
+}
+
+.status-safe {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+    border: 2px solid #22c55e;
+}
+
+.status-caution {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #eab308;
+}
+
+.status-warning {
+    background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    border: 2px solid #f97316;
+}
+
+.status-danger {
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+    border: 2px solid #ef4444;
+}
+
+.status-critical {
+    background: linear-gradient(135deg, #fecaca 0%, #ef4444 50%, #dc2626 100%);
+    border: 3px solid #991b1b;
+    animation: pulse-critical 2s infinite;
+}
+
+@keyframes pulse-critical {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+    }
+}
+
+/* Timeline */
+.timeline-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+/* Time selection */
+.time-selection {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.time-selection .input-group {
+    margin-bottom: 0;
+}
+
+.time-selection label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 0;
+}
+
+.time-selection input[type="radio"] {
+    width: auto;
+    cursor: pointer;
+    accent-color: #dc2626;
+}
+
+input[type="datetime-local"], input[type="time"] {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    color: #1f2937;
+}
+
+input[type="datetime-local"]:focus, input[type="time"]:focus {
+    outline: none;
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    transform: translateY(-2px);
+}
+
+#currentTimeDisplay {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+.timeline-container h4 {
+    margin-bottom: 15px;
+}
+
+.timeline-peak-info {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #eab308;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #92400e;
+    font-size: 15px;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 70px 1fr 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    background: white;
+    border-radius: 8px;
+}
+
+.timeline-time {
+    font-weight: 600;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.timeline-past {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.timeline-now {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.timeline-peak-marker {
+    color: #ea580c;
+    font-weight: 700;
+}
+
+.timeline-peak-value {
+    color: #ea580c;
+    font-weight: 800;
+}
+
+.timeline-bar {
+    height: 24px;
+    background: #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.timeline-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+.timeline-safe {
+    background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+}
+
+.timeline-caution {
+    background: linear-gradient(90deg, #eab308 0%, #ca8a04 100%);
+}
+
+.timeline-warning {
+    background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+}
+
+.timeline-value {
+    font-weight: 700;
+    color: #1f2937;
+    text-align: right;
+    font-size: 14px;
+}
+
+/* Drink reference cards */
+.drink-reference {
+    margin-top: 20px;
+}
+
+.drink-reference h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.drink-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.drink-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.drink-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #dc2626;
+}
+
+.drink-icon {
+    font-size: 2.5em;
+    margin-bottom: 8px;
+}
+
+.drink-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.drink-info {
+    color: #6b7280;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.drink-alcohol {
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .bac-number {
+        font-size: 3em;
+    }
+    
+    .drink-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .timeline-item {
+        grid-template-columns: 60px 1fr 70px;
+        gap: 8px;
+    }
+    
+    .status-icon {
+        font-size: 2em;
+    }
+    
+    .time-selection {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bac-number {
+        font-size: 2.5em;
+    }
+    
+    .drink-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .time-selection {
+        padding: 10px;
+    }
+}

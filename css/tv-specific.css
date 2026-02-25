@@ -1,0 +1,167 @@
+/* tv-specific.css - TV-spesifikk styling */
+
+/* TV-specifik gradient (lilla/blå for teknologi-tema) */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #5b73e8 75%, #4c63d2 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+/* TV-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-left: 5px solid #667eea;
+}
+
+.breakdown {
+    background: rgba(102, 126, 234, 0.05);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.breakdown h3 {
+    color: #4c63d2;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.dimension-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.05);
+}
+
+.dimension-item:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #4c63d2;
+    border-left: 4px solid #667eea;
+}
+
+/* TV-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #667eea 0%, #4c63d2 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.info-note {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+/* Spesielle TV-elementer */
+.tv-visual {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.tv-screen {
+    background: #000;
+    border: 3px solid #333;
+    border-radius: 8px;
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+}
+
+.tv-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.tv-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    text-align: center;
+}
+
+.tv-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+    color: #667eea;
+}
+
+/* Aspect ratio specific styling */
+.aspect-16-9 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.aspect-21-9 {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.aspect-4-3 {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+}
+
+.aspect-32-9 {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+/* Responsive TV visualization */
+@media (max-width: 768px) {
+    .tv-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .tv-card {
+        padding: 12px;
+    }
+    
+    .tv-icon {
+        font-size: 1.5em;
+    }
+}
+
+/* Size recommendation styling */
+.size-recommendation {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #059669;
+}
+
+.distance-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #d97706;
+}

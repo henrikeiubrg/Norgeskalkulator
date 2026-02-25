@@ -1,0 +1,304 @@
+/* bompenge-specific.css - Bompengekalkulator styling */
+
+/* Bil/transport-tema: blågrønn/teal gradient */
+body {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 25%, #115e59 75%, #134e4a 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(13, 148, 136, 0.3);
+}
+
+/* Two-column layout */
+.calculator-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.input-column,
+.result-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-column h3,
+.result-column h3 {
+    font-size: 1.1em;
+    color: #0f766e;
+    margin: 0 0 8px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Result cards */
+.result-card {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.result-card.primary {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    border: none;
+    color: white;
+}
+
+.result-card.primary .result-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.result-card.primary .result-value {
+    color: white;
+}
+
+.result-card.savings {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 2px solid #10b981;
+}
+
+.result-card.savings .result-value {
+    color: #059669;
+}
+
+.result-label {
+    font-size: 0.85em;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.result-value {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #0f766e;
+}
+
+.result-card.primary .result-value {
+    font-size: 2em;
+}
+
+.result-unit {
+    font-size: 0.9em;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* Toggle switch for AutoPASS */
+.toggle-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+    background: #f0fdfa;
+    border-radius: 10px;
+    border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+.toggle-switch {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 28px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: #14b8a6;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.toggle-label {
+    flex: 1;
+}
+
+.toggle-label strong {
+    display: block;
+    font-size: 0.95em;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.toggle-label small {
+    font-size: 0.8em;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+/* Rabatter info box */
+.rabatt-box {
+    background: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 12px;
+}
+
+.rabatt-box h4 {
+    font-size: 0.9em;
+    color: #0f766e;
+    margin: 0 0 10px 0;
+}
+
+.rabatt-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 0.85em;
+    color: #374151;
+}
+
+.rabatt-item .check {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.rabatt-item.inactive {
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+.rabatt-item.inactive .check {
+    color: #9ca3af;
+}
+
+/* Disclaimer */
+.disclaimer-box {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 16px;
+    font-size: 0.85em;
+    color: #92400e;
+    line-height: 1.5;
+}
+
+.disclaimer-box strong {
+    color: #78350f;
+}
+
+/* Knapper og fokus */
+.calculate-btn {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(13, 148, 136, 0.4);
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #14b8a6;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+}
+
+.info-note {
+    background: rgba(13, 148, 136, 0.1);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Breakdown */
+.breakdown {
+    background: rgba(13, 148, 136, 0.05);
+    border: 1px solid rgba(13, 148, 136, 0.1);
+}
+
+.breakdown h3 {
+    color: #0f766e;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 2px solid rgba(13, 148, 136, 0.2);
+    padding-bottom: 10px;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(13, 148, 136, 0.1);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-label {
+    color: #6b7280;
+    font-size: 0.95em;
+}
+
+.breakdown-value {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Result grid for mobile */
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .calculator-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card.primary .result-value {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 500px) {
+    .toggle-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

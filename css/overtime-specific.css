@@ -1,0 +1,112 @@
+/* overtime-specific.css - Overtid-spesifikk styling */
+
+/* Overtid-specifik gradient (mørkeblå/natt-tema for arbeidstid) */
+body {
+    background: linear-gradient(135deg, #1e40af 0%, #3730a3 25%, #581c87 50%, #7c2d12 75%, #dc2626 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(30, 64, 175, 0.3);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Overtid-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 5px solid #1e40af;
+}
+
+.breakdown {
+    background: rgba(30, 64, 175, 0.05);
+    border: 1px solid rgba(30, 64, 175, 0.1);
+}
+
+.breakdown h3 {
+    color: #1d4ed8;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.tax-bracket {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(30, 64, 175, 0.05);
+}
+
+.tax-bracket:last-child {
+    border-bottom: none;
+}
+
+.weekend-warning {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #d97706;
+}
+
+/* Overtid-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(30, 64, 175, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #1e40af;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.info-note {
+    background: rgba(30, 64, 175, 0.1);
+    border: 1px solid rgba(30, 64, 175, 0.2);
+}
+
+/* Spesielle overtid-elementer */
+.overtime-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.overtime-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #1e40af;
+    text-align: center;
+}
+
+.overtime-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Time-specific styling */
+.night-shift {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+    color: white;
+}
+
+.evening-shift {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.weekend-shift {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: white;
+}

@@ -1,0 +1,105 @@
+/* alcohol-specific.css - Alkohol/baking-spesifikk styling */
+
+/* Alkohol/baking-specifik gradient (brun/varm for baking-tema) */
+body {
+    background: linear-gradient(135deg, #8b4513 0%, #d2691e 25%, #cd853f 75%, #daa520 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(139, 69, 19, 0.3);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Alkohol-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fff8f0 0%, #ffe4d1 100%);
+    border-left: 5px solid #8b4513;
+}
+
+/* Alkohol-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #8b4513;
+    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.info-note {
+    background: rgba(139, 69, 19, 0.1);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+/* Baking-tema spesifikke tilpasninger */
+h2 {
+    color: #654321;
+}
+
+.baking-tip {
+    background: rgba(218, 165, 32, 0.1);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #654321;
+}
+
+/* Input med enhetsvelger */
+.input-with-unit {
+    display: flex;
+    gap: 10px;
+}
+
+.input-with-unit input {
+    flex: 1;
+}
+
+.unit-selector {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+/* Alcohol percentage display */
+.percentage-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.percentage-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #8b4513;
+    text-align: center;
+}
+
+.bottle-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Responsive adjustments for alcohol calculator */
+@media (max-width: 768px) {
+    .input-with-unit {
+        flex-direction: column;
+    }
+    
+    .unit-selector {
+        width: 100%;
+    }
+}

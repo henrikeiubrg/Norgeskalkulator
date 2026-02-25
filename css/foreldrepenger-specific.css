@@ -1,0 +1,284 @@
+/* foreldrepenger-specific.css - Foreldrepenger-spesifikk styling */
+
+/* Foreldrepenger-spesifikk gradient (rosa/lilla for familie-tema) */
+body {
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 25%, #8b5cf6 75%, #7c3aed 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(236, 72, 153, 0.3);
+}
+
+/* Foreldrepenger-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border-left: 5px solid #ec4899;
+}
+
+/* Foreldrepenger-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+.info-note {
+    background: rgba(236, 72, 153, 0.08);
+    border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.info-note h3 {
+    color: #be185d;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.info-note ul {
+    list-style-position: inside;
+    margin-left: 0;
+}
+
+.info-note li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Foreldrepenger tema spesifikke tilpasninger */
+h1 {
+    color: #831843;
+}
+
+h2 {
+    color: #be185d;
+}
+
+/* Periode informasjon */
+.benefit-period {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed rgba(236, 72, 153, 0.3);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.period-info {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.period-label {
+    display: block;
+    font-size: 0.9em;
+    color: #831843;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.period-value {
+    display: block;
+    font-size: 1.3em;
+    color: #be185d;
+    font-weight: 700;
+}
+
+/* Sammenligning seksjon */
+.comparison-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border: 2px solid rgba(236, 72, 153, 0.2);
+}
+
+.comparison-section h3 {
+    color: #831843;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comparison-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.comparison-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fdf2f8 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ec4899;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+}
+
+.comparison-header {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #be185d;
+    text-align: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(236, 72, 153, 0.3);
+}
+
+.comparison-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.comparison-detail:last-child {
+    border-bottom: none;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(236, 72, 153, 0.2);
+}
+
+.comparison-detail span {
+    color: #831843;
+    font-weight: 600;
+}
+
+.comparison-detail strong {
+    color: #be185d;
+    font-size: 1.1em;
+}
+
+/* SEO innhold seksjon */
+.seo-content {
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+.seo-content h2 {
+    color: #831843;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.seo-content h3 {
+    color: #be185d;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.seo-content p {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.seo-content ul {
+    margin: 15px 0 15px 25px;
+    list-style-type: disc;
+}
+
+.seo-content li {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.seo-content strong {
+    color: #831843;
+}
+
+/* Responsiv design for sammenligning */
+@media (max-width: 768px) {
+    .comparison-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .period-info {
+        min-width: 100%;
+    }
+    
+    .benefit-period {
+        flex-direction: column;
+    }
+}
+
+/* Forbedret lesbarhet for resultater */
+.result-item:last-child {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.result-item:last-child .result-value {
+    color: #be185d;
+    font-size: 1.4em;
+}
+
+/* Input styling forbedringer */
+input[type="number"]::placeholder {
+    color: #d1a1b9;
+}
+
+select {
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+select option {
+    padding: 10px;
+}
+
+/* Hover effekter for bedre UX */
+.input-group:hover label {
+    color: #be185d;
+    transition: color 0.3s ease;
+}
+
+/* Accessibility forbedringer */
+input[type="number"]:invalid,
+select:invalid {
+    border-color: #ef4444;
+}
+
+input[type="number"]:valid,
+select:valid {
+    border-color: #22c55e;
+}
+
+/* Loading state (kan brukes ved fremtidig utvidelse) */
+.calculate-btn:active {
+    transform: scale(0.98);
+}
+
+/* Print styling */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .calculate-btn {
+        display: none;
+    }
+    
+    .comparison-section,
+    .info-note {
+        page-break-inside: avoid;
+    }
+}

@@ -1,0 +1,158 @@
+/* paint-specific.css - Maling-spesifikk styling */
+
+/* Maling-specifik gradient (fargerik som malingspallett) */
+body {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 25%, #c084fc 50%, #e879f9 75%, #f0abfc 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Maling-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    border-left: 5px solid #8b5cf6;
+}
+
+.breakdown {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.breakdown h3 {
+    color: #7c3aed;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.area-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.05);
+}
+
+.area-item:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    background: rgba(139, 92, 246, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #7c3aed;
+    border-left: 4px solid #8b5cf6;
+}
+
+.cost-estimate {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #16a34a;
+}
+
+.room-input {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.room-header {
+    font-weight: 600;
+    color: #7c3aed;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-room {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-room {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.paint-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.paint-type {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.paint-type:hover, .paint-type.selected {
+    border-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Maling-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.info-note {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Spesielle maling-elementer */
+.paint-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.paint-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #8b5cf6;
+    text-align: center;
+}
+
+.paint-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}

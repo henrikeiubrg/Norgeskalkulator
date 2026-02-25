@@ -1,0 +1,124 @@
+/* moving-specific.css - Flyttekostnad-spesifikk styling */
+
+/* Flytting-specifik gradient (oransje/brun for moving/cardboard-tema) */
+body {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 25%, #dc2626 75%, #b91c1c 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(249, 115, 22, 0.3);
+}
+
+/* Flytting-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 100%);
+    border-left: 5px solid #f97316;
+}
+
+.breakdown {
+    background: rgba(249, 115, 22, 0.05);
+    border: 1px solid rgba(249, 115, 22, 0.1);
+}
+
+.breakdown h3 {
+    color: #c2410c;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.05);
+}
+
+.cost-item:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    background: rgba(249, 115, 22, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #c2410c;
+    border-left: 4px solid #f97316;
+}
+
+.tips-section {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #16a34a;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comparison-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #fed7aa;
+    text-align: center;
+}
+
+.comparison-item.recommended {
+    border-color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+}
+
+@media (max-width: 768px) {
+    .comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Flytting-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.info-note {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+/* Spesielle flytting-elementer */
+.moving-truck-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.moving-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #f97316;
+    text-align: center;
+}
+
+.moving-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}

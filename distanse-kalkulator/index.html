@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-12S8B5H4TN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-12S8B5H4TN');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sjøavstandskalkulator 2026 – Beregn Sjøreise Mellom Havner</title>
+    <meta name="description" content="Gratis sjøavstandskalkulator for 2026. Beregn nautiske mil, reisetid og sjøruter mellom havner over hele verden. Nøyaktig og enkel å bruke.">
+    <meta name="keywords" content="sjøavstandskalkulator, nautiske mil, havneavstand, sjørute kalkulator, reisetid sjø, shipping distance, maritime calculator 2026, port distance calculator">
+    <link rel="canonical" href="https://norgeskalkulator.no/distanse-kalkulator/" />
+
+    <!-- Favicon og delingsbilde -->
+    <link rel="icon" type="image/png" href="https://norgeskalkulator.no/images/n-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://norgeskalkulator.no/images/n-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://norgeskalkulator.no/images/n-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://norgeskalkulator.no/images/n-icon.png">
+    <link rel="shortcut icon" href="https://norgeskalkulator.no/images/n-icon.png">
+
+    <!-- Open Graph for deling -->
+    <meta property="og:title" content="Sjøavstandskalkulator 2026 – Beregn Sjøreise Mellom Havner" />
+    <meta property="og:description" content="Beregn sjøavstand i nautiske mil, reisetid og sjøruter mellom havner over hele verden. Profesjonell og nøyaktig kalkulator." />
+    <meta property="og:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+    <meta property="og:url" content="https://norgeskalkulator.no/distanse-kalkulator/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter kort -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sjøavstandskalkulator 2026 – Nautiske mil og reisetid">
+    <meta name="twitter:description" content="Kalkuler sjøavstand og reisetid mellom havner over hele verden – enkelt og gratis.">
+    <meta name="twitter:image" content="https://norgeskalkulator.no/images/n-icon.png">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2043095188942400" crossorigin="anonymous"></script>
+
+    <!-- Structured Data: Web Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Sjøavstandskalkulator 2026",
+      "description": "Beregn sjøavstand i nautiske mil, reisetid og sjøruter mellom havner over hele verden.",
+      "url": "https://norgeskalkulator.no/distanse-kalkulator/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "inLanguage": "nb-NO",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "NOK"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Norgeskalkulator.no",
+        "url": "https://norgeskalkulator.no",
+        "logo": "https://norgeskalkulator.no/images/n-icon.png"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Hvordan beregnes sjøavstand mellom havner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sjøavstand beregnes i nautiske mil basert på faktiske sjøruter mellom havner, inkludert kanal- og stederuter som Panama- og Suez-kanalen. En nautisk mil tilsvarer 1.852 kilometer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hva er en nautisk mil?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En nautisk mil er en måleenhet brukt i sjøfart og luftfart, tilsvarende 1.852 kilometer eller ca. 1.15078 miles. Den er basert på jordens omkrets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hvordan beregnes reisetid for skip?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reisetid for skip beregnes ved å dele distansen i nautiske mil på skipets hastighet i knop. Ett knop tilsvarer én nautisk mil per time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hvilke sjøruter er inkludert i kalkulatoren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kalkulatoren viser flere alternative sjøruter inkludert direkte ruter og ruter via Panama-kanalen, Suez-kanalen, Kapp det gode håp og andre viktige maritim passasjer."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .connection-status {
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        .connection-status.connected {
+            color: #22543d;
+        }
+        
+        .connection-status.disconnected {
+            color: #9b2c2c;
+        }
+        
+        .main-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .control-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .port-search-container {
+            position: relative;
+        }
+        
+        .port-search {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .port-search:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .port-search.has-value {
+            padding-right: 2.5rem;
+        }
+        
+        .clear-btn {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e2e8f0;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        
+        .clear-btn:hover {
+            background: #cbd5e0;
+        }
+        
+        .port-search.has-value + .clear-btn {
+            display: flex;
+        }
+        
+        .suggestions-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .suggestions-dropdown.active {
+            display: block;
+        }
+        
+        .suggestion-item {
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: 1px solid #f7fafc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background: #f7fafc;
+        }
+        
+        .suggestion-item.selected {
+            background: #edf2f7;
+        }
+        
+        .port-id {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            font-family: monospace;
+        }
+        
+        .speed-input-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .speed-input-group input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .speed-input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .speed-input-group span {
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .loading.active {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2e8f0;
+            display: none;
+        }
+        
+        .results.active {
+            display: block;
+        }
+        
+        .result-card {
+            background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .result-detail {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .route-info {
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .route-badge {
+            display: inline-block;
+            background: #805ad5;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-message {
+            background: #fed7d7;
+            color: #9b2c2c;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .error-message.active {
+            display: block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-top: 0.25rem;
+        }
+        
+        .port-count {
+            text-align: center;
+            color: #718096;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
+            
+            .control-panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2043095188942400"
+     crossorigin="anonymous"></script>
+<!-- TopAnnonse -->
+<ins class="adsbygoogle"
+     style="display:block; margin: 0 auto; text-align:center;"
+     data-ad-client="ca-pub-2043095188942400"
+     data-ad-slot="2346545780"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <div class="header">
+        <h1>⚓ Sjø Distanse Kalkulator</h1>
+        <div class="subtitle">Calculate precise sea distances and voyage durations between ports worldwide</div>
+        <div class="connection-status" id="connectionStatus">Connecting to server...</div>
+    </div>
+    
+    <div class="main-container">
+        <div class="control-panel">
+            <div class="error-message" id="errorMessage"></div>
+            
+            <div class="form-group">
+                <label for="loadPort">Loading Port</label>
+                <div class="port-search-container">
+                    <input type="text" 
+                           class="port-search" 
+                           id="loadPort" 
+                           placeholder="Type to search ports..."
+                           autocomplete="off">
+                    <button class="clear-btn" onclick="clearPort('loadPort')" title="Clear">×</button>
+                    <div class="suggestions-dropdown" id="loadPortSuggestions"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="dischPort">Discharge Port</label>
+                <div class="port-search-container">
+                    <input type="text" 
+                           class="port-search" 
+                           id="dischPort" 
+                           placeholder="Type to search ports..."
+                           autocomplete="off">
+                    <button class="clear-btn" onclick="clearPort('dischPort')" title="Clear">×</button>
+                    <div class="suggestions-dropdown" id="dischPortSuggestions"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="vesselSpeed">Vessel Speed</label>
+                <div class="speed-input-group">
+                    <input type="number" id="vesselSpeed" min="1" max="50" value="10" step="0.5">
+                    <span>knots</span>
+                </div>
+            </div>
+            
+            <button onclick="calculateRoute()" id="calculateBtn">Calculate Route</button>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>Calculating route...</div>
+            </div>
+            
+            <div class="results" id="results">
+                <h3 style="margin-bottom: 1rem; color: #2d3748;">Route Information</h3>
+                <div id="routeResults"></div>
+            </div>
+            
+            <div class="port-count" id="portCount"></div>
+        </div>
+    </div>
+    
+    <script>
+        const API_BASE = '/.netlify/functions/server/api';
+        let portData = {};
+        let selectedFromPortId = null;
+        let selectedToPortId = null;
+        let searchTimeout = null;
+
+        // Initialize application
+        async function init() {
+            const statusEl = document.getElementById('connectionStatus');
+            const portCountEl = document.getElementById('portCount');
+            
+            try {
+                // Check server health
+                const healthResponse = await fetch(`${API_BASE}/health`);
+                const health = await healthResponse.json();
+                
+                if (health.success) {
+                    statusEl.textContent = `✓ Connected to server`;
+                    statusEl.className = 'connection-status connected';
+                    
+                    // Load all ports
+                    const portsResponse = await fetch(`${API_BASE}/ports`);
+                    const portsData = await portsResponse.json();
+                    
+                    if (portsData.success) {
+                        portData = portsData.ports;
+                        portCountEl.textContent = `${portsData.count} ports available`;
+                        
+                        // Initialize search inputs
+                        initializePortSearch();
+                    }
+                }
+            } catch (error) {
+                statusEl.textContent = '✗ Cannot connect to server. Make sure server.js is running.';
+                statusEl.className = 'connection-status disconnected';
+                showError('Cannot connect to server. Please run: node server.js');
+            }
+        }
+
+        // Initialize port search functionality
+        function initializePortSearch() {
+            const loadPortInput = document.getElementById('loadPort');
+            const dischPortInput = document.getElementById('dischPort');
+            const loadPortSuggestions = document.getElementById('loadPortSuggestions');
+            const dischPortSuggestions = document.getElementById('dischPortSuggestions');
+
+            setupPortSearchInput(loadPortInput, loadPortSuggestions, 'from');
+            setupPortSearchInput(dischPortInput, dischPortSuggestions, 'to');
+        }
+
+        function setupPortSearchInput(input, suggestionsDiv, type) {
+            let currentFocus = -1;
+
+            input.addEventListener('input', async function() {
+                const searchTerm = this.value.trim();
+                
+                // Update clear button visibility
+                if (this.value) {
+                    this.classList.add('has-value');
+                } else {
+                    this.classList.remove('has-value');
+                    if (type === 'from') {
+                        selectedFromPortId = null;
+                    } else {
+                        selectedToPortId = null;
+                    }
+                }
+                
+                if (searchTerm.length < 1) {
+                    suggestionsDiv.classList.remove('active');
+                    return;
+                }
+
+                // Clear previous timeout
+                if (searchTimeout) {
+                    clearTimeout(searchTimeout);
+                }
+
+                // Debounce search requests
+                searchTimeout = setTimeout(async () => {
+                    try {
+                        const response = await fetch(`${API_BASE}/ports/search?q=${encodeURIComponent(searchTerm)}`);
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            displaySuggestions(data.results, suggestionsDiv, input, type);
+                        }
+                    } catch (error) {
+                        console.error('Search error:', error);
+                    }
+                }, 200);
+                
+                currentFocus = -1;
+            });
+
+            input.addEventListener('keydown', function(e) {
+                const items = suggestionsDiv.getElementsByClassName('suggestion-item');
+                
+                if (e.keyCode === 40) { // Down arrow
+                    e.preventDefault();
+                    currentFocus++;
+                    addActive(items);
+                } else if (e.keyCode === 38) { // Up arrow
+                    e.preventDefault();
+                    currentFocus--;
+                    addActive(items);
+                } else if (e.keyCode === 13) { // Enter
+                    e.preventDefault();
+                    if (currentFocus > -1 && items[currentFocus]) {
+                        items[currentFocus].click();
+                    }
+                } else if (e.keyCode === 27) { // Escape
+                    suggestionsDiv.classList.remove('active');
+                    currentFocus = -1;
+                }
+            });
+
+            function addActive(items) {
+                if (!items) return;
+                removeActive(items);
+                if (currentFocus >= items.length) currentFocus = 0;
+                if (currentFocus < 0) currentFocus = items.length - 1;
+                if (items[currentFocus]) {
+                    items[currentFocus].classList.add('selected');
+                    items[currentFocus].scrollIntoView({ block: 'nearest' });
+                }
+            }
+
+            function removeActive(items) {
+                for (let i = 0; i < items.length; i++) {
+                    items[i].classList.remove('selected');
+                }
+            }
+        }
+
+        // Global click handler
+        document.addEventListener('click', function(e) {
+            const loadPortSuggestions = document.getElementById('loadPortSuggestions');
+            const dischPortSuggestions = document.getElementById('dischPortSuggestions');
+            const loadPortInput = document.getElementById('loadPort');
+            const dischPortInput = document.getElementById('dischPort');
+            
+            if (!loadPortInput.contains(e.target) && !loadPortSuggestions.contains(e.target)) {
+                loadPortSuggestions.classList.remove('active');
+            }
+            if (!dischPortInput.contains(e.target) && !dischPortSuggestions.contains(e.target)) {
+                dischPortSuggestions.classList.remove('active');
+            }
+        });
+
+        function displaySuggestions(matches, suggestionsDiv, input, type) {
+            suggestionsDiv.innerHTML = '';
+            
+            if (!matches || matches.length === 0) {
+                suggestionsDiv.classList.remove('active');
+                return;
+            }
+
+            matches.forEach(match => {
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = match.name;
+                
+                const idSpan = document.createElement('span');
+                idSpan.className = 'port-id';
+                idSpan.textContent = `ID: ${match.id}`;
+                
+                div.appendChild(nameSpan);
+                div.appendChild(idSpan);
+                
+                div.addEventListener('click', function() {
+                    input.value = match.name;
+                    input.classList.add('has-value');
+                    if (type === 'from') {
+                        selectedFromPortId = match.id;
+                    } else {
+                        selectedToPortId = match.id;
+                    }
+                    suggestionsDiv.classList.remove('active');
+                });
+                
+                suggestionsDiv.appendChild(div);
+            });
+            
+            suggestionsDiv.classList.add('active');
+        }
+
+        function clearPort(inputId) {
+            const input = document.getElementById(inputId);
+            input.value = '';
+            input.classList.remove('has-value');
+            
+            if (inputId === 'loadPort') {
+                selectedFromPortId = null;
+            } else {
+                selectedToPortId = null;
+            }
+            
+            input.focus();
+        }
+
+        async function calculateRoute() {
+            if (!selectedFromPortId || !selectedToPortId) {
+                showError('Please select both loading and discharge ports');
+                return;
+            }
+
+            if (selectedFromPortId === selectedToPortId) {
+                showError('Loading and discharge ports cannot be the same');
+                return;
+            }
+
+            const vesselSpeed = document.getElementById('vesselSpeed').value;
+            const calculateBtn = document.getElementById('calculateBtn');
+            const loading = document.getElementById('loading');
+            const results = document.getElementById('results');
+            
+            // Show loading state
+            calculateBtn.disabled = true;
+            loading.classList.add('active');
+            results.classList.remove('active');
+            hideError();
+
+            try {
+                const response = await fetch(`${API_BASE}/route/${selectedFromPortId}/${selectedToPortId}/${vesselSpeed}`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    displayRouteResults(result.data, result.ports, vesselSpeed);
+                } else {
+                    throw new Error(result.error || '');
+                }
+                
+            } catch (error) {
+                console.error('Error calculating route:', error);
+                showError(`Failed to calculate route: ${error.message}`);
+            } finally {
+                calculateBtn.disabled = false;
+                loading.classList.remove('active');
+            }
+        }
+
+function displayRouteResults(data, ports, vesselSpeed) {
+    const resultsDiv = document.getElementById('routeResults');
+    const results = document.getElementById('results');
+    
+    if (!data || data.length === 0) {
+        resultsDiv.innerHTML = '<p style="color: #718096;">No route data available for this port combination.</p>';
+        results.classList.add('active');
+        return;
+    }
+
+    let html = '';
+    
+    // Show port names
+    html += `
+        <div style="background: #f7fafc; padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+            <div style="font-size: 0.9rem; color: #4a5568; margin-bottom: 0.5rem;">
+                <strong>From:</strong> ${ports.from}
+            </div>
+            <div style="font-size: 0.9rem; color: #4a5568;">
+                <strong>To:</strong> ${ports.to}
+            </div>
+        </div>
+    `;
+    
+    data.forEach((route, index) => {
+        const timeHours = parseFloat(route['Time in Hours']);
+        const distance = parseFloat(route.Distance);
+        const days = Math.floor(timeHours / 24);
+        const hours = Math.round(timeHours % 24);
+        const via = route.Via || 'Direct';
+
+        // Build routing HTML if present (array of strings)
+        let routingHtml = '';
+        if (Array.isArray(route.Routing) && route.Routing.length > 0) {
+            routingHtml = `
+                <div class="route-info">
+                    <div class="result-detail" style="margin-bottom:0.5rem;"><strong>Routing</strong></div>
+                    <ul style="margin-left:1rem; color:#4a5568;">
+                        ${route.Routing.map(step => `<li>${step}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+        } else if (via && via !== 'Direct') {
+            // Fallback to VIA badge if no routing steps were parsed
+            routingHtml = `<div class="route-info"><span class="route-badge">${via}</span></div>`;
+        }
+
+        html += `
+            <div class="result-card">
+                <div class="result-title">Route ${index + 1} ${via !== 'Direct' && via ? `via ${via}` : ''}</div>
+                <div class="result-value">${days}d ${hours}h</div>
+                <div class="result-detail">Distance: ${distance.toLocaleString()} nautical miles</div>
+                <div class="result-detail">Original time: ${route.Time}</div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">Speed</div>
+                        <div class="stat-value">${vesselSpeed} kts</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Total Hours</div>
+                        <div class="stat-value">${timeHours.toLocaleString()}</div>
+                    </div>
+                </div>
+                ${routingHtml}
+            </div>
+        `;
+    });
+
+    resultsDiv.innerHTML = html;
+    results.classList.add('active');
+}
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('active');
+            
+            setTimeout(() => {
+                errorDiv.classList.remove('active');
+            }, 5000);
+        }
+
+        function hideError() {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.classList.remove('active');
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2043095188942400"
+     crossorigin="anonymous"></script>
+<!-- Mellomannonse -->
+<ins class="adsbygoogle"
+     style="display:block; margin: 0 auto; text-align:center;"
+     data-ad-client="ca-pub-2043095188942400"
+     data-ad-slot="1657098887"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<section id="seo-article" style="max-width: 800px; margin: 40px auto 20px; padding: 20px; background: #ffffff; border-radius: 10px; font-family: 'Segoe UI', sans-serif;">
+<h2 style="font-size: 24px; margin-bottom: 16px; color: #2c3e50;">Sjøavstandskalkulator 2026 – Beregn Nautiske Mil og Reisetid Mellom Havner</h2>
+<p style="font-size: 16px; line-height: 1.6; color: #333;">
+    Norgeskalkulator.no tilbyr en gratis og profesjonell <strong>sjøavstandskalkulator for 2026</strong> som beregner nøyaktig avstand i nautiske mil, kilometer og reisetid mellom havner over hele verden. Med tilgang til tusenvis av havner og presise sjøruter, inkludert viktige passasjer som <strong>Panama-kanalen</strong>, <strong>Suez-kanalen</strong> og <strong>Kapp det gode håp</strong>, gir vi deg all informasjon du trenger for maritim ruteplanlegging.
+</p>
+
+<h3 style="margin-top: 24px; color: #2c3e50;">Hva er en nautisk mil?</h3>
+<p style="font-size: 16px; line-height: 1.6; color: #333;">
+    En <strong>nautisk mil</strong> (nautical mile) er den internasjonale standard måleenheten for avstander i sjøfart og luftfart. Én nautisk mil tilsvarer nøyaktig <strong>1.852 kilometer</strong> eller omtrent <strong>1.15078 statute miles</strong>. <strong>Knop</strong> er hastighetsenheten som brukes til sjøs, hvor ett knop tilsvarer én nautisk mil per time.
+</p>
+
+<h3 style="margin-top: 24px; color: #2c3e50;">Hvorfor bruke en sjøavstandskalkulator?</h3>
+<ul style="padding-left: 20px; color: #333;">
+<li>Beregn <strong>nøyaktig sjøavstand</strong> mellom to havner i nautiske mil og kilometer</li>
+<li>Få <strong>estimert reisetid</strong> basert på skipets hastighet i knop</li>
+<li>Se <strong>alternative sjøruter</strong> inkludert kanal- og stederuter</li>
+<li>Planlegg <strong>drivstofforbruk</strong> og <strong>logistikkostnader</strong> for shipping</li>
+<li>Sammenlign <strong>ruter via Panama-kanalen vs. Suez-kanalen</strong></li>
+</ul>
+
+<h3 style="margin-top: 24px; color: #2c3e50;">Sjøruter og maritime passasjer</h3>
+<p style="font-size: 16px; line-height: 1.6; color: #333;">
+    Vår kalkulator viser flere alternative sjøruter når de er tilgjengelige, inkludert:
+</p>
+<ul style="padding-left: 20px; color: #333;">
+<li><strong>Panama-kanalen</strong> - Forbinder Atlanterhavet og Stillehavet</li>
+<li><strong>Suez-kanalen</strong> - Korteste sjøveien mellom Europa og Asia</li>
+<li><strong>Kapp det gode håp</strong> - Alternativ rute rundt sørspissen av Afrika</li>
+<li><strong>Magellan-stredet</strong> - Sjørute gjennom Sør-Amerika</li>
+<li><strong>Direkte ruter</strong> - Korteste vei mellom havner over åpent hav</li>
+</ul>
+
+<p style="font-size: 15px; line-height: 1.6; color: #777; margin-top: 30px;">
+    Søkeord: sjøavstandskalkulator, nautiske mil, sea distance calculator, havneavstand, shipping distance calculator 2026, maritime calculator, port to port distance, knop til km, sjørute kalkulator, reisetid skip, panama kanal, suez kanal, nautical miles calculator
+</p>
+</section>
+
+<section id="about-section" style="max-width: 800px; margin: 20px auto; padding: 20px; background: #f5f5fa; border-radius: 10px; font-family: 'Segoe UI', sans-serif;">
+<h2 style="font-size: 24px; margin-bottom: 16px; color: #333;">Om Norgeskalkulator</h2>
+<p style="font-size: 16px; line-height: 1.6; color: #555;">
+    Norgeskalkulator tilbyr profesjonelle kalkulatorer innen økonomi, transport og maritim industri. Vår sjøavstandskalkulator for 2026 er utviklet for å gi nøyaktig og praktisk informasjon til alle som jobber med eller er interessert i sjøfart. Vi tilbyr også drivstoffkalkulator, skattekalkulator, feriepengekalkulator og flere andre nyttige verktøy.
+</p>
+</section>
+
+<section id="privacy-policy" style="max-width: 800px; margin: 20px auto 40px; padding: 20px; background: #f5f5fa; border-radius: 10px; font-family: 'Segoe UI', sans-serif;">
+<h2 style="font-size: 24px; margin-bottom: 16px; color: #333;">Personvernerklæring</h2>
+<p style="font-size: 16px; line-height: 1.6; color: #555;">
+    Vi bruker Google AdSense på dette nettstedet for å vise annonser. Google kan bruke informasjonskapsler (cookies) for å vise relevante annonser basert på dine besøk på denne og andre nettsteder. Ved å bruke dette nettstedet samtykker du i vår bruk av slike teknologier for annonsering. Du kan lese mer om hvordan Google bruker data her: https://policies.google.com/technologies/ads
+</p>
+</section>
+
+</body>
+</html>

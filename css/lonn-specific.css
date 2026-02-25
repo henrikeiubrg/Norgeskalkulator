@@ -1,0 +1,492 @@
+/* lonn-specific.css - Lønnssammenligning kalkulator styling */
+
+/* Info tooltip styling */
+.info-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: help;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.info-tooltip:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.info-tooltip::before {
+    content: "i";
+}
+
+.info-tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: #1f2937;
+    color: #f3f4f6;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.info-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #1f2937 transparent transparent transparent;
+}
+
+.info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .info-tooltip .tooltip-text {
+        width: 220px;
+        left: auto;
+        right: -10px;
+        transform: none;
+    }
+    
+    .info-tooltip .tooltip-text::after {
+        left: auto;
+        right: 15px;
+        transform: none;
+    }
+}
+
+.label-with-tooltip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label-with-tooltip label {
+    margin-bottom: 0;
+}
+
+/* Main theme - Purple/Indigo gradient */
+body {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 25%, #7c3aed 75%, #8b5cf6 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Calculator icon */
+.calculator-icon {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Results styling */
+.results {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    border-left: 5px solid #6366f1;
+}
+
+/* Verdict display */
+.result-verdict {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.result-verdict.verdict-above {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border: 2px solid #10b981;
+}
+
+.result-verdict.verdict-below {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 2px solid #ef4444;
+}
+
+.result-verdict.verdict-average {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 2px solid #f59e0b;
+}
+
+.verdict-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.verdict-text {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.verdict-subtext {
+    font-size: 1.1em;
+    color: #4b5563;
+}
+
+/* Comparison cards */
+.comparison-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.comparison-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 15px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid #6366f1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comparison-value {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.comparison-sub {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .comparison-display {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-card {
+        padding: 15px;
+    }
+}
+
+/* Visual comparison bar */
+.difference-bar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.bar-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.bar-container {
+    position: relative;
+}
+
+.bar-track {
+    height: 40px;
+    background: linear-gradient(90deg, #fecaca 0%, #fef3c7 30%, #d1fae5 70%, #bbf7d0 100%);
+    border-radius: 20px;
+    position: relative;
+    overflow: visible;
+}
+
+.bar-marker {
+    position: absolute;
+    top: -8px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.bar-marker.median-marker {
+    left: 50%;
+}
+
+.bar-marker::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 56px;
+    background: #6b7280;
+    border-radius: 2px;
+}
+
+.marker-label {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.bar-marker.avg-marker::before {
+    background: #4f46e5;
+}
+
+.bar-marker.avg-marker .marker-label {
+    color: #4f46e5;
+}
+
+.bar-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.5);
+    z-index: 20;
+    transition: left 0.5s ease;
+}
+
+.indicator-label {
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Breakdown styling */
+.breakdown {
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.breakdown h3 {
+    color: #4f46e5;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+    padding-bottom: 10px;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+}
+
+.breakdown-item:last-child {
+    border-bottom: none;
+}
+
+.breakdown-label {
+    color: #374151;
+    font-weight: 500;
+}
+
+.breakdown-value {
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+.breakdown-value.positive {
+    color: #059669;
+}
+
+.breakdown-value.negative {
+    color: #dc2626;
+}
+
+/* Button styling */
+.calculate-btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Info note */
+.info-note {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.info-note strong {
+    color: #4f46e5;
+}
+
+/* Loader */
+.loader {
+    text-align: center;
+    padding: 30px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(99, 102, 241, 0.2);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loader p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* SEO Content Section */
+.seo-content {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(99, 102, 241, 0.1);
+}
+
+.seo-content h2 {
+    color: #4f46e5;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.seo-content article {
+    margin-bottom: 25px;
+}
+
+.seo-content h3 {
+    color: #374151;
+    font-size: 1.15em;
+    margin-bottom: 12px;
+}
+
+.seo-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.seo-content ul {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.seo-content li {
+    margin-bottom: 8px;
+}
+
+.seo-content strong {
+    color: #374151;
+}
+
+/* Footer */
+.calculator-footer {
+    text-align: center;
+    padding: 25px 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.footer-nav {
+    margin-top: 15px;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .verdict-text {
+        font-size: 1.3em;
+    }
+    
+    .verdict-subtext {
+        font-size: 0.95em;
+    }
+    
+    .comparison-value {
+        font-size: 1.2em;
+    }
+    
+    .bar-indicator {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .indicator-label {
+        font-size: 11px;
+    }
+}

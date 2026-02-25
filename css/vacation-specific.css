@@ -1,0 +1,131 @@
+/* vacation-specific.css - Feriepenger-spesifikk styling */
+
+/* Feriepenger-specifik gradient (blå/turkis for ferie/sommer-tema) */
+body {
+    background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 25%, #0891b2 75%, #0e7490 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(14, 165, 233, 0.3);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Feriepenger-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 5px solid #0ea5e9;
+}
+
+.breakdown {
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.breakdown h3 {
+    color: #0369a1;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.tax-bracket {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.05);
+}
+
+.tax-bracket:last-child {
+    border-bottom: none;
+}
+
+.vacation-days {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #0e7490;
+}
+
+.age-warning {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #d97706;
+}
+
+/* Feriepenger-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(14, 165, 233, 0.4);
+}
+
+input[type="number"]:focus, 
+select:focus,
+input[type="date"]:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.info-note {
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* Spesielle feriepenger-elementer */
+.vacation-calculator {
+    position: relative;
+}
+
+.summer-decoration {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 2em;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.vacation-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.vacation-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #0ea5e9;
+    text-align: center;
+}
+
+.vacation-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Mobile-spesifikke tilpasninger for feriepenger */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 22px !important;
+    }
+}
+
+.flag::before {
+    content: "🇳🇴";
+}

@@ -1,0 +1,104 @@
+/* wedding-specific.css - Bryllup-spesifikk styling */
+
+/* Bryllup-specifik gradient */
+body {
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 25%, #f8e8ff 75%, #e8d8ff 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+/* Bryllup-spesifikke resultat-bokser */
+.results {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    border-left: 5px solid #ec4899;
+}
+
+.breakdown {
+    background: rgba(236, 72, 153, 0.05);
+    border: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.breakdown h3 {
+    color: #be185d;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(236, 72, 153, 0.05);
+}
+
+.cost-item:last-child {
+    border-bottom: none;
+}
+
+.savings-tips {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #16a34a;
+}
+
+.section-header {
+    background: rgba(236, 72, 153, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #be185d;
+    border-left: 4px solid #ec4899;
+}
+
+.cost-input {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #fce7f3;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.cost-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.percentage-display {
+    font-size: 12px;
+    color: #be185d;
+    background: #fdf2f8;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #fce7f3;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ec4899 0%, #be185d 100%);
+    transition: width 0.3s ease;
+}
+
+/* Bryllup-spesifikke høydepunkter */
+.calculate-btn {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.4);
+}

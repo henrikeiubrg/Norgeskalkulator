@@ -1,0 +1,783 @@
+/* protein-specific.css - Proteinkalkulator styling */
+
+/* Info tooltip styling */
+.info-tooltip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: help;
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.info-tooltip:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.info-tooltip::before {
+    content: "i";
+}
+
+.info-tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+.info-tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #1e293b transparent transparent transparent;
+}
+
+.info-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .info-tooltip .tooltip-text {
+        width: 220px;
+        left: auto;
+        right: -10px;
+        transform: none;
+    }
+    
+    .info-tooltip .tooltip-text::after {
+        left: auto;
+        right: 15px;
+        transform: none;
+    }
+}
+
+.tooltip-text a {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.tooltip-text a:hover {
+    color: #bfdbfe;
+}
+
+.tooltip-text strong {
+    color: #93c5fd;
+}
+
+.label-with-tooltip {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label-with-tooltip label {
+    margin-bottom: 0;
+}
+
+/* Protein-spesifikk gradient (blå for helse/fitness-tema) */
+body {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #0ea5e9 75%, #38bdf8 100%);
+}
+
+.calculator-card {
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Protein icon styling */
+.protein-icon {
+    font-size: 2.5em;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Results section */
+.results {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 5px solid #3b82f6;
+}
+
+/* Protein meter container */
+.protein-meter-container {
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.meter-label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+.protein-meter {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 35px;
+    background: linear-gradient(90deg, #e2e8f0 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+    border-radius: 20px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+}
+
+.meter-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.meter-value {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: #1e40af;
+    margin: 15px 0 5px;
+    line-height: 1;
+}
+
+.meter-unit {
+    font-size: 0.4em;
+    font-weight: 600;
+    color: #3b82f6;
+    margin-left: 5px;
+}
+
+.meter-range {
+    font-size: 1em;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Circular gauge alternative */
+.gauge-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.circular-gauge {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.gauge-bg {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 15;
+}
+
+.gauge-fill {
+    fill: none;
+    stroke: url(#gaugeGradient);
+    stroke-width: 15;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+    transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gauge-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gauge-value {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #1e40af;
+    line-height: 1;
+}
+
+.gauge-label {
+    font-size: 0.9em;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Target cards */
+.target-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+@media (max-width: 768px) {
+    .target-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.target-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 15px;
+    border-radius: 15px;
+    text-align: center;
+    border-left: 4px solid #3b82f6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.target-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(59, 130, 246, 0.15);
+}
+
+.target-card.highlight {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-left: none;
+}
+
+.target-card.highlight .target-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.target-card.highlight .target-value {
+    color: white;
+}
+
+.target-label {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.target-value {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #1e40af;
+}
+
+.target-sub {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Per meal breakdown */
+.meal-breakdown {
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.meal-breakdown h3 {
+    color: #1e40af;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+.meal-item {
+    background: white;
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.meal-icon {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.meal-name {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+.meal-protein {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #1e40af;
+}
+
+/* Food examples section */
+.food-examples {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.food-examples h3 {
+    color: #1e40af;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.food-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(59, 130, 246, 0.08);
+    border-radius: 10px;
+}
+
+.food-toggle label {
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.food-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 12px;
+    padding: 18px 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    cursor: default;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.food-card.vegetarian {
+    border-left: 4px solid #22c55e;
+}
+
+.food-card.vegan {
+    border-left: 4px solid #a855f7;
+}
+
+.food-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.food-name {
+    font-weight: 600;
+    color: #334155;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.food-protein {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1e40af;
+}
+
+.food-portion {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 3px;
+}
+
+.diet-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.diet-badge.vegetarian {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+}
+
+.diet-badge.vegan {
+    background: rgba(168, 85, 247, 0.15);
+    color: #7e22ce;
+}
+
+.diet-badge.carnivore {
+    background: rgba(220, 38, 38, 0.15);
+    color: #b91c1c;
+}
+
+.food-card.carnivore {
+    border-left: 4px solid #dc2626;
+}
+
+/* Section headers */
+.section-header {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    color: #1e40af;
+    border-left: 4px solid #3b82f6;
+}
+
+/* Buttons */
+.calculate-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.info-note {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Checkbox styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-group:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Summary box */
+.summary-box {
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.summary-box h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.summary-box .big-number {
+    font-size: 3em;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.summary-box .per-day {
+    opacity: 0.85;
+    font-size: 1em;
+}
+
+/* Goal badges */
+.goal-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.goal-badge.maintenance {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+}
+
+.goal-badge.muscle {
+    background: rgba(59, 130, 246, 0.15);
+    color: #1e40af;
+}
+
+.goal-badge.fatloss {
+    background: rgba(249, 115, 22, 0.15);
+    color: #c2410c;
+}
+
+/* Activity level indicator */
+.activity-indicator {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.activity-dot.active {
+    background: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+/* Loader */
+.loader {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tip box */
+.tip-box {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #1e40af;
+    font-size: 14px;
+}
+
+.tip-box strong {
+    color: #1d4ed8;
+}
+
+/* Warning box */
+.warning-box {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #92400e;
+    font-size: 14px;
+}
+
+/* Hidden class */
+.hidden {
+    display: none !important;
+}
+
+/* Animation for results */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results.show {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .target-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .target-card {
+        padding: 15px;
+    }
+    
+    .target-value {
+        font-size: 1.5em;
+    }
+    
+    .summary-box .big-number {
+        font-size: 2.2em;
+    }
+    
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .meal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .meter-value {
+        font-size: 2.2em;
+    }
+    
+    .circular-gauge {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .gauge-value {
+        font-size: 2em;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .calculate-btn {
+        display: none;
+    }
+}
