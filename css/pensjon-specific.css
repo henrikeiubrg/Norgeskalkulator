@@ -1,0 +1,99 @@
+/* pensjon-specific.css */
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #718096;
+}
+
+.result-value.highlight {
+  font-size: 1.3em;
+  color: #667eea;
+}
+
+/* Breakdown */
+.pension-breakdown {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 15px;
+}
+
+.breakdown-item:last-of-type {
+  border-bottom: none;
+}
+
+.breakdown-item.total-row {
+  border-top: 2px solid #667eea;
+  margin-top: 4px;
+  padding-top: 12px;
+  font-size: 16px;
+}
+
+.bd-label {
+  color: #4a5568;
+}
+
+.bd-value {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.good { color: #16a34a; font-weight: 700; }
+.ok   { color: #d97706; font-weight: 700; }
+.low  { color: #dc2626; font-weight: 700; }
+
+/* Age comparison */
+.age-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.age-card {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.age-card:hover {
+  border-color: #667eea;
+}
+
+.ac-age {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 4px;
+}
+
+.ac-monthly {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.ac-rate {
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.ac-years {
+  font-size: 0.78em;
+  color: #718096;
+}
