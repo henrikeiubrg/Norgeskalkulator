@@ -1,0 +1,115 @@
+/* studielan-specific.css */
+
+.field-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #718096;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.shortcut-card {
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.shortcut-card.savings {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.shortcut-card.cost {
+  background: #fefce8;
+  border-color: #fde68a;
+}
+
+.sc-years {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.sc-monthly {
+  font-size: 1em;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.sc-detail {
+  font-size: 0.85em;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.positive {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.negative {
+  color: #b45309;
+  font-weight: 600;
+}
+
+.amort-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.amort-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 12px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.amort-table th:first-child {
+  text-align: center;
+  border-radius: 8px 0 0 0;
+}
+
+.amort-table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.amort-table td {
+  padding: 9px 12px;
+  text-align: right;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.amort-table td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.amort-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.amort-table tr:last-child td {
+  border-bottom: none;
+}
+
+.amort-table tr:hover {
+  background: #eef2ff;
+}
