@@ -1,0 +1,292 @@
+/* elbil-specific.css - Elbil Lading Kalkulator */
+
+body {
+    background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 50%, #40916c 100%);
+}
+
+.calculator-card {
+    border-top: 5px solid #52b788;
+}
+
+h2 {
+    color: #1a472a;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(45, 106, 79, 0.45);
+}
+
+.results {
+    border-left: 5px solid #52b788;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #40916c;
+    box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.15);
+}
+
+/* Tab switch for home vs public */
+.tab-container {
+    display: flex;
+    background: #e9ecef;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 25px;
+    gap: 4px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #6c757d;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.3);
+}
+
+/* Comparison cards */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comparison-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #ccc;
+}
+
+.comparison-card.home-card {
+    border-top-color: #40916c;
+}
+
+.comparison-card.public-card {
+    border-top-color: #e76f51;
+}
+
+.comparison-card h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6c757d;
+}
+
+.comparison-card .big-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.comparison-card.home-card .big-number { color: #2d6a4f; }
+.comparison-card.public-card .big-number { color: #c1440e; }
+
+.comparison-card .sub-label {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Savings highlight */
+.savings-box {
+    background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.savings-box .savings-label {
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.92;
+}
+
+.savings-box .savings-amount {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/* Monthly table */
+.monthly-table-wrapper {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.monthly-table-wrapper h3 {
+    text-align: center;
+    color: #1a472a;
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+
+.monthly-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.monthly-table th {
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.monthly-table th:first-child { border-radius: 8px 0 0 0; }
+.monthly-table th:last-child  { border-radius: 0 8px 0 0; }
+
+.monthly-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #374151;
+}
+
+.monthly-table tr:last-child td { border-bottom: none; font-weight: 700; background: #f0fdf4; }
+.monthly-table tr:nth-child(even) td { background: #fafafa; }
+.monthly-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.monthly-table tr:last-child td:last-child  { border-radius: 0 0 8px 0; }
+
+.monthly-table td.home-col { color: #2d6a4f; font-weight: 600; }
+.monthly-table td.public-col { color: #c1440e; font-weight: 600; }
+.monthly-table td.savings-col { color: #1a472a; font-weight: 700; }
+
+@media (max-width: 600px) {
+    .monthly-table-wrapper { padding: 15px; }
+    .monthly-table th, .monthly-table td { padding: 7px 8px; font-size: 12px; }
+}
+
+/* Charging time bar */
+.charge-time-bar {
+    background: #e9ecef;
+    border-radius: 8px;
+    height: 12px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.charge-time-fill {
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #40916c, #52b788);
+    transition: width 0.6s ease;
+}
+
+/* Section article styling */
+.seo-article {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.75;
+    color: #374151;
+}
+
+.seo-article h2 {
+    font-size: 22px;
+    color: #1a472a;
+    margin: 0 0 16px 0;
+    text-align: left;
+}
+
+.seo-article h3 {
+    font-size: 18px;
+    color: #2d6a4f;
+    margin: 28px 0 12px 0;
+    text-align: left;
+}
+
+.seo-article p {
+    margin-bottom: 14px;
+    font-size: 15.5px;
+}
+
+.seo-article ul {
+    margin: 10px 0 14px 22px;
+}
+
+.seo-article ul li {
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.seo-article .internal-links {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 24px;
+}
+
+.seo-article .internal-links h4 {
+    color: #1a472a;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.seo-article .internal-links a {
+    color: #2d6a4f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.seo-article .internal-links a:hover {
+    text-decoration: underline;
+}
+
+/* Info tip box */
+.tip-box {
+    background: rgba(82, 183, 136, 0.12);
+    border-left: 4px solid #52b788;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 14.5px;
+    color: #1a472a;
+}
+
+.tip-box strong {
+    display: block;
+    margin-bottom: 4px;
+}
