@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-12S8B5H4TN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-12S8B5H4TN');
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2043095188942400"
+    crossorigin="anonymous"></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kalorikalkulator – Beregn TDEE og Daglig Kaloriebehov 2026</title>
+  <link rel="canonical" href="https://norgeskalkulator.no/kalorikalkulator/" />
+
+  <meta name="description"
+    content="Gratis kalorikalkulator. Beregn BMR og TDEE basert på kjønn, alder, vekt og aktivitetsnivå. Få kaloriemål for vektnedgang, vedlikehold og vektøkning.">
+  <meta name="keywords"
+    content="kalorikalkulator, TDEE kalkulator, BMR kalkulator, daglig kaloriebehov, kaloriunderskudd, kalorioverskudd, Mifflin-St Jeor, metabolsk rate, makronæringsstoffer kalkulator, protein karbohydrat fett, vektnedgang kalorier, vektøkning kalorier, vedlikeholdskalorier, aktivitetsnivå kalorier, norsk kalorikalkulator">
+  <meta name="author" content="Norgeskalkulator.no">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <link rel="icon" type="image/png" href="https://norgeskalkulator.no/images/n-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://norgeskalkulator.no/images/n-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://norgeskalkulator.no/images/n-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://norgeskalkulator.no/images/n-icon.png">
+  <link rel="shortcut icon" href="https://norgeskalkulator.no/images/n-icon.png">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://norgeskalkulator.no/kalorikalkulator/" />
+  <meta property="og:title" content="Kalorikalkulator 2026 – Beregn TDEE og Daglig Kaloriebehov" />
+  <meta property="og:description"
+    content="Finn ut nøyaktig hvor mange kalorier du trenger per dag. Beregn BMR, TDEE og makronæringsstoffer gratis." />
+  <meta property="og:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="Norgeskalkulator" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kalorikalkulator 2026 – Beregn TDEE og Makroer" />
+  <meta name="twitter:description"
+    content="Gratis TDEE-kalkulator. Beregn daglig kaloriebehov og makronæringsstoffer basert på ditt aktivitetsnivå." />
+  <meta name="twitter:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#f97316">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kalorikalkulator 2026",
+    "alternateName": "TDEE Kalkulator Norge",
+    "description": "Gratis kalorikalkulator som beregner BMR og TDEE ved hjelp av Mifflin-St Jeor-formelen. Gir kaloriemål for vektnedgang, vedlikehold og vektøkning, pluss makronæringsfordeling.",
+    "url": "https://norgeskalkulator.no/kalorikalkulator/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "inLanguage": "nb-NO",
+    "isAccessibleForFree": true,
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "NOK"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Norgeskalkulator.no",
+      "url": "https://norgeskalkulator.no"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hva er TDEE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TDEE (Total Daily Energy Expenditure) er det totale antallet kalorier kroppen din forbrenner i løpet av en dag, inkludert all fysisk aktivitet. Det beregnes ved å multiplisere BMR med en aktivitetsfaktor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hva er forskjellen mellom BMR og TDEE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMR (Basal Metabolic Rate) er kalorier kroppen forbrenner i hvile for å opprettholde livsviktige funksjoner. TDEE inkluderer i tillegg kalorier fra daglig aktivitet og trening."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hvor mange kalorier bør jeg spise for å gå ned i vekt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Et kaloriunderskudd på 500 kcal per dag gir en trygg vektnedgang på omtrent 0,5 kg per uke. Spis aldri under BMR uten medisinsk tilsyn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hva er Mifflin-St Jeor-formelen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mifflin-St Jeor er den mest nøyaktige formelen for å beregne BMR. For menn: (10 × vekt) + (6,25 × høyde) - (5 × alder) + 5. For kvinner: (10 × vekt) + (6,25 × høyde) - (5 × alder) - 161."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hva er makronæringsstoffer og hvordan fordeles de?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Makronæringsstoffer er protein, karbohydrater og fett. En vanlig fordeling er 30% protein, 40% karbohydrater og 30% fett av totalt kaloriinntak. Protein og karbohydrater gir 4 kcal/g, fett gir 9 kcal/g."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #f97316;
+      --orange-light: #fed7aa;
+      --blue: #1e40af;
+      --green: #16a34a;
+      --red: #dc2626;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --text-gray: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 2px 10px rgba(0,0,0,0.06);
+      --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { font-size: 1.15rem; font-weight: 800; color: var(--orange); text-decoration: none; }
+    .nav-back { font-size: 0.9rem; color: var(--text-gray); text-decoration: none; display: flex; align-items: center; gap: 0.3rem; }
+    .nav-back:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+      border-bottom: 1px solid #fed7aa;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .hero-emoji { font-size: 3rem; margin-bottom: 0.5rem; }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; color: var(--text); margin-bottom: 0.5rem; }
+    .hero p { color: var(--text-gray); font-size: 1rem; max-width: 560px; margin: 0 auto; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+    }
+    .card h2 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    /* ── SEX TOGGLE ── */
+    .sex-toggle { display: flex; gap: 0; border-radius: 8px; overflow: hidden; border: 2px solid var(--border); width: fit-content; margin-bottom: 1.5rem; }
+    .sex-toggle button {
+      padding: 0.6rem 1.6rem;
+      border: none;
+      background: var(--white);
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sex-toggle button.active {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    /* ── FORM GRID ── */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 500px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .field label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text-gray); margin-bottom: 0.4rem; }
+    .field input, .field select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: var(--white);
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--orange); }
+
+    .full-width { grid-column: 1 / -1; }
+
+    /* ── BUTTON ── */
+    .btn-calc {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(135deg, var(--orange), #ea580c);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      transition: opacity 0.2s;
+    }
+    .btn-calc:hover { opacity: 0.9; }
+
+    /* ── RESULTS ── */
+    #results { display: none; }
+
+    .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+
+    .result-box {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      border: 2px solid var(--border);
+    }
+    .result-box.highlight { background: linear-gradient(135deg, #fff7ed, #ffedd5); border-color: var(--orange); }
+    .result-box .label { font-size: 0.8rem; font-weight: 600; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+    .result-box .value { font-size: 1.8rem; font-weight: 800; color: var(--text); }
+    .result-box .unit { font-size: 0.85rem; color: var(--text-gray); }
+
+    /* ── GOALS ── */
+    .goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .goal-box {
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      border: 2px solid var(--border);
+    }
+    .goal-box.loss { background: #fef2f2; border-color: #fca5a5; }
+    .goal-box.maintain { background: #f0fdf4; border-color: #86efac; }
+    .goal-box.gain { background: #eff6ff; border-color: #93c5fd; }
+    .goal-box .goal-label { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .goal-box.loss .goal-label { color: var(--red); }
+    .goal-box.maintain .goal-label { color: var(--green); }
+    .goal-box.gain .goal-label { color: var(--blue); }
+    .goal-box .goal-kcal { font-size: 1.6rem; font-weight: 800; color: var(--text); }
+    .goal-box .goal-desc { font-size: 0.8rem; color: var(--text-gray); margin-top: 0.2rem; }
+
+    /* ── MACROS ── */
+    .macro-row { margin-bottom: 1rem; }
+    .macro-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; }
+    .macro-name { font-weight: 700; font-size: 0.95rem; }
+    .macro-info { font-size: 0.9rem; color: var(--text-gray); }
+    .macro-bar-bg { height: 10px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .macro-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+    .macro-bar-fill.protein { background: linear-gradient(90deg, #f97316, #ea580c); }
+    .macro-bar-fill.carbs { background: linear-gradient(90deg, #3b82f6, #1d4ed8); }
+    .macro-bar-fill.fat { background: linear-gradient(90deg, #a855f7, #7c3aed); }
+
+    /* ── SEO CONTENT ── */
+    .seo-content { line-height: 1.8; color: var(--text); }
+    .seo-content h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin: 2rem 0 0.8rem; }
+    .seo-content h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 1.4rem 0 0.5rem; }
+    .seo-content p { margin-bottom: 1rem; color: #374151; }
+    .seo-content ul { margin: 0.5rem 0 1rem 1.2rem; }
+    .seo-content li { margin-bottom: 0.4rem; color: #374151; }
+
+    /* ── FORMULA BOX ── */
+    .formula-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--orange);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.2rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      color: var(--text);
+    }
+
+    /* ── INTERNAL LINKS ── */
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+    .related-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .related-link:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--orange); text-decoration: none; }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">🧮 Norgeskalkulator</a>
+      <a href="/" class="nav-back">← Alle kalkulatorer</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-emoji">🔥</div>
+    <h1>Kalorikalkulator – Beregn TDEE</h1>
+    <p>Finn ut nøyaktig hvor mange kalorier du trenger per dag basert på kjønn, alder, vekt og aktivitetsnivå</p>
+  </div>
+
+  <div class="container">
+
+    <!-- CALCULATOR CARD -->
+    <div class="card">
+      <h2>⚙️ Beregn ditt daglige kaloriebehov</h2>
+
+      <!-- Sex toggle -->
+      <div style="margin-bottom: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--text-gray);">Kjønn</div>
+      <div class="sex-toggle">
+        <button id="btn-male" class="active" onclick="setSex('mann')">♂ Mann</button>
+        <button id="btn-female" onclick="setSex('kvinne')">♀ Kvinne</button>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="age">Alder (år)</label>
+          <input type="number" id="age" min="15" max="99" placeholder="30" value="">
+        </div>
+        <div class="field">
+          <label for="weight">Vekt (kg)</label>
+          <input type="number" id="weight" min="30" max="300" placeholder="75" value="">
+        </div>
+        <div class="field">
+          <label for="height">Høyde (cm)</label>
+          <input type="number" id="height" min="100" max="250" placeholder="175" value="">
+        </div>
+        <div class="field full-width">
+          <label for="activity">Aktivitetsnivå</label>
+          <select id="activity">
+            <option value="1.2">Stillesittende – Lite eller ingen trening</option>
+            <option value="1.375">Lett aktiv – Lett trening 1–3 dager/uke</option>
+            <option value="1.55" selected>Moderat aktiv – Moderat trening 3–5 dager/uke</option>
+            <option value="1.725">Veldig aktiv – Hard trening 6–7 dager/uke</option>
+            <option value="1.9">Ekstremt aktiv – Veldig hard daglig trening eller fysisk jobb</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Beregn kaloriebehov 🔥</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results">
+
+      <!-- BMR + TDEE -->
+      <div class="card">
+        <h2>📊 Dine resultater</h2>
+        <div class="result-grid">
+          <div class="result-box">
+            <div class="label">BMR</div>
+            <div class="value" id="res-bmr">–</div>
+            <div class="unit">kcal/dag (hvile)</div>
+          </div>
+          <div class="result-box highlight">
+            <div class="label">TDEE</div>
+            <div class="value" id="res-tdee">–</div>
+            <div class="unit">kcal/dag (total)</div>
+          </div>
+        </div>
+
+        <!-- Goals -->
+        <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--text-gray);">Kaloriemål</h3>
+        <div class="goals-grid">
+          <div class="goal-box loss">
+            <div class="goal-label">🔻 Vektnedgang</div>
+            <div class="goal-kcal" id="res-loss">–</div>
+            <div class="goal-desc">–500 kcal/dag · ~0,5 kg/uke</div>
+          </div>
+          <div class="goal-box maintain">
+            <div class="goal-label">⚖️ Vedlikehold</div>
+            <div class="goal-kcal" id="res-maintain">–</div>
+            <div class="goal-desc">Stabil vekt</div>
+          </div>
+          <div class="goal-box gain">
+            <div class="goal-label">📈 Vektøkning</div>
+            <div class="goal-kcal" id="res-gain">–</div>
+            <div class="goal-desc">+300 kcal/dag · muskelmasse</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MACROS -->
+      <div class="card">
+        <h2>🥗 Makronæringsstoffer (basert på vedlikehold)</h2>
+        <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 1.2rem;">Fordeling: 30% protein · 40% karbohydrater · 30% fett</p>
+
+        <div class="macro-row">
+          <div class="macro-header">
+            <span class="macro-name" style="color: #f97316;">🥩 Protein (30%)</span>
+            <span class="macro-info" id="macro-protein-info">–</span>
+          </div>
+          <div class="macro-bar-bg">
+            <div class="macro-bar-fill protein" id="bar-protein" style="width: 30%"></div>
+          </div>
+        </div>
+
+        <div class="macro-row">
+          <div class="macro-header">
+            <span class="macro-name" style="color: #3b82f6;">🍞 Karbohydrater (40%)</span>
+            <span class="macro-info" id="macro-carbs-info">–</span>
+          </div>
+          <div class="macro-bar-bg">
+            <div class="macro-bar-fill carbs" id="bar-carbs" style="width: 40%"></div>
+          </div>
+        </div>
+
+        <div class="macro-row">
+          <div class="macro-header">
+            <span class="macro-name" style="color: #a855f7;">🥑 Fett (30%)</span>
+            <span class="macro-info" id="macro-fat-info">–</span>
+          </div>
+          <div class="macro-bar-bg">
+            <div class="macro-bar-fill fat" id="bar-fat" style="width: 30%"></div>
+          </div>
+        </div>
+
+        <div id="formula-used" style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--text-gray); background: #f8fafc; border-radius: 8px; padding: 0.8rem 1rem; border: 1px solid var(--border);"></div>
+      </div>
+
+    </div><!-- /#results -->
+
+    <!-- SEO CONTENT -->
+    <div class="card seo-content">
+      <h2>Hva er TDEE og hvorfor er det viktig?</h2>
+      <p>TDEE – <strong>Total Daily Energy Expenditure</strong> – er det totale antallet kalorier kroppen din forbrenner i løpet av 24 timer. Dette inkluderer alt fra pustingen din om natten til treningen på treningssenteret. Å kjenne din TDEE er grunnsteinen i enhver vellykket diett- eller treningsplan, enten du ønsker å gå ned i vekt, bygge muskler eller bare holde vekten stabil.</p>
+      <p>Mange tror at å spise mindre alltid er bedre, men uten en presis beregning risikerer du å spise for lite og undergrave muskelmasse, metabolisme og energinivå. Vår kalkulator bruker den vitenskapelig anerkjente <strong>Mifflin-St Jeor-formelen</strong>, som regnes som den mest nøyaktige metoden for å estimere BMR (Basal Metabolic Rate) for normalbefolkningen.</p>
+
+      <h2>Mifflin-St Jeor-formelen forklart</h2>
+      <p>BMR (Basal Metabolic Rate) er antall kalorier kroppen forbrenner i fullstendig hvile – altså det kroppen trenger bare for å overleve: puste, pumpe blod, regulere temperatur og opprettholde organfunksjon.</p>
+
+      <div class="formula-box">
+        Mann: BMR = (10 × vekt i kg) + (6,25 × høyde i cm) − (5 × alder) + 5<br>
+        Kvinne: BMR = (10 × vekt i kg) + (6,25 × høyde i cm) − (5 × alder) − 161
+      </div>
+
+      <p>Når BMR er beregnet, multipliseres det med en <strong>aktivitetsfaktor</strong> for å finne TDEE:</p>
+      <ul>
+        <li><strong>Stillesittende (×1,2):</strong> Kontorjobb, minimal bevegelse</li>
+        <li><strong>Lett aktiv (×1,375):</strong> Lett trening 1–3 dager i uken</li>
+        <li><strong>Moderat aktiv (×1,55):</strong> Moderat trening 3–5 dager i uken</li>
+        <li><strong>Veldig aktiv (×1,725):</strong> Hard trening nesten daglig</li>
+        <li><strong>Ekstremt aktiv (×1,9):</strong> Fysisk krevende jobb + daglig trening</li>
+      </ul>
+
+      <h2>Kaloriemål: Underskudd, vedlikehold og overskudd</h2>
+      <p>Når TDEE er kjent, kan du enkelt sette deg et kaloriemål:</p>
+      <ul>
+        <li><strong>Vektnedgang:</strong> TDEE minus 500 kcal per dag gir en trygg og bærekraftig vektnedgang på omtrent 0,5 kg per uke. Dette regnes som det optimale underskuddet – aggressivt nok til å gi resultater, men uten å risikere muskeltap eller metabolsk tilpasning.</li>
+        <li><strong>Vedlikehold:</strong> Spiser du akkurat din TDEE, holder vekten seg stabil. Dette er ideelt i perioder uten spesifikt vekt- eller muskelbygningsmål.</li>
+        <li><strong>Vektøkning / Bulking:</strong> Et overskudd på 300 kcal per dag er det anbefalte «lean bulk»-overskuddet. Det gir kroppen nok drivstoff til å bygge muskelmasse uten unødig fettoppbygging.</li>
+      </ul>
+
+      <h2>Makronæringsstoffer – Protein, karbohydrater og fett</h2>
+      <p>Kaloritallet alene forteller ikke hele historien. Hvilke næringsstoffer kaloriene kommer fra, har enorm betydning for kroppsammensetning, ytelse og helse. <strong>Makronæringsstoffer</strong> (makroer) er de tre næringsstoffgruppene som gir energi:</p>
+      <ul>
+        <li><strong>Protein (4 kcal/g):</strong> Bygger og reparerer muskler, holder deg mett lenger og øker stoffskiftet gjennom den termiske effekten av mat. Målet er 30% av kaloriene fra protein.</li>
+        <li><strong>Karbohydrater (4 kcal/g):</strong> Kroppens og hjernens foretrukne drivstoff. Gir energi til trening og daglige aktiviteter. Målsatt til 40% av kaloriene.</li>
+        <li><strong>Fett (9 kcal/g):</strong> Essensielt for hormonproduksjon, fettløselige vitaminer (A, D, E, K) og cellemembranfunksjon. Utgjør 30% av kaloriene.</li>
+      </ul>
+      <p>Fordelingen 30/40/30 er en velfungerende standardfordeling for de fleste. Styrketrenere velger gjerne mer protein (35–40%), mens utholdenhetsutøvere kan øke karbohydratandelen.</p>
+
+      <h2>Kalorier og vektregulering i norsk kontekst</h2>
+      <p>Ifølge Helsedirektoratets kostholdsråd bør norske voksne innta mellom 1 600 og 3 000 kcal per dag, avhengig av kjønn, alder og aktivitetsnivå. Mange nordmenn undervurderer kaloriinntaket fra typiske norske matvarer som brunost, knekkebrød med smør og kaviar – noe som kan sabotere vektnedgangsforsøk.</p>
+      <p>TDEE-kalkulatoren gir deg et evidensbasert utgangspunkt. Kombiner den gjerne med en <a href="/protein-kalkulator/">proteinkalkulator</a> for å optimalisere proteininntak, og sjekk <a href="/bmi-kalkulator/">BMI-kalkulatoren</a> for å forstå din nåværende vektklassifisering.</p>
+
+      <h2>Vanlige feil å unngå</h2>
+      <ul>
+        <li>Spise langt under BMR – kroppen går i «sultemodus» og bremser metabolismen</li>
+        <li>Overvurdere aktivitetsnivå – velg ærlig kategori for presise resultater</li>
+        <li>Ignorere makrofordeling – kaloritelling uten makrostyring gir suboptimale resultater</li>
+        <li>Ikke justere etter vektendring – oppdater beregningen for hvert 5. kilo du mister eller legger på</li>
+      </ul>
+
+      <h3>Relaterte kalkulatorer</h3>
+      <div class="related-links">
+        <a href="/bmi-kalkulator/" class="related-link">⚖️ BMI-kalkulator</a>
+        <a href="/protein-kalkulator/" class="related-link">🥩 Proteinkalkulator</a>
+        <a href="/levealder-kalkulator/" class="related-link">🏃 Levealder-kalkulator</a>
+      </div>
+    </div>
+
+  </div><!-- /.container -->
+
+  <footer>
+    <p>© 2026 <a href="/">Norgeskalkulator.no</a> · <a href="/personvern.html">Personvern</a> · <a href="/kontakt.html">Kontakt</a></p>
+    <p style="margin-top: 0.4rem;">Resultatene er estimater. Konsulter lege eller ernæringsfysiolog for medisinsk rådgivning.</p>
+  </footer>
+
+  <script>
+    let sex = 'mann';
+
+    function setSex(val) {
+      sex = val;
+      document.getElementById('btn-male').classList.toggle('active', val === 'mann');
+      document.getElementById('btn-female').classList.toggle('active', val === 'kvinne');
+    }
+
+    function calculate() {
+      const age    = parseFloat(document.getElementById('age').value);
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value);
+      const actMul = parseFloat(document.getElementById('activity').value);
+
+      if (!age || !weight || !height || age < 15 || weight < 30 || height < 100) {
+        alert('Fyll ut alle felt med gyldige verdier.');
+        return;
+      }
+
+      // Mifflin-St Jeor
+      let bmr;
+      if (sex === 'mann') {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+      } else {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+      }
+
+      const tdee     = Math.round(bmr * actMul);
+      const bmrRound = Math.round(bmr);
+      const loss     = Math.round(tdee - 500);
+      const gain     = Math.round(tdee + 300);
+
+      // Macros based on maintenance (TDEE)
+      const proteinKcal = tdee * 0.30;
+      const carbsKcal   = tdee * 0.40;
+      const fatKcal     = tdee * 0.30;
+      const proteinG    = Math.round(proteinKcal / 4);
+      const carbsG      = Math.round(carbsKcal / 4);
+      const fatG        = Math.round(fatKcal / 9);
+
+      document.getElementById('res-bmr').textContent     = bmrRound.toLocaleString('no-NO');
+      document.getElementById('res-tdee').textContent    = tdee.toLocaleString('no-NO');
+      document.getElementById('res-loss').textContent    = loss.toLocaleString('no-NO') + ' kcal';
+      document.getElementById('res-maintain').textContent = tdee.toLocaleString('no-NO') + ' kcal';
+      document.getElementById('res-gain').textContent    = gain.toLocaleString('no-NO') + ' kcal';
+
+      document.getElementById('macro-protein-info').textContent = `${proteinG} g (${Math.round(proteinKcal)} kcal)`;
+      document.getElementById('macro-carbs-info').textContent   = `${carbsG} g (${Math.round(carbsKcal)} kcal)`;
+      document.getElementById('macro-fat-info').textContent     = `${fatG} g (${Math.round(fatKcal)} kcal)`;
+
+      // Formula display
+      const sexLabel = sex === 'mann' ? 'Mann' : 'Kvinne';
+      const constant = sex === 'mann' ? '+5' : '−161';
+      document.getElementById('formula-used').innerHTML =
+        `<strong>Din formel (${sexLabel}):</strong> BMR = (10 × ${weight}) + (6,25 × ${height}) − (5 × ${age}) ${constant} = <strong>${bmrRound} kcal</strong><br>TDEE = ${bmrRound} × ${actMul} = <strong>${tdee} kcal</strong>`;
+
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Allow Enter key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+
+</body>
+</html>
