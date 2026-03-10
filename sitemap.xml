@@ -2,53 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Hovedside -->
-  <url><loc>https://norgeskalkulator.no/</loc><lastmod>2026-02-28</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://norgeskalkulator.no/</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
-  <!-- Høy trafikk / Kjernekalkulatorer (priority 0.9) -->
-  <url><loc>https://norgeskalkulator.no/skatte-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/timelonn-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/bmi-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/boliglan-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/drivstoff-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/tv-storrelse-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/nettolonnkalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/lonn-over-under-snittet/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/feriepenger-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/strompris-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://norgeskalkulator.no/dagpenger-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Priority 0.95 — Høyest søkevolum (GSC-data) -->
+  <!-- skatte-kalkulator: 167k impressions | tv-storrelse: 92k | promille: 57k | barnetrygd: 36k | dagpenger: 34k -->
+  <url><loc>https://norgeskalkulator.no/skatte-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://norgeskalkulator.no/tv-storrelse-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://norgeskalkulator.no/promille-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://norgeskalkulator.no/barnetrygd-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://norgeskalkulator.no/dagpenger-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
 
-  <!-- Medium trafikk (priority 0.8) -->
-  <url><loc>https://norgeskalkulator.no/studielan-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/pensjon-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/sykepenger-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/foreldrepenger-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/barnetrygd-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/energisparing-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/elbil-lading-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/overtids-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/protein-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/levealder-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/bompenge-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/sparing-over-under-snittet/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/firmabil-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/kalorikalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://norgeskalkulator.no/prosentendring-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Priority 0.9 — Sterke performere (GSC-data) -->
+  <!-- drivstoff: 35k impressions, høy CTR | feriepenger: 17k impressions -->
+  <url><loc>https://norgeskalkulator.no/drivstoff-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://norgeskalkulator.no/feriepenger-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
-  <!-- Nisje / Lavere trafikk (priority 0.7) -->
-  <url><loc>https://norgeskalkulator.no/algebra-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/alkoholprosent-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/tilhengervekt-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/malings-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/flyttekostnad-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/bryllupsbudsjett-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/reisebudsjett-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/distanse-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://norgeskalkulator.no/promille-kalkulator/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Priority 0.8 — Medium performere (<15k impressions) -->
+  <url><loc>https://norgeskalkulator.no/bmi-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/boliglan-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/timelonn-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/nettolonnkalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/lonn-over-under-snittet/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/strompris-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/studielan-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/pensjon-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/sykepenger-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/foreldrepenger-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/energisparing-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/elbil-lading-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/overtids-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/protein-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/bompenge-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/sparing-over-under-snittet/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/firmabil-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/kalorikalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/prosentendring-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/algebra-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/alkoholprosent-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/tilhengervekt-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/malings-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/flyttekostnad-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/bryllupsbudsjett-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/reisebudsjett-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://norgeskalkulator.no/distanse-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Verktøy / Ikke-kalkulatorer (priority 0.6) -->
-  <url><loc>https://norgeskalkulator.no/ruter-tabell/</loc><lastmod>2026-03-05</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://norgeskalkulator.no/fly-informasjon/</loc><lastmod>2026-03-05</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
-  <url><loc>https://norgeskalkulator.no/quiz-generator-alder/</loc><lastmod>2026-03-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Priority 0.7 — Lav søkevolum (<2k impressions) -->
+  <url><loc>https://norgeskalkulator.no/levealder-kalkulator/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://norgeskalkulator.no/ruter-tabell/</loc><lastmod>2026-03-10</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+
+  <!-- Priority 0.6 — Verktøy / ikke-kalkulatorer -->
+  <url><loc>https://norgeskalkulator.no/fly-informasjon/</loc><lastmod>2026-03-10</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://norgeskalkulator.no/quiz-generator-alder/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Informasjonssider -->
   <url><loc>https://norgeskalkulator.no/om-oss.html</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
