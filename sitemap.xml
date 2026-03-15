@@ -54,6 +54,8 @@
   <url><loc>https://norgeskalkulator.no/fly-informasjon/</loc><lastmod>2026-03-10</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
   <url><loc>https://norgeskalkulator.no/quiz-generator-alder/</loc><lastmod>2026-03-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
+  <url><loc>https://norgeskalkulator.no/finansiell-kalkulator/</loc><lastmod>2026-03-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
   <!-- Informasjonssider -->
   <url><loc>https://norgeskalkulator.no/om-oss.html</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://norgeskalkulator.no/faq.html</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>

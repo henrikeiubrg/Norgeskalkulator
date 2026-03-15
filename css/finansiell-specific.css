@@ -1,0 +1,434 @@
+/* finansiell-specific.css — Finansiell Kalkulator (HP 12C/17BII+ inspired) */
+
+/* Dark green finance theme */
+body {
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calculator-card {
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* ── Tab navigation ─────────────────────────────────── */
+.tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 20px 0 10px;
+    padding: 8px;
+    background: #f1f5f9;
+    border-radius: 12px;
+}
+
+.tab-btn {
+    flex: 1 1 auto;
+    min-width: 90px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: transparent;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+/* ── Tab panels ─────────────────────────────────────── */
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section headings ───────────────────────────────── */
+.section-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 22px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #10b981;
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.calculate-btn {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+}
+
+input[type="number"]:focus, select:focus, input[type="text"]:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+/* Small utility buttons (add/remove cash flow) */
+.btn-sm {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-add {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.btn-add:hover { background: #10b981; color: white; }
+
+.btn-remove {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.btn-remove:hover { background: #ef4444; color: white; }
+
+/* ── Results ────────────────────────────────────────── */
+.results {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left: 5px solid #10b981;
+}
+
+.results h3 {
+    color: #065f46;
+    margin-bottom: 16px;
+    font-size: 1.2em;
+}
+
+.result-item {
+    padding: 13px 0;
+}
+
+.result-item:last-child {
+    border-top: 2px solid #10b981;
+    padding-top: 16px;
+    font-size: 1.2em;
+    color: #065f46;
+}
+
+.result-label { color: #065f46; }
+.result-value { color: #064e3b; }
+
+/* Highlight box for key result */
+.result-highlight {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.result-highlight .hl-value {
+    font-size: 1.4em;
+    font-weight: 800;
+}
+
+.result-positive { color: #6ee7b7; }
+.result-negative { color: #fca5a5; }
+
+/* ── Cash flow table ────────────────────────────────── */
+.cf-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.cf-row label {
+    min-width: 55px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0;
+}
+
+.cf-row input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* ── Amortization table ─────────────────────────────── */
+.amort-table-wrap {
+    overflow-x: auto;
+    margin-top: 16px;
+    border-radius: 10px;
+    border: 1px solid #d1fae5;
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.amort-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.amort-table thead th {
+    background: #065f46;
+    color: white;
+    padding: 10px 12px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.amort-table thead th:first-child { text-align: left; }
+
+.amort-table tbody tr:nth-child(even) { background: #f0fdf4; }
+.amort-table tbody tr:hover { background: #d1fae5; }
+
+.amort-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: right;
+    color: #374151;
+    font-size: 12.5px;
+}
+
+.amort-table td:first-child { text-align: left; font-weight: 600; color: #065f46; }
+
+/* ── TVM solver layout ──────────────────────────────── */
+.tvm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+    .tvm-grid { grid-template-columns: 1fr; }
+}
+
+.tvm-solve-select {
+    background: #f0fdf4;
+    border: 2px solid #10b981;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.tvm-solve-select label {
+    color: #065f46;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* ── Sensitivity table ──────────────────────────────── */
+.sensitivity-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.sensitivity-table th {
+    background: #1e3a5f;
+    color: white;
+    padding: 9px 12px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.sensitivity-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+    font-size: 12.5px;
+}
+
+.sensitivity-table tr:nth-child(even) { background: #f8fafc; }
+.sensitivity-table .pos { color: #059669; font-weight: 600; }
+.sensitivity-table .neg { color: #dc2626; font-weight: 600; }
+
+/* ── Canvas charts ──────────────────────────────────── */
+.chart-wrap {
+    position: relative;
+    margin: 16px 0;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #d1fae5;
+    padding: 12px;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+/* ── Formula box ────────────────────────────────────── */
+.formula-box {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    margin: 12px 0;
+    border-left: 4px solid #10b981;
+    line-height: 1.7;
+}
+
+.formula-box .formula-label {
+    color: #6ee7b7;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ── Bond ───────────────────────────────────────────── */
+.bond-metric {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #d1fae5;
+}
+
+.bond-metric:last-child { border-bottom: none; }
+.bond-metric-label { color: #065f46; font-weight: 600; }
+.bond-metric-value { color: #064e3b; font-weight: 700; }
+
+/* ── Error / warning ────────────────────────────────── */
+.error-msg {
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    color: #991b1b;
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ── SEO content section ────────────────────────────── */
+.seo-section {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-top: 0;
+}
+
+.seo-section h2 {
+    color: #1e3a5f;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 24px 0 10px;
+    text-align: left;
+}
+
+.seo-section h3 {
+    color: #065f46;
+    font-size: 1.15em;
+    font-weight: 700;
+    margin: 20px 0 8px;
+}
+
+.seo-section p {
+    color: #374151;
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.seo-section ul {
+    margin: 0 0 14px 22px;
+}
+
+.seo-section ul li {
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+.internal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.internal-link-btn {
+    display: inline-block;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.internal-link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+    .tab-btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .result-highlight {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .result-highlight .hl-value { font-size: 1.2em; }
+
+    .amort-table { font-size: 11px; }
+    .amort-table td, .amort-table thead th { padding: 6px 8px; }
+
+    .seo-section { padding: 20px; }
+}

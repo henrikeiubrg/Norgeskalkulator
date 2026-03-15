@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-12S8B5H4TN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-12S8B5H4TN');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Finansiell Kalkulator 2026 — NPV, IRR, TVM, Amortisering &amp; Obligasjoner</title>
+<meta name="description" content="Profesjonell finansiell kalkulator med NPV, IRR, nåverdi (TVM), låneamortisering, obligasjonsvurdering og investeringsanalyse. Inspirert av HP 12C/17BII+. Gratis og presis.">
+<meta name="keywords" content="finansiell kalkulator, NPV kalkulator, IRR kalkulator, nåverdi kalkulator, internrente, tidsverdien av penger, TVM kalkulator, amortisering kalkulator, obligasjonsverdi, CAGR kalkulator, investeringskalkulator, netto nåverdi">
+<link rel="canonical" href="https://norgeskalkulator.no/finansiell-kalkulator/" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://norgeskalkulator.no/images/n-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://norgeskalkulator.no/images/n-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://norgeskalkulator.no/images/n-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://norgeskalkulator.no/images/n-icon.png">
+<link rel="shortcut icon" href="https://norgeskalkulator.no/images/n-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Finansiell Kalkulator 2026 — NPV, IRR, TVM, Obligasjoner" />
+<meta property="og:description" content="Profesjonell finansiell kalkulator med netto nåverdi, internrente, tidsverdien av penger, låneamortisering og obligasjonsvurdering. Gratis og presis." />
+<meta property="og:image" content="https://norgeskalkulator.no/images/n-icon.png" />
+<meta property="og:url" content="https://norgeskalkulator.no/finansiell-kalkulator/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Finansiell Kalkulator 2026 — NPV, IRR, TVM, Obligasjoner">
+<meta name="twitter:description" content="Profesjonell finansiell kalkulator med netto nåverdi, internrente, tidsverdien av penger, amortisering og obligasjonsvurdering.">
+<meta name="twitter:image" content="https://norgeskalkulator.no/images/n-icon.png">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#059669">
+
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2043095188942400" crossorigin="anonymous"></script>
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Finansiell Kalkulator 2026",
+  "description": "Profesjonell finansiell kalkulator med NPV, IRR, TVM (tidsverdien av penger), låneamortisering, obligasjonsvurdering og investeringsanalyse. Inspirert av HP 12C/HP 17BII+.",
+  "url": "https://norgeskalkulator.no/finansiell-kalkulator/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "inLanguage": "nb-NO",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "NOK"
+  },
+  "featureList": [
+    "NPV – Netto nåverdi med diskonterte kontantstrømmer",
+    "IRR – Internrente med Newton-Raphson metode",
+    "TVM – Tidsverdien av penger (PV, FV, PMT, NPER, RATE)",
+    "Låneamortisering med månedlig nedbetalingsplan",
+    "Obligasjonsvurdering med varighet og konveksitet",
+    "CAGR, ROI og breakeven-analyse"
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Norgeskalkulator.no",
+    "url": "https://norgeskalkulator.no",
+    "logo": "https://norgeskalkulator.no/images/n-icon.png"
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er NPV (netto nåverdi)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NPV (Net Present Value / netto nåverdi) er summen av alle fremtidige kontantstrømmer diskontert tilbake til nåtiden, minus den initielle investeringen. En positiv NPV betyr at investeringen er lønnsom. Formelen er: NPV = Σ [CFt / (1 + r)^t] − C0, der CFt er kontantstrøm i år t, r er diskonteringsrenten og C0 er den initielle investeringen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er IRR (internrente)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRR (Internal Rate of Return / internrente) er den diskonteringsrenten som gjør NPV lik null. Hvis IRR er høyere enn avkastningskravet (hurdle rate), er investeringen lønnsom. Beregnes med Newton-Raphson iterasjonsmetode for nøyaktighet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er tidsverdien av penger (TVM)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidsverdien av penger (Time Value of Money) beskriver prinsippet om at en krone i dag er mer verdt enn en krone i fremtiden. TVM-kalkulatoren kan løse for nåverdi (PV), fremtidig verdi (FV), betaling (PMT), antall perioder (NPER) eller rente (RATE)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan beregnes låneamortisering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Låneamortisering beregner månedlig betaling med annuitetsformelen: PMT = P × [r(1+r)^n] / [(1+r)^n − 1], der P er lånebeløp, r er månedlig rente og n er antall betalingsperioder. Tabellen viser nøyaktig fordeling mellom avdrag og rente for hver periode."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er obligasjonsvarighet (duration)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Macaulay duration er det vektede gjennomsnittet av tidspunktet for alle kontantstrømmer fra en obligasjon, vektet med nåverdien av hver kontantstrøm. Modified duration viser prosentvis prisendring ved 1 prosentpoeng renteendring. Konveksitet beskriver kurvaturforholdet mellom pris og rente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er CAGR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CAGR (Compound Annual Growth Rate / sammensatt årlig vekstrate) viser den jevne årlige avkastningen en investering ville gitt dersom den vokste med konstant hastighet. Formelen er: CAGR = (Sluttverdi / Startverdi)^(1/år) − 1."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Hjem","item":"https://norgeskalkulator.no/"},
+    {"@type":"ListItem","position":2,"name":"Finansiell Kalkulator","item":"https://norgeskalkulator.no/finansiell-kalkulator/"}
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="../css/calculator-base.css">
+<link rel="stylesheet" href="../css/finansiell-specific.css">
+</head>
+<body>
+
+<!-- Top AdSense -->
+<ins class="adsbygoogle"
+     style="display:block; margin: 0 auto; text-align:center;"
+     data-ad-client="ca-pub-2043095188942400"
+     data-ad-slot="2346545780"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="container">
+
+  <!-- ═══════════════════════════════════════════════════ CALCULATOR CARD -->
+  <div class="calculator-card">
+
+    <div style="font-size:1.5em; text-align:center;">
+      <a href="/" style="text-decoration:none; color:inherit; display:inline-block;">
+        <span class="flag">🇳🇴</span> Norgeskalkulator.no
+      </a>
+    </div>
+
+    <h1 style="font-size:1.5em; font-weight:500; color:#4a5568; text-align:center; margin:10px 0 4px;">
+      Finansiell Kalkulator 2026
+    </h1>
+    <p style="text-align:center; color:#64748b; font-size:14px; margin-bottom:4px;">
+      NPV · IRR · TVM · Amortisering · Obligasjoner · Investeringsanalyse
+    </p>
+
+    <!-- ─── TAB NAVIGATION ─────────────────────────── -->
+    <nav class="tab-nav" role="tablist" aria-label="Kalkulator-kategorier">
+      <button class="tab-btn active" onclick="switchTab('npv', this)" role="tab" aria-selected="true">📊 NPV</button>
+      <button class="tab-btn" onclick="switchTab('irr', this)" role="tab" aria-selected="false">📈 IRR</button>
+      <button class="tab-btn" onclick="switchTab('tvm', this)" role="tab" aria-selected="false">⏱ TVM</button>
+      <button class="tab-btn" onclick="switchTab('amort', this)" role="tab" aria-selected="false">🏦 Amortisering</button>
+      <button class="tab-btn" onclick="switchTab('bond', this)" role="tab" aria-selected="false">📜 Obligasjon</button>
+      <button class="tab-btn" onclick="switchTab('invest', this)" role="tab" aria-selected="false">💹 Investering</button>
+    </nav>
+
+    <!-- ═══════════════════════════════════ TAB: NPV ═══ -->
+    <div id="tab-npv" class="tab-panel active">
+      <h2 class="section-title">NPV — Netto Nåverdi</h2>
+
+      <div class="formula-box">
+        <span class="formula-label">Formel</span>
+        NPV = Σ [ CFₜ / (1 + r)ᵗ ]  −  C₀
+        <br>
+        Lønnsomhetsindeks (PI) = (NPV + C₀) / C₀
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="npv-investment">Initiell investering (kr)</label>
+          <input type="number" id="npv-investment" placeholder="Eks: 500000" value="500000" min="0">
+        </div>
+        <div class="input-group">
+          <label for="npv-rate">Diskonteringsrente (% per år)</label>
+          <input type="number" id="npv-rate" placeholder="Eks: 8" value="8" step="0.1" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="section-title" style="font-size:0.95em; margin-top:10px;">Kontantstrømmer per år</div>
+      <div id="npv-cf-list"></div>
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <button class="btn-sm btn-add" onclick="addNpvCF()">+ Legg til år</button>
+        <button class="btn-sm btn-remove" onclick="removeNpvCF()">− Fjern siste</button>
+      </div>
+
+      <button class="calculate-btn pulse" onclick="calcNPV()">Beregn NPV</button>
+
+      <div id="npv-results" class="results" style="display:none;">
+        <h3>Resultater — NPV</h3>
+        <div id="npv-highlight"></div>
+        <div id="npv-table-wrap"></div>
+        <div class="chart-wrap" style="margin-top:16px;">
+          <canvas id="npv-chart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════ TAB: IRR ═══ -->
+    <div id="tab-irr" class="tab-panel">
+      <h2 class="section-title">IRR — Internrente</h2>
+
+      <div class="formula-box">
+        <span class="formula-label">Formel (Newton-Raphson)</span>
+        0 = Σ [ CFₜ / (1 + IRR)ᵗ ]  −  C₀
+        <br>
+        IRRₙ₊₁ = IRRₙ − NPV(IRRₙ) / NPV'(IRRₙ)
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="irr-investment">Initiell investering (kr)</label>
+          <input type="number" id="irr-investment" placeholder="Eks: 300000" value="300000" min="0">
+        </div>
+        <div class="input-group">
+          <label for="irr-hurdle">Avkastningskrav / Hurdle Rate (%)</label>
+          <input type="number" id="irr-hurdle" placeholder="Eks: 10" value="10" step="0.1" min="0" max="100">
+        </div>
+      </div>
+
+      <div class="section-title" style="font-size:0.95em; margin-top:10px;">Kontantstrømmer per år</div>
+      <div id="irr-cf-list"></div>
+      <div style="display:flex; gap:10px; margin-bottom:16px;">
+        <button class="btn-sm btn-add" onclick="addIrrCF()">+ Legg til år</button>
+        <button class="btn-sm btn-remove" onclick="removeIrrCF()">− Fjern siste</button>
+      </div>
+
+      <button class="calculate-btn pulse" onclick="calcIRR()">Beregn IRR</button>
+
+      <div id="irr-results" class="results" style="display:none;">
+        <h3>Resultater — IRR</h3>
+        <div id="irr-highlight"></div>
+        <div id="irr-sensitivity-wrap"></div>
+        <div class="chart-wrap" style="margin-top:16px;">
+          <canvas id="irr-chart" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════ TAB: TVM ═══ -->
+    <div id="tab-tvm" class="tab-panel">
+      <h2 class="section-title">TVM — Tidsverdien av Penger</h2>
+
+      <div class="formula-box">
+        <span class="formula-label">Grunnformel</span>
+        FV = PV × (1 + r)ⁿ  +  PMT × [(1 + r)ⁿ − 1] / r
+        <br>
+        La ett felt stå tomt — kalkulatoren løser for det ukjente.
+      </div>
+
+      <div class="tvm-solve-select">
+        <label for="tvm-solve">Løs for:</label>
+        <select id="tvm-solve" style="margin-top:6px; width:100%; padding:10px; border-radius:8px; border:1.5px solid #10b981; font-size:15px;">
+          <option value="PV">PV — Nåverdi</option>
+          <option value="FV">FV — Fremtidig verdi</option>
+          <option value="PMT">PMT — Periodisk betaling</option>
+          <option value="NPER">NPER — Antall perioder</option>
+          <option value="RATE">RATE — Rente per periode</option>
+        </select>
+      </div>
+
+      <div class="tvm-grid">
+        <div class="input-group">
+          <label for="tvm-pv">PV — Nåverdi (kr) <span style="color:#94a3b8;font-weight:400;">(negativt = utbetaling)</span></label>
+          <input type="number" id="tvm-pv" placeholder="Eks: -100000">
+        </div>
+        <div class="input-group">
+          <label for="tvm-fv">FV — Fremtidig verdi (kr)</label>
+          <input type="number" id="tvm-fv" placeholder="Eks: 200000">
+        </div>
+        <div class="input-group">
+          <label for="tvm-pmt">PMT — Betaling per periode (kr) <span style="color:#94a3b8;font-weight:400;">(negativt = utbetaling)</span></label>
+          <input type="number" id="tvm-pmt" placeholder="Eks: -5000" value="0">
+        </div>
+        <div class="input-group">
+          <label for="tvm-rate">Rente per periode (%)</label>
+          <input type="number" id="tvm-rate" placeholder="Eks: 0.5" step="0.01">
+        </div>
+        <div class="input-group">
+          <label for="tvm-nper">NPER — Antall perioder</label>
+          <input type="number" id="tvm-nper" placeholder="Eks: 60" min="1">
+        </div>
+        <div class="input-group">
+          <label for="tvm-type">Betalingstype</label>
+          <select id="tvm-type">
+            <option value="0">Etterskuddsvis (ordinær annuitet)</option>
+            <option value="1">Forhåndsvis (annuitet due)</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="calculate-btn pulse" onclick="calcTVM()">Løs TVM</button>
+
+      <div id="tvm-results" class="results" style="display:none;">
+        <h3>Resultater — TVM</h3>
+        <div id="tvm-output"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════ TAB: AMORTISERING ═ -->
+    <div id="tab-amort" class="tab-panel">
+      <h2 class="section-title">Låneamortisering</h2>
+
+      <div class="formula-box">
+        <span class="formula-label">Formel (annuitetslån)</span>
+        PMT = P × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]
+        <br>
+        Rentedel = Restlån × r  |  Avdragsdel = PMT − Rentedel
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="amort-principal">Lånebeløp (kr)</label>
+          <input type="number" id="amort-principal" placeholder="Eks: 3000000" value="3000000" min="1">
+        </div>
+        <div class="input-group">
+          <label for="amort-rate">Nominell rente (% per år)</label>
+          <input type="number" id="amort-rate" placeholder="Eks: 5.5" value="5.5" step="0.1" min="0.01">
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="amort-term">Nedbetalingstid (år)</label>
+          <input type="number" id="amort-term" placeholder="Eks: 25" value="25" min="1" max="50">
+        </div>
+        <div class="input-group">
+          <label for="amort-extra">Ekstra månedlig betaling (kr)</label>
+          <input type="number" id="amort-extra" placeholder="0" value="0" min="0">
+        </div>
+      </div>
+
+      <button class="calculate-btn pulse" onclick="calcAmort()">Beregn amortisering</button>
+
+      <div id="amort-results" class="results" style="display:none;">
+        <h3>Resultater — Amortisering</h3>
+        <div id="amort-summary"></div>
+        <div class="chart-wrap" style="margin-top:16px;">
+          <canvas id="amort-chart" height="220"></canvas>
+        </div>
+        <div id="amort-table-wrap" class="amort-table-wrap" style="margin-top:16px;"></div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════ TAB: OBLIGASJON ═══ -->
+    <div id="tab-bond" class="tab-panel">
+      <h2 class="section-title">Obligasjonsvurdering</h2>
+
+      <div class="formula-box">
+        <span class="formula-label">Formel</span>
+        Pris = Σ [C / (1+y)ᵗ]  +  F / (1+y)ⁿ
+        <br>
+        Macaulay Duration = Σ [t × PV(CFₜ)] / Pris
+        <br>
+        Modified Duration = Macaulay Duration / (1 + y)
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="bond-face">Pålydende verdi (kr)</label>
+          <input type="number" id="bond-face" placeholder="Eks: 1000000" value="1000000" min="1">
+        </div>
+        <div class="input-group">
+          <label for="bond-coupon">Kupongrate (% per år)</label>
+          <input type="number" id="bond-coupon" placeholder="Eks: 4.5" value="4.5" step="0.01" min="0">
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="bond-ytm">Effektiv rente / YTM (% per år)</label>
+          <input type="number" id="bond-ytm" placeholder="Eks: 5.0" value="5.0" step="0.01" min="0.01">
+        </div>
+        <div class="input-group">
+          <label for="bond-years">År til forfall</label>
+          <input type="number" id="bond-years" placeholder="Eks: 10" value="10" min="1" max="100">
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <label for="bond-freq">Kuponghyppighet</label>
+          <select id="bond-freq">
+            <option value="1">Årlig</option>
+            <option value="2" selected>Halvårlig</option>
+            <option value="4">Kvartalsvis</option>
+          </select>
+        </div>
+        <div class="input-group" style="display:flex; align-items:flex-end;">
+          <button class="calculate-btn pulse" style="margin:0;" onclick="calcBond()">Beregn obligasjon</button>
+        </div>
+      </div>
+
+      <div id="bond-results" class="results" style="display:none;">
+        <h3>Resultater — Obligasjon</h3>
+        <div id="bond-output"></div>
+      </div>
+    </div>
+
+    <!-- ═════════════════════════════ TAB: INVESTERING ═ -->
+    <div id="tab-invest" class="tab-panel">
+      <h2 class="section-title">Investeringsanalyse — CAGR, ROI & Breakeven</h2>
+
+      <!-- CAGR -->
+      <div class="section-title" style="font-size:0.95em;">📈 CAGR — Sammensatt Årlig Vekstrate</div>
+      <div class="formula-box">
+        <span class="formula-label">Formel</span>
+        CAGR = (Sluttverdi / Startverdi)^(1/år) − 1
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="cagr-start">Startverdi (kr)</label>
+          <input type="number" id="cagr-start" placeholder="Eks: 100000" value="100000">
+        </div>
+        <div class="input-group">
+          <label for="cagr-end">Sluttverdi (kr)</label>
+          <input type="number" id="cagr-end" placeholder="Eks: 250000" value="250000">
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="cagr-years">Antall år</label>
+          <input type="number" id="cagr-years" placeholder="Eks: 7" value="7" min="0.1" step="0.5">
+        </div>
+        <div class="input-group" style="display:flex; align-items:flex-end;">
+          <button class="btn-sm btn-add" style="width:100%; padding:13px;" onclick="calcCAGR()">Beregn CAGR</button>
+        </div>
+      </div>
+      <div id="cagr-result"></div>
+
+      <!-- ROI -->
+      <div class="section-title" style="font-size:0.95em; margin-top:24px;">💰 ROI — Avkastning på Investering</div>
+      <div class="formula-box">
+        <span class="formula-label">Formel</span>
+        ROI = (Nettogevinst / Kostnad) × 100%
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="roi-cost">Investeringskostnad (kr)</label>
+          <input type="number" id="roi-cost" placeholder="Eks: 200000" value="200000">
+        </div>
+        <div class="input-group">
+          <label for="roi-return">Total avkastning (kr)</label>
+          <input type="number" id="roi-return" placeholder="Eks: 320000" value="320000">
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="roi-years">Holdetid (år)</label>
+          <input type="number" id="roi-years" placeholder="Eks: 5" value="5" min="0.1" step="0.5">
+        </div>
+        <div class="input-group" style="display:flex; align-items:flex-end;">
+          <button class="btn-sm btn-add" style="width:100%; padding:13px;" onclick="calcROI()">Beregn ROI</button>
+        </div>
+      </div>
+      <div id="roi-result"></div>
+
+      <!-- Breakeven -->
+      <div class="section-title" style="font-size:0.95em; margin-top:24px;">⚖️ Breakeven-analyse</div>
+      <div class="formula-box">
+        <span class="formula-label">Formel</span>
+        Breakeven-volum = Faste kostnader / (Salgspris − Variabel kostnad per enhet)
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="be-fixed">Faste kostnader (kr)</label>
+          <input type="number" id="be-fixed" placeholder="Eks: 500000" value="500000">
+        </div>
+        <div class="input-group">
+          <label for="be-price">Salgspris per enhet (kr)</label>
+          <input type="number" id="be-price" placeholder="Eks: 250" value="250">
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group">
+          <label for="be-var">Variabel kostnad per enhet (kr)</label>
+          <input type="number" id="be-var" placeholder="Eks: 100" value="100">
+        </div>
+        <div class="input-group">
+          <label for="be-target">Målvolum (enheter, valgfritt)</label>
+          <input type="number" id="be-target" placeholder="Eks: 5000" value="5000">
+        </div>
+      </div>
+      <button class="btn-sm btn-add" style="padding:13px 24px; width:100%; font-size:15px;" onclick="calcBreakeven()">Beregn Breakeven</button>
+      <div id="be-result" style="margin-top:14px;"></div>
+    </div>
+
+  </div><!-- /.calculator-card -->
+
+  <!-- ═══════════════════════════════════════════════ SEO CONTENT -->
+  <div class="seo-section">
+    <h1 style="color:#1e3a5f; font-size:1.8em; font-weight:700; margin-bottom:14px;">
+      Finansiell Kalkulator — NPV, IRR, TVM og mer
+    </h1>
+    <p>
+      En profesjonell finansiell kalkulator er uunnværlig for investorer, bedriftsledere, regnskapsførere og studenter. Vår kalkulator er inspirert av den legendariske HP 12C og HP 17BII+ — verktøyene finansielle fagfolk verden over har stolt på i tiår. Her finner du alt du trenger for å ta presise, velinformerte finansielle beslutninger.
+    </p>
+
+    <h2>Hva er Netto Nåverdi (NPV)?</h2>
+    <p>
+      <strong>Netto nåverdi (NPV)</strong> er det viktigste verktøyet i kapitalbudsjettering. Metoden diskonterer alle fremtidige kontantstrømmer tilbake til dagens verdi ved hjelp av et avkastningskrav (diskonteringsrenten), og trekker fra den initielle investeringen. Formelen er:
+    </p>
+    <p style="font-family:monospace; background:#f1f5f9; padding:12px; border-radius:8px; color:#1e293b;">
+      NPV = Σ [ CFₜ / (1 + r)ᵗ ] − C₀
+    </p>
+    <p>
+      En <strong>positiv NPV</strong> betyr at investeringen gir mer enn avkastningskravet og er lønnsom. En negativ NPV betyr at du taper verdi relativt til kravet. <em>Eksempel:</em> Du investerer 500 000 kr og forventer kontantstrømmer på 150 000 kr per år i 5 år, med 8% diskonteringsrente. NPV ≈ 99 272 kr — investeringen er lønnsom.
+    </p>
+
+    <h2>Internrente (IRR) og Newton-Raphson-metoden</h2>
+    <p>
+      <strong>Internrenten (IRR)</strong> er den renten som gjør NPV eksakt lik null — altså den implisitte avkastningen på investeringen. Siden IRR-ligningen ikke har en lukket løsning, bruker vi <strong>Newton-Raphson iterasjon</strong> for å finne svaret med høy presisjon (konvergerer typisk på under 50 iterasjoner). Regelen er enkel: hvis IRR &gt; avkastningskrav, godkjenn prosjektet.
+    </p>
+
+    <h2>Tidsverdien av Penger (TVM)</h2>
+    <p>
+      TVM-kalkulatoren lar deg løse for hvilken som helst av de fem variablene — <strong>PV (nåverdi), FV (fremtidig verdi), PMT (betaling), NPER (perioder)</strong> og <strong>RATE (rente)</strong> — når de øvrige er kjent. Dette er grunnlaget for all finansiell modellering: et boliglån, en spareavtale, et leasingkontrahkt eller en pensjonsberegning kan alle uttrykkes som TVM-problemer.
+    </p>
+    <ul>
+      <li><strong>PV:</strong> Hva er en fremtidig sum verdt i dag? Viktig for investeringsvurderinger.</li>
+      <li><strong>FV:</strong> Hva vokser sparingen til over tid med rentes-rente-effekten?</li>
+      <li><strong>PMT:</strong> Hva blir den månedlige betalingen på et lån eller en livrentekontrakt?</li>
+      <li><strong>NPER:</strong> Hvor mange perioder tar det å nå et sparmål?</li>
+      <li><strong>RATE:</strong> Hva er den implisitte renten i en kontraktstrøm?</li>
+    </ul>
+
+    <h2>Låneamortisering</h2>
+    <p>
+      Amortisering viser hvordan et lån nedbetales over tid. Et annuitetslån har fast månedlig betaling, men fordelingen mellom avdrag og rente endrer seg — tidlig i lånets løpetid er rentedelen størst, mens avdragsdelen øker gradvis. Kalkulatoren viser full nedbetalingsplan, total rentekostnad og effekten av ekstra innbetalinger. Nyttig for <a href="/boliglan-kalkulator/" style="color:#059669;">boliglånberegning</a> og <a href="/studielan-kalkulator/" style="color:#059669;">studielånsplanlegging</a>.
+    </p>
+
+    <h2>Obligasjonsvurdering — Pris, Varighet og Konveksitet</h2>
+    <p>
+      Obligasjonsprisen beregnes som nåverdien av alle fremtidige kuponger pluss nåverdien av pålydende ved forfall. Når markedsrenten stiger, faller obligasjonsprisen (og omvendt). <strong>Macaulay duration</strong> måler rentesensitiviteten — jo lengre duration, jo mer prissensitiv er obligasjonen. <strong>Modifisert duration</strong> gir prosentvis prisendring per prosentpoeng renteendring. <strong>Konveksitet</strong> forbedrer estimatene ytterligere.
+    </p>
+
+    <h2>CAGR, ROI og Breakeven</h2>
+    <p>
+      <strong>CAGR</strong> (sammensatt årlig vekstrate) er standardmålet for investeringsavkastning over tid — det eliminerer volatilitet og gir en jevn, sammenlignbar rate. <strong>ROI</strong> viser totalavkastningen i prosent. <strong>Breakeven-analysen</strong> beregner det minimale salgsvolumet du trenger for å dekke alle kostnader — kritisk informasjon for forretningsplanlegging og budsjett.
+    </p>
+
+    <h2>Relaterte kalkulatorer</h2>
+    <div class="internal-links">
+      <a href="/boliglan-kalkulator/" class="internal-link-btn">🏠 Boliglånkalkulator</a>
+      <a href="/studielan-kalkulator/" class="internal-link-btn">🎓 Studielånskalkulator</a>
+      <a href="/nettolonnkalkulator/" class="internal-link-btn">💼 Nettolønnskalkulator</a>
+      <a href="/sparing-over-under-snittet/" class="internal-link-btn">💰 Sparekalkulator</a>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Ofte stilte spørsmål</h2>
+    <details style="margin-bottom:12px; border:1px solid #d1fae5; border-radius:8px; padding:14px;">
+      <summary style="font-weight:700; color:#065f46; cursor:pointer;">Hva er forskjellen på NPV og IRR?</summary>
+      <p style="margin-top:10px; color:#374151;">NPV gir et absolutt tall (kroner) som viser verdiskapning, mens IRR gir en relativ avkastning i prosent. NPV er generelt å foretrekke fordi den tar hensyn til prosjektstørrelse og kan brukes når kontantstrømmene skifter fortegn flere ganger (IRR kan gi feil svar i slike tilfeller).</p>
+    </details>
+    <details style="margin-bottom:12px; border:1px solid #d1fae5; border-radius:8px; padding:14px;">
+      <summary style="font-weight:700; color:#065f46; cursor:pointer;">Hva betyr negativt fortegn i TVM?</summary>
+      <p style="margin-top:10px; color:#374151;">I finansiell TVM-konvensjon representerer negative tall utbetalinger (penger ut av lommen) og positive tall innbetalinger. Eks: et lån på 1 000 000 kr tas inn som PV = +1 000 000, mens månedlige avdrag er PMT = −8 000.</p>
+    </details>
+    <details style="margin-bottom:12px; border:1px solid #d1fae5; border-radius:8px; padding:14px;">
+      <summary style="font-weight:700; color:#065f46; cursor:pointer;">Hva er en obligasjon handles til kurs over/under pari?</summary>
+      <p style="margin-top:10px; color:#374151;">Når markedsrenten er <em>lavere</em> enn kupongrate handles obligasjonen over pari (kurs > 100). Når markedsrenten er <em>høyere</em>, handles den under pari. En obligasjon med 4,5% kupong og 5% YTM vil alltid ha en pris under pålydende.</p>
+    </details>
+    <details style="margin-bottom:12px; border:1px solid #d1fae5; border-radius:8px; padding:14px;">
+      <summary style="font-weight:700; color:#065f46; cursor:pointer;">Hva er en god IRR?</summary>
+      <p style="margin-top:10px; color:#374151;">Det avhenger av risikoen og kapitalkostnaden. Som tommelfingerregel: i eiendom aksepteres gjerne 8–12% IRR, i PE-fond kreves 20%+. Sammenlignet med avkastningskravet (WACC): prosjekter med IRR > WACC skaper verdi.</p>
+    </details>
+  </div>
+
+</div><!-- /.container -->
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script>
+// ─────────────────────────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────────────────────────
+const fmt = (n, decimals = 0) => {
+  if (!isFinite(n)) return '—';
+  return new Intl.NumberFormat('nb-NO', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  }).format(n);
+};
+
+const fmtKr = (n, decimals = 0) => isFinite(n) ? fmt(n, decimals) + ' kr' : '—';
+const fmtPct = (n, decimals = 2) => isFinite(n) ? fmt(n * 100, decimals) + ' %' : '—';
+
+function showError(container, msg) {
+  document.getElementById(container).innerHTML =
+    `<div class="error-msg">⚠️ ${msg}</div>`;
+  document.getElementById(container).style.display = 'block';
+}
+
+// ─────────────────────────────────────────────────────────────────
+// TAB SWITCHING
+// ─────────────────────────────────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+}
+
+// ─────────────────────────────────────────────────────────────────
+// CASH FLOW HELPERS
+// ─────────────────────────────────────────────────────────────────
+function buildCFList(containerId, count = 5, prefix = 'cf') {
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  for (let i = 1; i <= count; i++) {
+    el.innerHTML += `
+      <div class="cf-row">
+        <label>År ${i}</label>
+        <input type="number" id="${prefix}-${i}" placeholder="Eks: 120000" value="">
+      </div>`;
+  }
+}
+
+function getCFs(prefix) {
+  const vals = [];
+  let i = 1;
+  while (document.getElementById(prefix + '-' + i)) {
+    const v = parseFloat(document.getElementById(prefix + '-' + i).value);
+    vals.push(isNaN(v) ? 0 : v);
+    i++;
+  }
+  return vals;
+}
+
+function countCFs(prefix) {
+  let i = 1;
+  while (document.getElementById(prefix + '-' + i)) i++;
+  return i - 1;
+}
+
+// ── NPV cash flows ────────────────────────────────────────────────
+let npvCFCount = 5;
+buildCFList('npv-cf-list', npvCFCount, 'npv-cf');
+// Pre-fill example
+[150000,150000,200000,200000,250000].forEach((v, i) => {
+  const el = document.getElementById('npv-cf-' + (i+1));
+  if (el) el.value = v;
+});
+
+function addNpvCF() {
+  npvCFCount++;
+  document.getElementById('npv-cf-list').innerHTML +=
+    `<div class="cf-row"><label>År ${npvCFCount}</label>
+     <input type="number" id="npv-cf-${npvCFCount}" placeholder="Eks: 120000" value=""></div>`;
+}
+function removeNpvCF() {
+  if (npvCFCount <= 1) return;
+  const el = document.querySelector(`#npv-cf-list .cf-row:last-child`);
+  if (el) { el.remove(); npvCFCount--; }
+}
+
+// ── IRR cash flows ────────────────────────────────────────────────
+let irrCFCount = 5;
+buildCFList('irr-cf-list', irrCFCount, 'irr-cf');
+[80000,100000,120000,140000,160000].forEach((v, i) => {
+  const el = document.getElementById('irr-cf-' + (i+1));
+  if (el) el.value = v;
+});
+
+function addIrrCF() {
+  irrCFCount++;
+  document.getElementById('irr-cf-list').innerHTML +=
+    `<div class="cf-row"><label>År ${irrCFCount}</label>
+     <input type="number" id="irr-cf-${irrCFCount}" placeholder="Eks: 100000" value=""></div>`;
+}
+function removeIrrCF() {
+  if (irrCFCount <= 1) return;
+  const el = document.querySelector(`#irr-cf-list .cf-row:last-child`);
+  if (el) { el.remove(); irrCFCount--; }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// NPV CALCULATOR
+// ─────────────────────────────────────────────────────────────────
+let npvChartInst = null;
+
+function npvCalcCore(investment, rate, cashflows) {
+  // Returns { npv, pi, discounted[] }
+  const r = rate / 100;
+  let npv = -investment;
+  const discounted = cashflows.map((cf, i) => {
+    const d = cf / Math.pow(1 + r, i + 1);
+    return d;
+  });
+  npv += discounted.reduce((a, b) => a + b, 0);
+  const pi = investment > 0 ? (npv + investment) / investment : null;
+  return { npv, pi, discounted };
+}
+
+function calcNPV() {
+  const investment = parseFloat(document.getElementById('npv-investment').value);
+  const rate = parseFloat(document.getElementById('npv-rate').value);
+  const cfs = getCFs('npv-cf');
+
+  if (isNaN(investment) || investment <= 0) return showError('npv-results', 'Initiell investering må være positiv.');
+  if (isNaN(rate) || rate < 0) return showError('npv-results', 'Diskonteringsrente kan ikke være negativ.');
+  if (cfs.every(v => v === 0)) return showError('npv-results', 'Legg inn minst én kontantstrøm.');
+
+  const { npv, pi, discounted } = npvCalcCore(investment, rate, cfs);
+
+  const resultsEl = document.getElementById('npv-results');
+  resultsEl.style.display = 'block';
+
+  const npvColor = npv >= 0 ? 'result-positive' : 'result-negative';
+  const npvSign = npv >= 0 ? '✅ Lønnsom' : '❌ Ulønnsom';
+
+  document.getElementById('npv-highlight').innerHTML = `
+    <div class="result-highlight">
+      <span>Netto Nåverdi (NPV)</span>
+      <span class="hl-value ${npvColor}">${fmtKr(npv, 0)}</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Status</span>
+        <span class="result-value">${npvSign}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Lønnsomhetsindeks (PI)</span>
+        <span class="result-value">${pi !== null ? pi.toFixed(3) : '—'}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Sum kontantstrømmer</span>
+        <span class="result-value">${fmtKr(cfs.reduce((a,b)=>a+b,0))}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Sum diskonterte CF</span>
+        <span class="result-value">${fmtKr(discounted.reduce((a,b)=>a+b,0), 0)}</span>
+      </div>
+    </div>`;
+
+  // Year-by-year table
+  let tableHTML = `<table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:10px;">
+    <thead>
+      <tr style="background:#065f46;color:white;">
+        <th style="padding:9px 12px;text-align:left;">År</th>
+        <th style="padding:9px 12px;text-align:right;">Kontantstrøm</th>
+        <th style="padding:9px 12px;text-align:right;">Diskonteringsfaktor</th>
+        <th style="padding:9px 12px;text-align:right;">Nåverdi</th>
+        <th style="padding:9px 12px;text-align:right;">Kumulativ NPV</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#f0fdf4;">
+        <td style="padding:8px 12px;font-weight:600;color:#065f46;">0</td>
+        <td style="padding:8px 12px;text-align:right;color:#dc2626;font-weight:600;">${fmtKr(-investment)}</td>
+        <td style="padding:8px 12px;text-align:right;">1,000000</td>
+        <td style="padding:8px 12px;text-align:right;color:#dc2626;font-weight:600;">${fmtKr(-investment)}</td>
+        <td style="padding:8px 12px;text-align:right;color:#dc2626;font-weight:600;">${fmtKr(-investment)}</td>
+      </tr>`;
+
+  let cumNPV = -investment;
+  discounted.forEach((d, i) => {
+    cumNPV += d;
+    const r = rate / 100;
+    const factor = 1 / Math.pow(1 + r, i + 1);
+    const rowBg = i % 2 === 0 ? '#fff' : '#f0fdf4';
+    const cumColor = cumNPV >= 0 ? '#059669' : '#dc2626';
+    tableHTML += `<tr style="background:${rowBg};">
+      <td style="padding:8px 12px;font-weight:600;color:#065f46;">${i + 1}</td>
+      <td style="padding:8px 12px;text-align:right;">${fmtKr(cfs[i])}</td>
+      <td style="padding:8px 12px;text-align:right;">${factor.toFixed(6)}</td>
+      <td style="padding:8px 12px;text-align:right;">${fmtKr(d, 0)}</td>
+      <td style="padding:8px 12px;text-align:right;font-weight:700;color:${cumColor};">${fmtKr(cumNPV, 0)}</td>
+    </tr>`;
+  });
+  tableHTML += '</tbody></table>';
+  document.getElementById('npv-table-wrap').innerHTML = tableHTML;
+
+  // Chart
+  const labels = ['Jahr 0', ...cfs.map((_, i) => `År ${i + 1}`)];
+  const cfData = [-investment, ...cfs];
+  const discData = [-investment, ...discounted];
+
+  if (npvChartInst) npvChartInst.destroy();
+  npvChartInst = new Chart(document.getElementById('npv-chart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Kontantstrøm (kr)',
+          data: cfData,
+          backgroundColor: cfData.map(v => v >= 0 ? 'rgba(16,185,129,0.7)' : 'rgba(239,68,68,0.7)'),
+          borderRadius: 4
+        },
+        {
+          label: 'Diskontert nåverdi (kr)',
+          data: discData,
+          backgroundColor: discData.map(v => v >= 0 ? 'rgba(6,95,70,0.5)' : 'rgba(153,27,27,0.5)'),
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Kontantstrømmer vs. Diskonterte nåverdier' },
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        y: { ticks: { callback: v => fmt(v / 1000, 0) + 'k' } }
+      }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// IRR CALCULATOR (Newton-Raphson)
+// ─────────────────────────────────────────────────────────────────
+let irrChartInst = null;
+
+function irrNewtonRaphson(investment, cashflows) {
+  // cash flows indexed 1..n, investment at t=0
+  const allCF = [-investment, ...cashflows];
+
+  function npvAtRate(r) {
+    return allCF.reduce((sum, cf, t) => sum + cf / Math.pow(1 + r, t), 0);
+  }
+  function dnpvAtRate(r) {
+    return allCF.reduce((sum, cf, t) => sum - t * cf / Math.pow(1 + r, t + 1), 0);
+  }
+
+  let guess = 0.1;
+  for (let iter = 0; iter < 500; iter++) {
+    const npv = npvAtRate(guess);
+    const dnpv = dnpvAtRate(guess);
+    if (Math.abs(dnpv) < 1e-12) break;
+    const next = guess - npv / dnpv;
+    if (Math.abs(next - guess) < 1e-10) return next;
+    guess = next;
+    // keep guess in reasonable bounds
+    if (guess < -0.9999) guess = -0.9999;
+    if (guess > 100) guess = 100;
+  }
+  return isFinite(guess) ? guess : null;
+}
+
+function calcIRR() {
+  const investment = parseFloat(document.getElementById('irr-investment').value);
+  const hurdle = parseFloat(document.getElementById('irr-hurdle').value) / 100;
+  const cfs = getCFs('irr-cf');
+
+  if (isNaN(investment) || investment <= 0) return showError('irr-results', 'Initiell investering må være positiv.');
+  if (cfs.every(v => v === 0)) return showError('irr-results', 'Legg inn minst én kontantstrøm.');
+
+  const irr = irrNewtonRaphson(investment, cfs);
+
+  const resultsEl = document.getElementById('irr-results');
+  resultsEl.style.display = 'block';
+
+  if (irr === null || !isFinite(irr)) {
+    document.getElementById('irr-highlight').innerHTML =
+      `<div class="error-msg">Kunne ikke beregne IRR — kontantstrømmene gir ingen gyldig løsning.</div>`;
+    return;
+  }
+
+  const irrPct = irr * 100;
+  const decision = irr > hurdle ? '✅ Godkjenn (IRR > avkastningskrav)' : '❌ Avvis (IRR < avkastningskrav)';
+  const irrColor = irr > hurdle ? 'result-positive' : 'result-negative';
+
+  const allCF = [-investment, ...cfs];
+  const npvAtHurdle = allCF.reduce((s, cf, t) => s + cf / Math.pow(1 + hurdle, t), 0);
+
+  document.getElementById('irr-highlight').innerHTML = `
+    <div class="result-highlight">
+      <span>Internrente (IRR)</span>
+      <span class="hl-value ${irrColor}">${irrPct.toFixed(4)} %</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Beslutning</span>
+        <span class="result-value">${decision}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Avkastningskrav (hurdle rate)</span>
+        <span class="result-value">${(hurdle*100).toFixed(2)} %</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">Margin over krav</span>
+        <span class="result-value">${((irr-hurdle)*100).toFixed(2)} pp</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:180px;">
+        <span class="result-label">NPV ved avkastningskrav</span>
+        <span class="result-value">${fmtKr(npvAtHurdle, 0)}</span>
+      </div>
+    </div>`;
+
+  // Sensitivity table: NPV at various rates
+  const rates = [2, 4, 6, 8, 10, 12, 15, 20, 25];
+  let sensHTML = `<div class="section-title" style="font-size:0.9em;margin-top:16px;">Sensitivitetsanalyse — NPV ved ulike renter</div>
+    <table class="sensitivity-table">
+      <thead><tr><th>Rente (%)</th><th>NPV (kr)</th><th>Vurdering</th></tr></thead>
+      <tbody>`;
+  rates.forEach(rp => {
+    const r = rp / 100;
+    const npvR = allCF.reduce((s, cf, t) => s + cf / Math.pow(1 + r, t), 0);
+    const cls = npvR >= 0 ? 'pos' : 'neg';
+    const verdict = npvR >= 0 ? '✅ Lønnsom' : '❌ Ulønnsom';
+    sensHTML += `<tr><td>${rp},00 %</td><td class="${cls}">${fmtKr(npvR, 0)}</td><td>${verdict}</td></tr>`;
+  });
+  sensHTML += '</tbody></table>';
+  document.getElementById('irr-sensitivity-wrap').innerHTML = sensHTML;
+
+  // NPV profile chart
+  const chartRates = Array.from({ length: 50 }, (_, i) => i * 0.01); // 0..49%
+  const chartNPVs = chartRates.map(r =>
+    allCF.reduce((s, cf, t) => s + cf / Math.pow(1 + r, t), 0)
+  );
+  const chartLabels = chartRates.map(r => (r * 100).toFixed(0) + '%');
+
+  if (irrChartInst) irrChartInst.destroy();
+  irrChartInst = new Chart(document.getElementById('irr-chart'), {
+    type: 'line',
+    data: {
+      labels: chartLabels,
+      datasets: [{
+        label: 'NPV (kr)',
+        data: chartNPVs,
+        borderColor: '#10b981',
+        backgroundColor: 'rgba(16,185,129,0.1)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'NPV-profil — NPV som funksjon av diskonteringsrente' },
+        annotation: {
+          annotations: {
+            zeroline: { type: 'line', yMin: 0, yMax: 0, borderColor: '#94a3b8', borderWidth: 1 }
+          }
+        }
+      },
+      scales: {
+        y: {
+          ticks: { callback: v => fmt(v / 1000, 0) + 'k' }
+        }
+      }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────
+// TVM CALCULATOR
+// ─────────────────────────────────────────────────────────────────
+function calcTVM() {
+  const solve = document.getElementById('tvm-solve').value;
+  const type = parseInt(document.getElementById('tvm-type').value); // 0=end, 1=begin
+
+  const getVal = id => {
+    const v = parseFloat(document.getElementById(id).value);
+    return isNaN(v) ? null : v;
+  };
+
+  let pv   = getVal('tvm-pv');
+  let fv   = getVal('tvm-fv');
+  let pmt  = getVal('tvm-pmt') ?? 0;
+  let rate = getVal('tvm-rate');
+  let nper = getVal('tvm-nper');
+
+  const resultsEl = document.getElementById('tvm-results');
+  resultsEl.style.display = 'block';
+
+  let result = null;
+  let label  = '';
+  let explanation = '';
+
+  try {
+    if (solve === 'PV') {
+      if (rate === null || nper === null) return showError('tvm-results', 'RATE og NPER kreves for å beregne PV.');
+      const r = rate / 100;
+      if (Math.abs(r) < 1e-10) {
+        result = -(fv + pmt * nper);
+      } else {
+        const pvFactor = Math.pow(1 + r, -nper);
+        const pvFV = (fv ?? 0) * pvFactor;
+        const pvPMT = pmt * (1 - pvFactor) / r * (type === 1 ? (1 + r) : 1);
+        result = -(pvFV + pvPMT);
+      }
+      label = 'Nåverdi (PV)';
+      explanation = `Nåverdien av en fremtidig sum på ${fmtKr(fv ?? 0)} over ${nper} perioder ved ${rate} % er ${fmtKr(result, 2)}.`;
+
+    } else if (solve === 'FV') {
+      if (rate === null || nper === null || pv === null) return showError('tvm-results', 'PV, RATE og NPER kreves for å beregne FV.');
+      const r = rate / 100;
+      if (Math.abs(r) < 1e-10) {
+        result = -(pv + pmt * nper);
+      } else {
+        const growth = Math.pow(1 + r, nper);
+        result = -(pv * growth + pmt * (growth - 1) / r * (type === 1 ? (1 + r) : 1));
+      }
+      label = 'Fremtidig verdi (FV)';
+      explanation = `Et nåbeløp på ${fmtKr(pv)} vokser til ${fmtKr(result, 2)} etter ${nper} perioder ved ${rate} % rente.`;
+
+    } else if (solve === 'PMT') {
+      if (rate === null || nper === null || pv === null) return showError('tvm-results', 'PV, RATE og NPER kreves for å beregne PMT.');
+      const r = rate / 100;
+      if (Math.abs(r) < 1e-10) {
+        result = -((pv + (fv ?? 0)) / nper);
+      } else {
+        const growth = Math.pow(1 + r, nper);
+        const factor = type === 1 ? (1 + r) : 1;
+        result = -(pv * growth + (fv ?? 0)) * r / ((growth - 1) * factor);
+      }
+      label = 'Periodisk betaling (PMT)';
+      explanation = `For å nedbetale ${fmtKr(pv)} over ${nper} perioder ved ${rate} % rente er betalingen per periode ${fmtKr(result, 2)}.`;
+
+    } else if (solve === 'NPER') {
+      if (rate === null || pv === null) return showError('tvm-results', 'PV og RATE kreves for å beregne NPER.');
+      const r = rate / 100;
+      if (Math.abs(r) < 1e-10) {
+        if (Math.abs(pmt) < 1e-10) return showError('tvm-results', 'Kan ikke beregne NPER når rente og PMT begge er null.');
+        result = -(pv + (fv ?? 0)) / pmt;
+      } else {
+        const factor = type === 1 ? (1 + r) : 1;
+        const num = Math.log(((fv ?? 0) - pmt * factor / r) / (pv + pmt * factor / r));
+        const den = Math.log(1 + r);
+        result = -num / den;
+      }
+      label = 'Antall perioder (NPER)';
+      explanation = `Det tar ${result.toFixed(2)} perioder å nå målet med de angitte parameterne.`;
+
+    } else if (solve === 'RATE') {
+      if (nper === null || pv === null) return showError('tvm-results', 'PV og NPER kreves for å beregne RATE.');
+      // Newton-Raphson for rate
+      let r = 0.01;
+      const fvVal = fv ?? 0;
+      for (let i = 0; i < 500; i++) {
+        const factor = type === 1 ? (1 + r) : 1;
+        const growth = Math.pow(1 + r, nper);
+        const f = pv * growth + pmt * factor * (growth - 1) / r + fvVal;
+        const dg = nper * Math.pow(1 + r, nper - 1);
+        const df = pv * dg + pmt * factor * (r * dg - (growth - 1)) / (r * r);
+        const nextR = r - f / df;
+        if (Math.abs(nextR - r) < 1e-12) { r = nextR; break; }
+        r = nextR;
+        if (r < -0.9999) r = -0.9999;
+      }
+      result = r * 100;
+      label = 'Rente per periode (RATE)';
+      explanation = `Den implisitte renten er ${result.toFixed(6)} % per periode.`;
+    }
+  } catch(e) {
+    return showError('tvm-results', 'Beregningsfeil: ' + e.message);
+  }
+
+  if (!isFinite(result)) return showError('tvm-results', 'Ingen gyldig løsning funnet med de angitte parameterne. Sjekk innskrevne verdier.');
+
+  document.getElementById('tvm-output').innerHTML = `
+    <div class="result-highlight">
+      <span>${label}</span>
+      <span class="hl-value">${fmtKr(result, 4)}</span>
+    </div>
+    <p style="color:#374151; font-size:14px; margin:10px 0 16px;">${explanation}</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead><tr style="background:#065f46;color:white;">
+        <th style="padding:9px 12px;text-align:left;">Parameter</th>
+        <th style="padding:9px 12px;text-align:right;">Verdi</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:#f0fdf4;"><td style="padding:8px 12px;font-weight:600;">PV (Nåverdi)</td><td style="padding:8px 12px;text-align:right;">${solve === 'PV' ? `<strong>${fmtKr(result,4)}</strong>` : (pv !== null ? fmtKr(pv) : '—')}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:600;">FV (Fremtidig verdi)</td><td style="padding:8px 12px;text-align:right;">${solve === 'FV' ? `<strong>${fmtKr(result,4)}</strong>` : (fv !== null ? fmtKr(fv) : '—')}</td></tr>
+        <tr style="background:#f0fdf4;"><td style="padding:8px 12px;font-weight:600;">PMT (Betaling/periode)</td><td style="padding:8px 12px;text-align:right;">${solve === 'PMT' ? `<strong>${fmtKr(result,4)}</strong>` : fmtKr(pmt)}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:600;">RATE (Rente/periode)</td><td style="padding:8px 12px;text-align:right;">${solve === 'RATE' ? `<strong>${result.toFixed(6)} %</strong>` : (rate !== null ? rate + ' %' : '—')}</td></tr>
+        <tr style="background:#f0fdf4;"><td style="padding:8px 12px;font-weight:600;">NPER (Perioder)</td><td style="padding:8px 12px;text-align:right;">${solve === 'NPER' ? `<strong>${result.toFixed(2)}</strong>` : (nper !== null ? nper : '—')}</td></tr>
+        <tr><td style="padding:8px 12px;font-weight:600;">Betalingstype</td><td style="padding:8px 12px;text-align:right;">${type === 0 ? 'Etterskuddsvis' : 'Forhåndsvis'}</td></tr>
+      </tbody>
+    </table>`;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// LOAN AMORTIZATION
+// ─────────────────────────────────────────────────────────────────
+let amortChartInst = null;
+
+function calcAmort() {
+  const P = parseFloat(document.getElementById('amort-principal').value);
+  const annualRate = parseFloat(document.getElementById('amort-rate').value);
+  const termYears = parseInt(document.getElementById('amort-term').value);
+  const extra = parseFloat(document.getElementById('amort-extra').value) || 0;
+
+  if (isNaN(P) || P <= 0) return showError('amort-results', 'Lånebeløp må være positivt.');
+  if (isNaN(annualRate) || annualRate <= 0) return showError('amort-results', 'Renten må være større enn null.');
+  if (isNaN(termYears) || termYears < 1 || termYears > 50) return showError('amort-results', 'Nedbetalingstid må være mellom 1 og 50 år.');
+
+  const r = annualRate / 100 / 12;
+  const n = termYears * 12;
+  const pmt = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+
+  document.getElementById('amort-results').style.display = 'block';
+
+  // Build full schedule
+  let balance = P;
+  const schedule = [];
+  let totalInterest = 0;
+  let totalPrincipal = 0;
+  let period = 0;
+
+  const yearPrincipal = [];
+  const yearInterest = [];
+
+  let yearP = 0, yearI = 0;
+
+  while (balance > 0.01 && period < n + 1) {
+    period++;
+    const interestPart = balance * r;
+    let principalPart = pmt - interestPart + extra;
+    if (principalPart > balance) principalPart = balance;
+    balance -= principalPart;
+    if (balance < 0.01) balance = 0;
+    totalInterest += interestPart;
+    totalPrincipal += principalPart;
+    yearP += principalPart;
+    yearI += interestPart;
+    schedule.push({
+      period,
+      payment: interestPart + principalPart,
+      principal: principalPart,
+      interest: interestPart,
+      balance
+    });
+    if (period % 12 === 0) {
+      yearPrincipal.push(yearP);
+      yearInterest.push(yearI);
+      yearP = 0; yearI = 0;
+    }
+  }
+  // remainder
+  if (yearP + yearI > 0.01) {
+    yearPrincipal.push(yearP);
+    yearInterest.push(yearI);
+  }
+
+  const actualMonths = schedule.length;
+  const timeSaved = n - actualMonths;
+  const interestSaved = (pmt * n - P) - totalInterest;
+
+  document.getElementById('amort-summary').innerHTML = `
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Månedlig betaling</span>
+        <span class="result-value">${fmtKr(pmt + extra, 2)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Total rentekostnad</span>
+        <span class="result-value">${fmtKr(totalInterest, 0)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Totalt betalt</span>
+        <span class="result-value">${fmtKr(P + totalInterest, 0)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Faktisk nedbetalingstid</span>
+        <span class="result-value">${actualMonths} mnd (${(actualMonths/12).toFixed(1)} år)</span>
+      </div>
+      ${extra > 0 ? `
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Spart tid (ekstra betal.)</span>
+        <span class="result-value">${timeSaved} mnd</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Spart rente (ekstra betal.)</span>
+        <span class="result-value">${fmtKr(interestSaved, 0)}</span>
+      </div>` : ''}
+    </div>`;
+
+  // Chart — stacked bar per year
+  const yearLabels = yearPrincipal.map((_, i) => `År ${i + 1}`);
+  if (amortChartInst) amortChartInst.destroy();
+  amortChartInst = new Chart(document.getElementById('amort-chart'), {
+    type: 'bar',
+    data: {
+      labels: yearLabels,
+      datasets: [
+        {
+          label: 'Avdrag (kr)',
+          data: yearPrincipal,
+          backgroundColor: 'rgba(16,185,129,0.8)',
+          stack: 'stack'
+        },
+        {
+          label: 'Rente (kr)',
+          data: yearInterest,
+          backgroundColor: 'rgba(239,68,68,0.7)',
+          stack: 'stack'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Avdrag vs. Rente per år' },
+        legend: { position: 'bottom' }
+      },
+      scales: {
+        x: { stacked: true },
+        y: { stacked: true, ticks: { callback: v => fmt(v / 1000, 0) + 'k' } }
+      }
+    }
+  });
+
+  // Amortization table (show max 360 rows, but summarize yearly for longer loans)
+  const showYearly = actualMonths > 120;
+  let tableHTML = `<table class="amort-table">
+    <thead><tr>
+      <th>${showYearly ? 'År' : 'Måned'}</th>
+      <th>Betaling</th>
+      <th>Avdrag</th>
+      <th>Rente</th>
+      <th>Restlån</th>
+    </tr></thead><tbody>`;
+
+  if (showYearly) {
+    // Summarize by year
+    for (let y = 0; y < yearPrincipal.length; y++) {
+      const lastMonth = schedule[Math.min((y + 1) * 12 - 1, schedule.length - 1)];
+      tableHTML += `<tr>
+        <td>${y + 1}</td>
+        <td>${fmtKr(yearPrincipal[y] + yearInterest[y], 0)}</td>
+        <td>${fmtKr(yearPrincipal[y], 0)}</td>
+        <td>${fmtKr(yearInterest[y], 0)}</td>
+        <td>${fmtKr(lastMonth.balance, 0)}</td>
+      </tr>`;
+    }
+  } else {
+    schedule.forEach(row => {
+      tableHTML += `<tr>
+        <td>${row.period}</td>
+        <td>${fmtKr(row.payment, 2)}</td>
+        <td>${fmtKr(row.principal, 2)}</td>
+        <td>${fmtKr(row.interest, 2)}</td>
+        <td>${fmtKr(row.balance, 2)}</td>
+      </tr>`;
+    });
+  }
+  tableHTML += '</tbody></table>';
+  document.getElementById('amort-table-wrap').innerHTML = tableHTML;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// BOND VALUATION
+// ─────────────────────────────────────────────────────────────────
+function calcBond() {
+  const F   = parseFloat(document.getElementById('bond-face').value);
+  const cr  = parseFloat(document.getElementById('bond-coupon').value) / 100;
+  const ytm = parseFloat(document.getElementById('bond-ytm').value) / 100;
+  const T   = parseInt(document.getElementById('bond-years').value);
+  const m   = parseInt(document.getElementById('bond-freq').value); // periods per year
+
+  if (isNaN(F) || F <= 0) return showError('bond-results', 'Pålydende verdi må være positiv.');
+  if (isNaN(cr) || cr < 0) return showError('bond-results', 'Kupongrate kan ikke være negativ.');
+  if (isNaN(ytm) || ytm <= 0) return showError('bond-results', 'YTM må være større enn null.');
+  if (isNaN(T) || T < 1) return showError('bond-results', 'År til forfall må være minst 1.');
+
+  const N = T * m;           // total periods
+  const C = F * cr / m;      // coupon per period
+  const y = ytm / m;         // yield per period
+
+  // Bond price
+  let price = 0;
+  let macDuration = 0;
+  let convexity = 0;
+
+  for (let t = 1; t <= N; t++) {
+    const pv_t = C / Math.pow(1 + y, t);
+    price += pv_t;
+    macDuration += (t / m) * pv_t;
+    convexity += pv_t * t * (t + 1);
+  }
+  const pvFace = F / Math.pow(1 + y, N);
+  price += pvFace;
+  macDuration += (N / m) * pvFace;
+  macDuration /= price;
+
+  const modDuration = macDuration / (1 + y);
+  convexity = (convexity + pvFace * N * (N + 1)) / (price * Math.pow(1 + y, 2) * m * m);
+
+  const pricePercent = (price / F) * 100;
+  const couponAnnual = F * cr;
+  const currentYield = couponAnnual / price;
+
+  let statusText, statusColor;
+  if (Math.abs(pricePercent - 100) < 0.01) {
+    statusText = '⚖️ Til pari (kurs = 100)';
+    statusColor = '#374151';
+  } else if (pricePercent > 100) {
+    statusText = '📈 Over pari (kurs > 100) — kupong > YTM';
+    statusColor = '#059669';
+  } else {
+    statusText = '📉 Under pari (kurs < 100) — kupong < YTM';
+    statusColor = '#dc2626';
+  }
+
+  document.getElementById('bond-results').style.display = 'block';
+  document.getElementById('bond-output').innerHTML = `
+    <div class="result-highlight">
+      <span>Obligasjonskurs</span>
+      <span class="hl-value">${fmtKr(price, 2)}</span>
+    </div>
+    <p style="color:${statusColor}; font-weight:600; margin:8px 0 16px;">${statusText} (${pricePercent.toFixed(2)})</p>
+
+    <div class="bond-metric"><span class="bond-metric-label">Kurs i % av pålydende</span><span class="bond-metric-value">${pricePercent.toFixed(4)} %</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Kuponginntekt per år</span><span class="bond-metric-value">${fmtKr(couponAnnual, 2)}</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Kupon per periode (${m > 1 ? m + '/år' : 'år'})</span><span class="bond-metric-value">${fmtKr(C, 2)}</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Løpende avkastning (current yield)</span><span class="bond-metric-value">${(currentYield * 100).toFixed(4)} %</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Macaulay Duration</span><span class="bond-metric-value">${macDuration.toFixed(4)} år</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Modifisert Duration</span><span class="bond-metric-value">${modDuration.toFixed(4)}</span></div>
+    <div class="bond-metric"><span class="bond-metric-label">Konveksitet</span><span class="bond-metric-value">${convexity.toFixed(4)}</span></div>
+
+    <div class="formula-box" style="margin-top:16px;">
+      <span class="formula-label">Tolkning</span>
+      Modifisert duration ${modDuration.toFixed(2)} betyr at en renteøkning på 1 prosentpoeng
+      gir en prisendring på ca. <strong>${(modDuration * 100).toFixed(2)} %</strong> i motsatt retning.
+      Konveksitet på ${convexity.toFixed(2)} gir bedre estimat: 
+      ΔP/P ≈ −ModDur × Δy + ½ × Konveksitet × Δy²
+    </div>
+
+    <div class="section-title" style="font-size:0.9em;margin-top:16px;">Pris ved ulike renteendringer (Δy)</div>
+    <table class="sensitivity-table">
+      <thead><tr><th>Renteendring</th><th>Approx. pris (kr)</th><th>Endring (%)</th></tr></thead>
+      <tbody>
+        ${[-0.02,-0.01,-0.005,0,0.005,0.01,0.02].map(dy => {
+          const newPrice = dy === 0 ? price : price * (1 - modDuration * dy + 0.5 * convexity * dy * dy);
+          const chg = (newPrice / price - 1) * 100;
+          const cls = chg > 0 ? 'pos' : chg < 0 ? 'neg' : '';
+          return `<tr><td>${dy > 0 ? '+' : ''}${(dy*100).toFixed(1)} pp</td>
+            <td class="${cls}">${fmtKr(newPrice, 0)}</td>
+            <td class="${cls}">${chg.toFixed(2)} %</td></tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// INVESTMENT ANALYSIS: CAGR, ROI, BREAKEVEN
+// ─────────────────────────────────────────────────────────────────
+function calcCAGR() {
+  const startVal = parseFloat(document.getElementById('cagr-start').value);
+  const endVal   = parseFloat(document.getElementById('cagr-end').value);
+  const years    = parseFloat(document.getElementById('cagr-years').value);
+
+  const el = document.getElementById('cagr-result');
+  if (isNaN(startVal) || startVal <= 0) { el.innerHTML = '<div class="error-msg">Startverdi må være positiv.</div>'; return; }
+  if (isNaN(endVal) || endVal <= 0)     { el.innerHTML = '<div class="error-msg">Sluttverdi må være positiv.</div>'; return; }
+  if (isNaN(years) || years <= 0)       { el.innerHTML = '<div class="error-msg">Antall år må være positivt.</div>'; return; }
+
+  const cagr = Math.pow(endVal / startVal, 1 / years) - 1;
+  const totalReturn = (endVal / startVal - 1) * 100;
+
+  el.innerHTML = `
+    <div class="result-highlight" style="margin-top:12px;">
+      <span>CAGR</span>
+      <span class="hl-value result-positive">${(cagr * 100).toFixed(4)} % per år</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Total avkastning</span>
+        <span class="result-value">${totalReturn.toFixed(2)} %</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Verdiøkning (kr)</span>
+        <span class="result-value">${fmtKr(endVal - startVal, 0)}</span>
+      </div>
+    </div>`;
+}
+
+function calcROI() {
+  const cost    = parseFloat(document.getElementById('roi-cost').value);
+  const returns = parseFloat(document.getElementById('roi-return').value);
+  const years   = parseFloat(document.getElementById('roi-years').value);
+
+  const el = document.getElementById('roi-result');
+  if (isNaN(cost) || cost <= 0)    { el.innerHTML = '<div class="error-msg">Investeringskostnad må være positiv.</div>'; return; }
+  if (isNaN(returns))              { el.innerHTML = '<div class="error-msg">Total avkastning mangler.</div>'; return; }
+  if (isNaN(years) || years <= 0)  { el.innerHTML = '<div class="error-msg">Holdetid må være positiv.</div>'; return; }
+
+  const netGain = returns - cost;
+  const roi     = (netGain / cost) * 100;
+  const annROI  = (Math.pow(returns / cost, 1 / years) - 1) * 100;
+  const roiColor = roi >= 0 ? 'result-positive' : 'result-negative';
+
+  el.innerHTML = `
+    <div class="result-highlight" style="margin-top:12px;">
+      <span>ROI</span>
+      <span class="hl-value ${roiColor}">${roi.toFixed(2)} %</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Nettogevinst</span>
+        <span class="result-value">${fmtKr(netGain, 0)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Annualisert ROI (CAGR)</span>
+        <span class="result-value">${annROI.toFixed(4)} % / år</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Investeringsfaktor</span>
+        <span class="result-value">${(returns / cost).toFixed(3)}x</span>
+      </div>
+    </div>`;
+}
+
+function calcBreakeven() {
+  const fixed  = parseFloat(document.getElementById('be-fixed').value);
+  const price  = parseFloat(document.getElementById('be-price').value);
+  const varCost= parseFloat(document.getElementById('be-var').value);
+  const target = parseFloat(document.getElementById('be-target').value);
+
+  const el = document.getElementById('be-result');
+  if (isNaN(fixed) || fixed < 0)  { el.innerHTML = '<div class="error-msg">Faste kostnader kan ikke være negative.</div>'; return; }
+  if (isNaN(price) || price <= 0) { el.innerHTML = '<div class="error-msg">Salgspris må være positiv.</div>'; return; }
+  if (isNaN(varCost) || varCost < 0) { el.innerHTML = '<div class="error-msg">Variabel kostnad kan ikke være negativ.</div>'; return; }
+
+  const cm = price - varCost; // contribution margin
+  if (cm <= 0) { el.innerHTML = '<div class="error-msg">Dekningsbidrag (salgspris − variabel kostnad) må være positivt.</div>'; return; }
+
+  const beUnits = fixed / cm;
+  const beRevenue = beUnits * price;
+  const cmRatio   = (cm / price) * 100;
+
+  let targetHTML = '';
+  if (!isNaN(target) && target > 0) {
+    const targetProfit = target * cm - fixed;
+    const targetRevenue = target * price;
+    const targetColor = targetProfit >= 0 ? '#059669' : '#dc2626';
+    const targetIcon  = targetProfit >= 0 ? '✅' : '❌';
+    targetHTML = `
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Resultat ved ${fmt(target,0)} enheter</span>
+        <span class="result-value" style="color:${targetColor};">${targetIcon} ${fmtKr(targetProfit, 0)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Omsetning ved målvolum</span>
+        <span class="result-value">${fmtKr(targetRevenue, 0)}</span>
+      </div>`;
+  }
+
+  el.innerHTML = `
+    <div class="result-highlight" style="margin-top:12px;">
+      <span>Breakeven-volum</span>
+      <span class="hl-value">${Math.ceil(beUnits).toLocaleString('nb-NO')} enheter</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Breakeven-omsetning</span>
+        <span class="result-value">${fmtKr(beRevenue, 0)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Dekningsbidrag per enhet</span>
+        <span class="result-value">${fmtKr(cm, 2)}</span>
+      </div>
+      <div class="result-item" style="flex:1;min-width:160px;">
+        <span class="result-label">Dekningsgrad</span>
+        <span class="result-value">${cmRatio.toFixed(2)} %</span>
+      </div>
+      ${targetHTML}
+    </div>`;
+}
+
+// ─────────────────────────────────────────────────────────────────
+// INPUT VALIDATION — prevent invalid chars
+// ─────────────────────────────────────────────────────────────────
+document.querySelectorAll('input[type="number"]').forEach(inp => {
+  inp.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+});
+</script>
+
+</body>
+</html>
